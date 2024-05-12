@@ -7,14 +7,14 @@ import matplotlib.pyplot as plt
 
 
 def main():
-  surf = ParaboloidSurface(0.2, 0.13)
+  surf = ParaboloidSurface(0.2, -0.12)
   par = SystemParameters(
     surface = surf,
     gravity_accel = 9.81,
-    ball_mass = 0.05,
-    ball_radius = 0.1
+    ball_mass = 0.1,
+    ball_radius = 0.18
   )
-  traj, energy = simulate(par, 0.7, 0.7, [0, 0, 13], 20)
+  traj, energy = simulate(par, 0.7, 0.4099524763, [0, 4, 12], 18)
 
   np.save('data/trajectory.npy', traj)
   np.save('data/parameters.npy', par)

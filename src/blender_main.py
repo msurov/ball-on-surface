@@ -1,7 +1,6 @@
 from os.path import split, join
 import bpy
 import numpy as np
-from blender_print import print
 from surface import shifted_surface
 from trajectory import Trajectory
 from dynamics import SystemParameters
@@ -24,13 +23,26 @@ def find_object(name):
       return obj
   return None
 
+def get_object_bounding_box(obj):
+  mesh = obj.data
+  assert isinstance(mesh, bpy.types.Mesh)
+  verts = mesh.vertices
+  points = np.array([(elem.co.x, elem.co.y, elem.co.z) for elem in verts])
+  min_xyz = np.min(points, axis=0)
+  max_xyz = np.max(points, axis=0)
+  return min_xyz, max_xyz
+
+def get_object_size(obj):
+  min_xyz, max_xyz = get_object_bounding_box(obj)
+  dx, dy, dz = max_xyz - min_xyz
+  return dx, dy, dz
+
 def set_grid_heaight_map(obj, z_fun):
   mesh = obj.data
   assert isinstance(mesh, bpy.types.Mesh)
   verts = mesh.vertices
   for v in verts:
     v.co.z = z_fun(v.co.x, v.co.y)
-    print(v.co.x, v.co.y, v.co.z)
 
 def fixup_surface(par : SystemParameters):
   def f(x, y) -> float:
@@ -40,11 +52,30 @@ def fixup_surface(par : SystemParameters):
   obj = find_object('Grid')
   set_grid_heaight_map(obj, f)
 
+def fixup_cube(par : SystemParameters):
+  def f(x, y) -> float:
+    z,_,_,err = shifted_surface(par.surface, -par.ball_radius, x, y)
+    assert err < 1e-5
+    return z
+
+  obj = find_object('Cube')
+  pmin,_ = get_object_bounding_box(obj)
+  cube_bottom = pmin[2] + 1e-2
+
+  mesh = obj.data
+  assert isinstance(mesh, bpy.types.Mesh)
+  verts = mesh.vertices
+
+  for v in verts:
+    if v.co.z > cube_bottom:
+      v.co.z = f(v.co.x, v.co.y)
+
 def fixup_ball(par : SystemParameters):
   obj = find_object('football/soccer ball')
+  actual_diameter,*_ = get_object_size(obj)
   obj.scale.x = \
   obj.scale.y = \
-  obj.scale.z = par.ball_radius * 10
+  obj.scale.z = par.ball_radius * 2 / actual_diameter
 
 def insert_frames(traj : Trajectory):
   scene = bpy.data.scenes['Scene']
@@ -76,11 +107,9 @@ def cleanup():
 
 def main():
   data = load_sim_data()
-  fixup_surface(data['parameters'])
-  fixup_ball(data['parameters'])
+  par = data['parameters']
   traj = data['trajectory']
+  fixup_cube(par)
+  fixup_ball(par)
   setup_anim(traj)
   insert_frames(traj)
-
-cleanup()
-main()
