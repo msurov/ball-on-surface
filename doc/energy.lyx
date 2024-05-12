@@ -1,0 +1,222 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Двумерная задача
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $z=h\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $v_{z}=\frac{dh}{dx}v_{x}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+уравнения Лагранжа 2-го рода
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\omega r & =v\cdot\tau=v_{x}\tau_{x}+v_{z}\tau_{z}\\
+ & =\frac{v_{x}1+v_{z}\frac{dh}{dx}}{\sqrt{1+\left(\frac{dh}{dx}\right)^{2}}}\\
+ & =\frac{1+\left(\frac{dh}{dx}\right)^{2}}{\sqrt{1+\left(\frac{dh}{dx}\right)^{2}}}v_{x}\\
+ & =\sqrt{1+\left(\frac{dh}{dx}\right)^{2}}v_{x}
+\end{align*}
+
+\end_inset
+
+Кинетическая энергия 
+\begin_inset Formula 
+\begin{align*}
+K & =m\frac{v_{x}^{2}+v_{z}^{2}}{2}+M\frac{\omega^{2}}{2}\\
+ & =m\frac{v_{x}^{2}+\left(\frac{dh}{dx}v_{x}\right)^{2}}{2}+M\frac{1+\left(\frac{dh}{dx}\right)^{2}}{2r^{2}}v_{x}^{2}\\
+ & =m\frac{1+\left(\frac{dh}{dx}\right)^{2}}{2}v_{x}^{2}+M\frac{1+\left(\frac{dh}{dx}\right)^{2}}{2r^{2}}v_{x}^{2}\\
+ & =\left[m+\frac{M}{r^{2}}\right]\frac{1+\left(\frac{dh}{dx}\right)^{2}}{2}v_{x}^{2}
+\end{align*}
+
+\end_inset
+
+Потенциальная энергия 
+\begin_inset Formula 
+\[
+U=mgh
+\]
+
+\end_inset
+
+Уравнения Лагранжа 
+\begin_inset Formula 
+\begin{align*}
+K_{v_{x}} & =\left[m+\frac{M}{r^{2}}\right]\left(1+\left(\frac{dh}{dx}\right)^{2}\right)v_{x}\\
+\frac{d}{dt}K_{v_{x}} & =\left[m+\frac{M}{r^{2}}\right]2\frac{dh}{dx}\frac{d^{2}h}{dx^{2}}v_{x}^{2}+\left[m+\frac{M}{r^{2}}\right]\left(1+\left(\frac{dh}{dx}\right)^{2}\right)\dot{v}_{x}\\
+K_{x} & =\left[m+\frac{M}{r^{2}}\right]\frac{dh}{dx}\frac{d^{2}h}{dx^{2}}v_{x}^{2}\\
+U_{x} & =mg\frac{dh}{dx}\\
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(1+\left(\frac{dh}{dx}\right)^{2}\right)\dot{v}_{x}+\frac{dh}{dx}\frac{d^{2}h}{dx^{2}}v_{x}^{2}+\frac{g}{1+\frac{M}{mr^{2}}}\frac{dh}{dx}=0
+\]
+
+\end_inset
+
+Уравнения Лагранжа 1-го рода
+\end_layout
+
+\begin_layout Standard
+Уравнение связи 
+\begin_inset Formula 
+\[
+\phi=v-r\tau\omega=0\in\mathbb{R}^{2}
+\]
+
+\end_inset
+
+Уравнения движения 
+\begin_inset Formula 
+\begin{align*}
+\dot{v}_{x} & =\frac{1}{m}\lambda^{T}\frac{\partial\phi}{\partial v_{x}}\\
+\dot{v}_{z} & =-g+\frac{1}{m}\lambda^{T}\frac{\partial\phi}{\partial v_{z}}\\
+\dot{\omega} & =-\frac{r}{M}\lambda^{T}\tau
+\end{align*}
+
+\end_inset
+
+подставляем
+\begin_inset Formula 
+\begin{align*}
+\dot{v}_{x} & =\frac{1}{m}\lambda_{x}\\
+\dot{v}_{z} & =-g+\frac{1}{m}\lambda_{z}\\
+\dot{\omega} & =-\frac{r}{M}\lambda^{T}\tau
+\end{align*}
+
+\end_inset
+
+Продифференцируем уравнение связи 
+\begin_inset Formula 
+\begin{align*}
+\dot{v} & =r\frac{d\tau}{dx}v_{x}\omega+r\tau\dot{\omega}\\
+\frac{1}{m}\left[I+\frac{mr^{2}}{M}\tau\tau^{T}\right]\lambda & =r\frac{d\tau}{dx}v_{x}\omega+\left(\begin{array}{c}
+0\\
+g
+\end{array}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{d\tau}{dx} & =\frac{d}{dx}\frac{1}{\sqrt{1+\left(\frac{dh}{dx}\right)^{2}}}\left(\begin{array}{c}
+1\\
+\frac{dh}{dx}
+\end{array}\right)\\
+ & =\frac{1}{\left(1+\left(\frac{dh}{dx}\right)^{2}\right)^{3/2}}\frac{d^{2}h}{dx^{2}}\left(\begin{array}{c}
+-\frac{dh}{dx}\\
+1
+\end{array}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

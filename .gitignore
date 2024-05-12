@@ -1,0 +1,7 @@
+*.pyc
+__pycache__
+build
+*.blend1
+.venv
+*.lyx~
+*.lyx#
