@@ -1,20 +1,23 @@
 from os.path import split, join
 import bpy
 import numpy as np
-from surface import shifted_surface
-from trajectory import Trajectory
-from dynamics import SystemParameters
-from interp import linear_interp
+from common.surface import shifted_surface
+from common.trajectory import RigidBodyTrajectory
+from common.interp import linear_interp
+from .dynamics import SystemParameters
+from common.blender_print import print
 
 
 def load_sim_data():
   basepath,_ = split(bpy.data.filepath)
   datapath = join(basepath, '../data')
   par = np.load(join(datapath, 'parameters.npy'), allow_pickle=True).item()
-  traj = np.load(join(datapath, 'trajectory.npy'), allow_pickle=True).item()
+  ball_traj = np.load(join(datapath, 'ball_trajectory.npy'), allow_pickle=True).item()
+  table_traj = np.load(join(datapath, 'table_trajectory.npy'), allow_pickle=True).item()
   return {
-    'trajectory': traj,
-    'parameters': par
+    'ball_trajectory': ball_traj,
+    'table_trajectory': table_traj,
+    'parameters': par,
   }
 
 def find_object(name):
@@ -37,37 +40,22 @@ def get_object_size(obj):
   dx, dy, dz = max_xyz - min_xyz
   return dx, dy, dz
 
-def set_grid_heaight_map(obj, z_fun):
-  mesh = obj.data
-  assert isinstance(mesh, bpy.types.Mesh)
-  verts = mesh.vertices
-  for v in verts:
-    v.co.z = z_fun(v.co.x, v.co.y)
-
-def fixup_surface(par : SystemParameters):
-  def f(x, y) -> float:
-    z,_,_,err = shifted_surface(par.surface, -par.ball_radius, x, y)
-    assert err < 1e-5
-    return z
-  obj = find_object('Grid')
-  set_grid_heaight_map(obj, f)
-
-def fixup_cube(par : SystemParameters):
+def fixup_table(par : SystemParameters):
   def f(x, y) -> float:
     z,_,_,err = shifted_surface(par.surface, -par.ball_radius, x, y)
     assert err < 1e-5
     return z
 
-  obj = find_object('Cube')
+  obj = find_object('Table')
   pmin,_ = get_object_bounding_box(obj)
-  cube_bottom = pmin[2] + 1e-2
+  table_bottom = pmin[2] + 1e-2
 
   mesh = obj.data
   assert isinstance(mesh, bpy.types.Mesh)
   verts = mesh.vertices
 
   for v in verts:
-    if v.co.z > cube_bottom:
+    if v.co.z > table_bottom:
       v.co.z = f(v.co.x, v.co.y)
 
 def fixup_ball(par : SystemParameters):
@@ -77,7 +65,7 @@ def fixup_ball(par : SystemParameters):
   obj.scale.y = \
   obj.scale.z = par.ball_radius * 2 / actual_diameter
 
-def insert_frames(traj : Trajectory):
+def insert_ball_frames(traj : RigidBodyTrajectory):
   scene = bpy.data.scenes['Scene']
   fps = scene.render.fps
   tstart = traj.t[0]
@@ -94,7 +82,24 @@ def insert_frames(traj : Trajectory):
     ball.rotation_quaternion = q
     ball.keyframe_insert(data_path="rotation_quaternion", frame=i)
 
-def setup_anim(traj : Trajectory):
+def insert_table_frames(traj : RigidBodyTrajectory):
+  scene = bpy.data.scenes['Scene']
+  fps = scene.render.fps
+  tstart = traj.t[0]
+  tend = traj.t[-1]
+  duration = tend - tstart
+  nframes = int(duration * fps + 0.5)
+  table = find_object('Table')
+  for i in range(1, nframes + 1):
+    t = (i - 1) / fps
+    p = linear_interp(traj.t, traj.p, t)
+    q = linear_interp(traj.t, traj.q, t)
+    table.location = p
+    table.keyframe_insert(data_path="location", frame=i)
+    table.rotation_quaternion = q
+    table.keyframe_insert(data_path="rotation_quaternion", frame=i)
+
+def setup_anim(traj : RigidBodyTrajectory):
   scene = bpy.data.scenes['Scene']
   fps = scene.render.fps
   duration = traj.t[-1] - traj.t[0]
@@ -103,13 +108,15 @@ def setup_anim(traj : Trajectory):
 
 def cleanup():
   find_object('football/soccer ball').animation_data_clear()
-  find_object('Sphere').animation_data_clear()
+  find_object('Table').animation_data_clear()
 
 def main():
   data = load_sim_data()
   par = data['parameters']
-  traj = data['trajectory']
-  fixup_cube(par)
+  ball_traj = data['ball_trajectory']
+  table_traj = data['table_trajectory']
+  fixup_table(par)
   fixup_ball(par)
-  setup_anim(traj)
-  insert_frames(traj)
+  setup_anim(ball_traj)
+  insert_ball_frames(ball_traj)
+  insert_table_frames(table_traj)

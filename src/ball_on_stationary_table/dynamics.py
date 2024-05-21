@@ -1,15 +1,8 @@
 import numpy as np
 from dataclasses import dataclass
-from quat import quat_vec_mul
-from surface import Surface
+from common.quat import quat_vec_mul, wedge
+from common.surface import Surface
 
-def wedge(a):
-  x,y,z = a
-  return np.array([
-    [0, -z, y],
-    [z, 0, -x],
-    [-y, x, 0]
-  ])
 
 @dataclass
 class SystemParameters:
@@ -41,10 +34,12 @@ class Dynamics:
     v = self.radius * np.cross(w, normal)
 
     k = self.mass * self.radius**2 / self.inertia
-    A = (I + k * np.outer(normal, normal)) / self.mass
+    Wn = wedge(normal)
+    A = (I - k * Wn @ Wn) / self.mass
     J = self.surface.normal_jac(x, y)
     B = -self.radius * np.cross(J @ v[0:2], w) + ez * self.gravity_accel
     force = np.linalg.solve(A, B)
+
     return force
 
   def __call__(self, st) -> np.ndarray:

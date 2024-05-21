@@ -1,6 +1,5 @@
 import numpy as np
 
-
 def quat_make_continuous(q):
     R'''
         Brief:
