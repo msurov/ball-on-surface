@@ -1,0 +1,922 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Точка скользит по стержню
+\end_layout
+
+\begin_layout Standard
+Материальная точка скользит по невесомому стержню, который вращается по
+ закону 
+\begin_inset Formula $\theta=\theta\left(t\right)$
+\end_inset
+
+.
+ Декартовы координаты точки
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p=q\left(\begin{array}{c}
+\cos\theta\\
+\sin\theta
+\end{array}\right)
+\]
+
+\end_inset
+
+Скорость точки
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\dot{p}=\dot{q}\left(\begin{array}{c}
+\cos\theta\\
+\sin\theta
+\end{array}\right)+q\dot{\theta}\left(\begin{array}{c}
+-\sin\theta\\
+\cos\theta
+\end{array}\right)
+\]
+
+\end_inset
+
+Кинетическая энергия точки
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+K=\frac{\dot{p}^{T}\dot{p}}{2}=\frac{q^{2}\dot{\theta}^{2}}{2}+\frac{\dot{q}^{2}}{2}
+\]
+
+\end_inset
+
+Лагранжиан точки
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L=\frac{q^{2}\dot{\theta}^{2}}{2}+\frac{\dot{q}^{2}}{2}
+\]
+
+\end_inset
+
+Уравнения Лагранжа
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d}{dt}L_{\dot{q}}=\ddot{q}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L_{q}=q\dot{\theta}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ddot{q}=q\dot{\theta}^{2}
+\]
+
+\end_inset
+
+Изменение энергии во времени 
+\begin_inset Formula 
+\begin{align*}
+\frac{dE}{dt} & =\frac{d}{dt}\left[\frac{q^{2}\dot{\theta}^{2}}{2}+\frac{\dot{q}^{2}}{2}\right]\\
+ & =q\dot{q}\dot{\theta}^{2}+q^{2}\dot{\theta}\ddot{\theta}+\dot{q}\ddot{q}\\
+ & =q\dot{q}\dot{\theta}^{2}+q^{2}\dot{\theta}\ddot{\theta}+\dot{q}q\dot{\theta}^{2}\\
+ & =2q\dot{q}\dot{\theta}^{2}+q^{2}\dot{\theta}\ddot{\theta}
+\end{align*}
+
+\end_inset
+
+при постоянной скорости будет 
+\begin_inset Formula 
+\[
+\frac{dE}{dt}=2\dot{q}\left[q\dot{\theta}^{2}\right]+q^{2}\dot{\theta}\ddot{\theta}
+\]
+
+\end_inset
+
+Импульс 
+\begin_inset Formula 
+\[
+p=L_{\dot{q}}=\dot{q}
+\]
+
+\end_inset
+
+Гамильтониан 
+\begin_inset Formula 
+\begin{align*}
+H & =\dot{q}p-L\\
+ & =\dot{q}p-\frac{q^{2}\dot{\theta}^{2}}{2}-\frac{\dot{q}^{2}}{2}\\
+ & =\frac{p^{2}}{2}-\frac{q^{2}\dot{\theta}^{2}}{2}
+\end{align*}
+
+\end_inset
+
+Уравнения Гамильтона 
+\begin_inset Formula 
+\begin{align*}
+H_{p} & =p\\
+H_{q} & =-q\dot{\theta}^{2}\\
+H_{t} & =q^{2}\dot{\theta}\ddot{\theta}\\
+\dot{p} & =-H_{q}=q\dot{\theta}^{2}\\
+\dot{q} & =H_{p}=p
+\end{align*}
+
+\end_inset
+
+Сохранение энергии
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{d}{dt}H & =H_{t}\\
+\frac{d}{dt}\left(\frac{p^{2}}{2}-\frac{q^{2}\dot{\theta}^{2}}{2}\right) & =q^{2}\dot{\theta}\ddot{\theta}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Точка на вращающейся плоскости
+\end_layout
+
+\begin_layout Standard
+Декартовы координаты точки 
+\begin_inset Formula 
+\begin{align*}
+p & =Rq
+\end{align*}
+
+\end_inset
+
+Скорость точки 
+\begin_inset Formula 
+\begin{align*}
+\dot{p} & =\dot{R}q+R\dot{q}\\
+\dot{p}^{T}\dot{p} & =\left(\dot{R}q+R\dot{q}\right)^{T}\left(\dot{R}q+R\dot{q}\right)\\
+ & =\left\Vert \dot{q}\right\Vert ^{2}+\left\Vert q\right\Vert ^{2}\dot{\theta}^{2}+2q\times\dot{q}\dot{\theta}
+\end{align*}
+
+\end_inset
+
+Энергия
+\begin_inset Formula 
+\begin{align*}
+K & =\frac{\left\Vert \dot{p}\right\Vert ^{2}}{2}\\
+ & =\frac{\left\Vert \dot{q}\right\Vert ^{2}+\left\Vert q\right\Vert ^{2}\dot{\theta}^{2}+2q\times\dot{q}\dot{\theta}}{2}\\
+U & =0
+\end{align*}
+
+\end_inset
+
+Обозначим 
+\begin_inset Formula $q^{\wedge}\equiv\left(-q_{y},q_{x}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $a^{T}b^{\wedge}=-a_{x}b_{y}+a_{y}b_{x}=b\times a$
+\end_inset
+
+.
+ Уравнения Лагранжа 
+\begin_inset Formula 
+\begin{align*}
+L_{\dot{q}} & =\dot{q}+q^{\wedge}\dot{\theta}\\
+\frac{d}{dt}L_{\dot{q}} & =\ddot{q}+\dot{q}^{\wedge}\dot{\theta}+q^{\wedge}\ddot{\theta}\\
+L_{q} & =q\dot{\theta}^{2}-\dot{q}^{\wedge}\dot{\theta}\\
+\ddot{q}+\dot{q}^{\wedge}\dot{\theta}+q^{\wedge}\ddot{\theta}-q\dot{\theta}^{2}+\dot{q}^{\wedge}\dot{\theta} & =0\\
+\ddot{q} & =-\dot{q}^{\wedge}\dot{\theta}-q^{\wedge}\ddot{\theta}+q\dot{\theta}^{2}-\dot{q}^{\wedge}\dot{\theta}
+\end{align*}
+
+\end_inset
+
+Накладываем уравнение связи 
+\begin_inset Formula $\phi=a^{T}\dot{q}=0$
+\end_inset
+
+.
+ Получим тогда 
+\begin_inset Formula 
+\begin{align*}
+\ddot{q} & =-\dot{q}^{\wedge}\dot{\theta}-q^{\wedge}\ddot{\theta}+q\dot{\theta}^{2}-\dot{q}^{\wedge}\dot{\theta}+\lambda a\\
+a^{T}\ddot{q} & =0
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+-\dot{q}\times a\dot{\theta}-q\times a\ddot{\theta}+a\cdot q\dot{\theta}^{2}-\dot{q}\times a\dot{\theta}+\lambda a^{T}a=0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lambda=\frac{-\dot{q}\times a\dot{\theta}-q\times a\ddot{\theta}+a\cdot q\dot{\theta}^{2}-\dot{q}\times a\dot{\theta}}{a^{T}a}
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{align*}
+\ddot{q} & =-\dot{q}^{\wedge}\dot{\theta}-q^{\wedge}\ddot{\theta}+q\dot{\theta}^{2}-\dot{q}^{\wedge}\dot{\theta}+\frac{-2\dot{q}\times a\dot{\theta}-q\times a\ddot{\theta}+a\cdot q\dot{\theta}^{2}}{a^{T}a}a\\
+\dot{u} & =a\times\ddot{q}\\
+ & =-2\left(a_{x}\dot{q}_{x}+a_{y}\dot{q}_{y}\right)\dot{\theta}-\left(a_{x}q_{x}+a_{y}q_{y}\right)\ddot{\theta}+a\times q\dot{\theta}^{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+u_{1} & =a_{x}\dot{x}-a_{y}\dot{y}\\
+u_{2} & =a_{x}\dot{x}+a_{y}\dot{y}\\
+\dot{x} & =\frac{u_{1}+u_{2}}{2a_{x}}\\
+\dot{y} & =\frac{u_{2}-u_{1}}{2a_{y}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Закон сохранения Энергии.
+ Вычислим непосредственно 
+\begin_inset Formula 
+\begin{align*}
+\frac{dK}{dt} & =\frac{d}{dt}\frac{\left\Vert \dot{q}\right\Vert ^{2}+\left\Vert q\right\Vert ^{2}\dot{\theta}^{2}}{2}\\
+ & =\dot{q}^{T}\ddot{q}+q^{T}\dot{q}\dot{\theta}^{2}+\left\Vert q\right\Vert ^{2}\dot{\theta}\ddot{\theta}\\
+ & =\dot{q}^{T}\left(\dot{\theta}^{2}q+\lambda a\right)+q^{T}\dot{q}\dot{\theta}^{2}+\left\Vert q\right\Vert ^{2}\dot{\theta}\ddot{\theta}\\
+ & =2q\cdot\dot{q}\dot{\theta}^{2}+\left\Vert q\right\Vert ^{2}\dot{\theta}\ddot{\theta}
+\end{align*}
+
+\end_inset
+
+Вычислим гамильтониан 
+\begin_inset Formula 
+\begin{align*}
+\mu & =L_{\dot{q}}=\dot{q}\\
+H & =\mu\dot{q}-L\\
+ & =\frac{\left\Vert \dot{q}\right\Vert ^{2}}{2}-\frac{\left\Vert q\right\Vert ^{2}\dot{\theta}^{2}}{2}\\
+\end{align*}
+
+\end_inset
+
+Тогда 
+\begin_inset Formula 
+\begin{align*}
+\frac{d}{dt}H & =H_{t}\\
+\frac{d}{dt}\left(\frac{\left\Vert \dot{q}\right\Vert ^{2}}{2}-\frac{\left\Vert q\right\Vert ^{2}\dot{\theta}^{2}}{2}\right) & =-\left\Vert q\right\Vert ^{2}\dot{\theta}\ddot{\theta}
+\end{align*}
+
+\end_inset
+
+Если вычислить разность 
+\begin_inset Formula 
+\begin{align*}
+E-H & =\frac{\left\Vert \dot{q}\right\Vert ^{2}+\left\Vert q\right\Vert ^{2}\dot{\theta}^{2}}{2}-\frac{\left\Vert \dot{q}\right\Vert ^{2}-\left\Vert q\right\Vert ^{2}\dot{\theta}^{2}}{2}\\
+ & =\left\Vert q\right\Vert ^{2}\dot{\theta}^{2}\\
+\frac{d}{dt}\left(E-H\right) & =2\left(q\cdot\dot{q}\dot{\theta}^{2}+\left\Vert q\right\Vert ^{2}\dot{\theta}\ddot{\theta}\right)
+\end{align*}
+
+\end_inset
+
+С другой стороны 
+\begin_inset Formula 
+\begin{align*}
+\frac{d}{dt}\left(E-H\right) & =2q\cdot\dot{q}\dot{\theta}^{2}+\left\Vert q\right\Vert ^{2}\dot{\theta}\ddot{\theta}+\left\Vert q\right\Vert ^{2}\dot{\theta}\ddot{\theta}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Материальная точка на вращающейся плоскости
+\end_layout
+
+\begin_layout Standard
+Добавим потенциальную энергию
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U=\frac{k\left\Vert q\right\Vert ^{2}}{2}
+\]
+
+\end_inset
+
+Тогда лагранжиан системы будет 
+\begin_inset Formula 
+\[
+L=\frac{\left\Vert \dot{q}\right\Vert ^{2}+\left\Vert q\right\Vert ^{2}\dot{\theta}^{2}}{2}-U
+\]
+
+\end_inset
+
+Уравнения Лагранжа
+\begin_inset Formula 
+\begin{align*}
+L_{\dot{q}} & =\dot{q}\\
+\frac{d}{dt}L_{\dot{q}} & =\ddot{q}\\
+L_{q} & =\dot{\theta}^{2}q-U_{q}\\
+\ddot{q} & =\dot{\theta}^{2}q-U_{q}
+\end{align*}
+
+\end_inset
+
+Накладываем уравнение связи 
+\begin_inset Formula $\phi=a^{T}\dot{q}=0$
+\end_inset
+
+.
+ Получим 
+\begin_inset Formula 
+\begin{align*}
+\ddot{q} & =\dot{\theta}^{2}q-U_{q}+\lambda a
+\end{align*}
+
+\end_inset
+
+Дифференцируем связь
+\begin_inset Formula 
+\begin{align*}
+0 & =a^{T}\ddot{q}+\dot{q}^{T}\frac{\partial a}{\partial q}\dot{q}\\
+0 & =a^{T}\left(\dot{\theta}^{2}q-U_{q}+\lambda a\right)+\dot{q}^{T}\frac{\partial a}{\partial q}\dot{q}\\
+\lambda & =\frac{a^{T}\left(U_{q}-\dot{\theta}^{2}q\right)-\dot{q}^{T}\frac{\partial a}{\partial q}\dot{q}}{a^{T}a}
+\end{align*}
+
+\end_inset
+
+Уравнения динамики
+\begin_inset Formula 
+\begin{align*}
+\ddot{q} & =\dot{\theta}^{2}q-U_{q}+\frac{a^{T}\left(U_{q}-\dot{\theta}^{2}q\right)-\dot{q}^{T}\frac{\partial a}{\partial q}\dot{q}}{a^{T}a}a
+\end{align*}
+
+\end_inset
+
+Гамильтониан 
+\begin_inset Formula 
+\begin{align*}
+H & =\frac{\left\Vert \dot{q}\right\Vert ^{2}}{2}-\frac{\left\Vert q\right\Vert ^{2}\dot{\theta}^{2}}{2}+U\\
+\end{align*}
+
+\end_inset
+
+Что если потенциальная энергия зависит от явно времени? Пример 
+\begin_inset Formula 
+\[
+U=\left[0,1\right]\cdot R\cdot q
+\]
+
+\end_inset
+
+Единственная разница – частная производная гамильтониана
+\begin_inset Formula 
+\begin{align*}
+H & =\frac{\left\Vert \dot{q}\right\Vert ^{2}}{2}-\frac{\left\Vert q\right\Vert ^{2}\dot{\theta}^{2}}{2}+U\\
+H_{t} & =-\left\Vert q\right\Vert ^{2}\dot{\theta}\ddot{\theta}+U_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $U_{q}=R^{T}\cdot\left[\begin{array}{c}
+0\\
+1
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $U_{t}=\left[0,1\right]\cdot R_{t}\cdot q$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Качение шара по горизонтально вращающейся плоскости
+\end_layout
+
+\begin_layout Standard
+Кинетическая энергия шара 
+\begin_inset Formula 
+\begin{align*}
+K & =\frac{\left\Vert \omega+\mathbf{e}_{z}\dot{\theta}\right\Vert ^{2}}{2}+\frac{\left\Vert v_{w}\right\Vert ^{2}}{2}
+\end{align*}
+
+\end_inset
+
+Положение шара и скорость
+\begin_inset Formula 
+\begin{align*}
+p_{w} & =R_{\theta}p_{t}\\
+v_{w} & =R_{\theta}v_{t}+\dot{R}_{\theta}p_{t}\\
+v_{t} & =\omega\times\mathbf{e}_{z}\\
+\omega_{s} & =\omega+\mathbf{e}_{z}\dot{\theta}
+\end{align*}
+
+\end_inset
+
+Энергия шара
+\begin_inset Formula 
+\begin{align*}
+K & =\frac{\left\Vert \omega+\mathbf{e}_{z}\dot{\theta}\right\Vert ^{2}}{2}+\frac{\left\Vert R_{\theta}v_{t}+\dot{R}_{\theta}p_{t}\right\Vert ^{2}}{2}\\
+ & =\frac{\left\Vert \omega\right\Vert ^{2}+\dot{\theta}^{2}+2\omega\cdot\mathbf{e}_{z}\dot{\theta}}{2}+\frac{\left\Vert v_{t}\right\Vert ^{2}+\left\Vert p_{t}\right\Vert ^{2}\dot{\theta}^{2}}{2}\\
+ & =\frac{\left\Vert \omega\right\Vert ^{2}+\dot{\theta}^{2}+2\omega\cdot\mathbf{e}_{z}\dot{\theta}}{2}+\frac{\left\Vert \omega\times\mathbf{e}_{z}\right\Vert ^{2}+\left\Vert p_{t}\right\Vert ^{2}\dot{\theta}^{2}}{2}
+\end{align*}
+
+\end_inset
+
+Уравнения движения.
+ Динамика твёрдого тела
+\begin_inset Formula 
+\begin{align*}
+\dot{v}_{w} & =-\mathbf{e}_{z}+f\\
+\dot{\omega}_{s} & =\tau
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{ts}=R_{tw}R_{ws}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{ts}\omega_{s,ts}^{\wedge}=\dot{R}_{tw}R_{ws}+R_{tw}\dot{R}_{ws}=R_{tw}\omega_{w,tw}^{\wedge}R_{ws}+R_{tw}R_{ws}\omega_{s,ws}^{\wedge}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\omega_{s,ts}^{\wedge}=R_{sw}\omega_{w,tw}^{\wedge}R_{sw}^{T}+\omega_{s,ws}^{\wedge}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\omega_{s,ts}=\omega_{s,tw}+\omega_{s,ws}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\omega_{t,ts}=\omega_{t,tw}+R_{ts}\omega_{s,ws}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\dot{\omega}_{t,ts}=\dot{\omega}_{t,tw}+\dot{R}_{ts}\omega_{s,ws}+R_{ts}\dot{\omega}_{s,ws}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\dot{\omega}_{t,ts}=\dot{\omega}_{t,tw}+R_{ts}\omega_{s,ts}^{\wedge}\omega_{s,ws}+R_{ts}\dot{\omega}_{s,ws}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\dot{\omega}_{t,ts}=\dot{\omega}_{t,tw}+R_{ts}\omega_{s,ts}^{\wedge}\left(\omega_{s,ts}-\omega_{s,tw}\right)+R_{ts}\dot{\omega}_{s,ws}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\dot{\omega}_{t,ts}=\dot{\omega}_{t,tw}-R_{ts}\omega_{s,ts}^{\wedge}\omega_{s,tw}+R_{ts}\dot{\omega}_{s,ws}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\dot{\omega}_{t,ts}=\dot{\omega}_{t,tw}-\omega_{t,ts}\times\omega_{t,tw}+R_{ts}\dot{\omega}_{s,ws}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+—
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+v_{w} & =R_{wt}v_{t}+\dot{R}_{wt}p_{t}\\
+ & =R_{wt}v_{t}+R_{wt}\omega_{t,wt}^{\wedge}p_{t}\\
+R_{tw}v_{w} & =v_{t}+\omega_{t,wt}^{\wedge}p_{t}\\
+\dot{v}_{t} & =R_{tw}\dot{v}_{w}-2\omega_{t,wt}^{\wedge}v_{t}-\left(\omega_{t,wt}^{\wedge}\omega_{t,wt}^{\wedge}+\dot{\omega}_{t,wt}^{\wedge}\right)p_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+—
+\end_layout
+
+\begin_layout Plain Layout
+В итоге 
+\begin_inset Formula 
+\begin{align*}
+\dot{v}_{t} & =R_{tw}\dot{v}_{w}-2\omega_{t,wt}^{\wedge}v_{t}-\left(\omega_{t,wt}^{\wedge}\omega_{t,wt}^{\wedge}+\dot{\omega}_{t,wt}^{\wedge}\right)p_{t}\\
+\dot{\omega}_{t,ts} & =\dot{\omega}_{t,tw}-\omega_{t,ts}\times\omega_{t,tw}+R_{ts}\dot{\omega}_{s,ws}
+\end{align*}
+
+\end_inset
+
+Подставляем в уравнения динамики, получаем
+\begin_inset Formula 
+\begin{align*}
+\dot{v}_{t} & =-R_{tw}\mathbf{e}_{z}+f_{t}-2\omega_{t,wt}^{\wedge}v_{t}-\left(\omega_{t,wt}^{\wedge}\omega_{t,wt}^{\wedge}+\dot{\omega}_{t,wt}^{\wedge}\right)p_{t}\\
+\dot{\omega}_{t,ts} & =-\dot{\omega}_{t,wt}-\omega_{t,ts}\times\omega_{t,tw}+\tau_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Во вращающейся СК уравнения движения будут
+\begin_inset Formula 
+\begin{align*}
+\dot{v} & =-\mathbf{e}_{z}+f+a\\
+\dot{\omega} & =\gamma+\tau
+\end{align*}
+
+\end_inset
+
+где обозначени 
+\begin_inset Formula 
+\begin{align*}
+\gamma & \equiv-\mathbf{e}_{z}\ddot{\theta}-\omega\times\mathbf{e}_{z}\dot{\theta}\\
+a & \equiv-2\dot{\theta}\mathbf{e}_{z}\times v-\left(\dot{\theta}^{2}\mathbf{e}_{z}^{\wedge}\mathbf{e}_{z}^{\wedge}+\ddot{\theta}\mathbf{e}_{z}^{\wedge}\right)p
+\end{align*}
+
+\end_inset
+
+Уравнение связи 
+\begin_inset Formula 
+\[
+v=\omega\times\mathbf{e}_{z}
+\]
+
+\end_inset
+
+даст выражения для сил 
+\begin_inset Formula 
+\begin{align*}
+\dot{v} & =-\mathbf{e}_{z}+\lambda+a\\
+\dot{\omega} & =\gamma+\lambda\times\mathbf{e}_{z}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+\phi_{i} & =v_{i}-e_{ijk}\omega_{j}\mathbf{z}_{k}\\
+\lambda_{i}\frac{\partial\phi_{i}}{\partial\omega_{n}} & =-e_{nki}\mathbf{z}_{k}\lambda_{i}\\
+ & =e_{nik}\lambda_{i}\mathbf{z}_{k}=\lambda\times\mathbf{e}_{z}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Продифференциуем 
+\begin_inset Formula 
+\[
+\left(-\mathbf{e}_{z}+\lambda+a\right)=\left(\gamma+\lambda\times\mathbf{e}_{z}\right)\times\mathbf{e}_{z}
+\]
+
+\end_inset
+
+Выражаем 
+\begin_inset Formula $\lambda$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\lambda & =\left(\begin{array}{ccc}
+\frac{1}{2} & 0 & 0\\
+0 & \frac{1}{2} & 0\\
+0 & 0 & 1
+\end{array}\right)\left(\gamma\times\mathbf{e}_{z}+\mathbf{e}_{z}-a\right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\gamma & \equiv-\mathbf{e}_{z}\ddot{\theta}-\omega\times\mathbf{e}_{z}\dot{\theta}\\
+a & \equiv-2\dot{\theta}\mathbf{e}_{z}\times v-\left(\dot{\theta}^{2}\mathbf{e}_{z}^{\wedge}\mathbf{e}_{z}^{\wedge}+\ddot{\theta}\mathbf{e}_{z}^{\wedge}\right)p
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+Лагранжиан 
+\begin_inset Formula 
+\[
+L=\frac{\left\Vert \omega\right\Vert ^{2}+\dot{\theta}^{2}+2\omega\cdot\mathbf{e}_{z}\dot{\theta}}{2}+\frac{\left\Vert \omega\times\mathbf{e}_{z}\right\Vert ^{2}+\left\Vert p_{t}\right\Vert ^{2}\dot{\theta}^{2}}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выразим импульс 
+\begin_inset Formula 
+\begin{align*}
+w & =L_{\omega}\\
+ & =\frac{2\omega^{T}+2\mathbf{e}_{z}^{T}\dot{\theta}}{2}+\frac{2\left(\mathbf{e}_{z}\times\omega\right)^{T}\mathbf{e}_{z}^{\wedge}}{2}\\
+ & =\omega^{T}+\mathbf{e}_{z}^{T}\dot{\theta}+\left(\mathbf{e}_{z}\times\omega\right)^{T}\mathbf{e}_{z}^{\wedge}\\
+\end{align*}
+
+\end_inset
+
+Гамильтониан 
+\begin_inset Formula 
+\begin{align*}
+H & =L_{\omega}\omega-L\\
+ & =\omega^{T}\omega+\mathbf{e}_{z}^{T}\omega\dot{\theta}+\left(\mathbf{e}_{z}\times\omega\right)^{T}\mathbf{e}_{z}^{\wedge}\omega-\frac{\left\Vert \omega\right\Vert ^{2}+\dot{\theta}^{2}+2\omega\cdot\mathbf{e}_{z}\dot{\theta}}{2}-\frac{\left\Vert \omega\times\mathbf{e}_{z}\right\Vert ^{2}+\left\Vert p_{t}\right\Vert ^{2}\dot{\theta}^{2}}{2}\\
+ & =\frac{\left\Vert \omega\right\Vert ^{2}}{2}+\frac{\left\Vert \omega\times\mathbf{e}_{z}\right\Vert ^{2}}{2}-\frac{\dot{\theta}^{2}}{2}-\frac{\left\Vert p_{t}\right\Vert ^{2}\dot{\theta}^{2}}{2}
+\end{align*}
+
+\end_inset
+
+Производная гамильтониана по времени 
+\begin_inset Formula 
+\begin{align*}
+H_{t} & =-\frac{2\dot{\theta}\ddot{\theta}}{2}-\frac{\left\Vert p_{t}\right\Vert ^{2}2\dot{\theta}\ddot{\theta}}{2}\\
+ & =-\left(1+\left\Vert p_{t}\right\Vert ^{2}\right)\dot{\theta}\ddot{\theta}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{\theta}=\left(\begin{array}{ccc}
+\cos\theta & -\sin\theta & 0\\
+\sin\theta & \cos\theta & 0\\
+0 & 0 & 1
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\dot{R}_{\theta}=\left(\begin{array}{ccc}
+-\sin\theta & -\cos\theta & 0\\
+\cos\theta & -\sin\theta & 0\\
+0 & 0 & 0
+\end{array}\right)\dot{\theta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\dot{R}_{\theta}^{T}\dot{R}_{\theta}=\left(\begin{array}{ccc}
+-\sin\theta & \cos\theta & 0\\
+-\cos\theta & -\sin\theta & 0\\
+0 & 0 & 0
+\end{array}\right)\left(\begin{array}{ccc}
+-\sin\theta & -\cos\theta & 0\\
+\cos\theta & -\sin\theta & 0\\
+0 & 0 & 0
+\end{array}\right)=\left(\begin{array}{ccc}
+1\\
+ & 1\\
+ &  & 0
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{\theta}^{T}\dot{R}_{\theta}=\left(\begin{array}{ccc}
+\cos\theta & \sin\theta & 0\\
+-\sin\theta & \cos\theta & 0\\
+0 & 0 & 1
+\end{array}\right)\left(\begin{array}{ccc}
+-\sin\theta & -\cos\theta & 0\\
+\cos\theta & -\sin\theta & 0\\
+0 & 0 & 0
+\end{array}\right)\dot{\theta}=\left(\begin{array}{ccc}
+0 & -1 & 0\\
+1 & 0 & 0\\
+0 & 0 & 0
+\end{array}\right)\dot{\theta}=\mathbf{e}_{z}^{\wedge}\dot{\theta}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

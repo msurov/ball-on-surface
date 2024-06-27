@@ -1,6 +1,7 @@
 import numpy as np
 from dataclasses import dataclass
-from common.quat import quat_vec_mul, wedge
+from common.quat import quat_vec_mul
+from common.linalg import wedge
 from common.surface import Surface
 
 

@@ -4,21 +4,21 @@ import numpy as np
 
 class FrameRotation(ABC):
   @abstractmethod
-  def rot(self, t):
+  def rot(self, t : float) -> np.ndarray:
     R"""
       get quaternion describing frame orientation
     """
     pass
 
   @abstractmethod
-  def angvel(self, t):
+  def angvel(self, t : float) -> np.ndarray:
     R"""
       get self angular velocity
     """
     pass
 
   @abstractmethod
-  def angaccel(self, t):
+  def angaccel(self, t : float) -> np.ndarray:
     R"""
       get self angular velocity time derivative
     """

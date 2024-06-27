@@ -1,0 +1,464 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Формула Родрига
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R=I+\sin\theta k^{\wedge}+\left(1-\cos\theta\right)k^{\wedge}k^{\wedge}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+кососимметрическая часть матрицы поворота
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(\frac{R-R^{T}}{2}\right)^{\vee}=\sin\theta k$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+пусть эта часть задаёт поворот
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $r=\left(\frac{R-R^{T}}{2}\right)^{\vee}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+тогда
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $r=\sin\theta k$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\sin\theta=\left\Vert r\right\Vert $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k=\frac{r}{\left\Vert r\right\Vert }$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+тогда обратное преобразование будет
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R=I+r^{\wedge}+\left(1-\sqrt{1-r^{T}r}\right)\frac{r^{\wedge}r^{\wedge}}{r^{T}r}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Связь с угловой скоростью
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $2r^{\wedge}=R-R^{T}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dot{r}^{\wedge}=\frac{\dot{R}-\dot{R}^{T}}{2}=\frac{R\omega^{\wedge}-\left(R\omega^{\wedge}\right)^{T}}{2}=\frac{1}{2}\left(R\omega^{\wedge}+\omega^{\wedge}R^{T}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a\times e_{x}=\begin{array}{ccc}
+i & j & k\\
+a_{x} & a_{y} & a_{z}\\
+1 & 0 & 0
+\end{array}=\left(\begin{array}{c}
+0\\
+a_{z}\\
+-a_{y}
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dot{r}=\frac{1}{2}\left(\begin{array}{ccc}
+R_{22}+R_{33} & -R_{21} & -R_{31}\\
+-R_{12} & R_{11}+R_{33} & -R_{32}\\
+-R_{13} & -R_{23} & R_{11}+R_{22}
+\end{array}\right)\omega$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+Если в качестве координат использовать компоненты кватерниона 
+\begin_inset Formula $q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Энергия катящегося шара 
+\begin_inset Formula 
+\[
+K=\frac{\omega^{T}\omega}{2}+\frac{v^{T}v}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\omega & =2\tilde{q}\circ\dot{q}\\
+\omega^{T}\omega & =\tilde{\omega}\circ\omega\\
+ & =4\left(q\circ\tilde{q}\right)\left(\dot{\tilde{q}}\circ\dot{q}\right)=4\left\Vert q\right\Vert ^{2}\left\Vert \dot{q}\right\Vert ^{2}\\
+K & =2\left\Vert q\right\Vert ^{2}\left\Vert \dot{q}\right\Vert ^{2}+\frac{v^{T}v}{2}
+\end{align*}
+
+\end_inset
+
+ Уравнения Лагранжа 
+\begin_inset Formula 
+\begin{align*}
+K_{\dot{q}} & =4\left\Vert q\right\Vert ^{2}\dot{q}\\
+K_{v} & =v\\
+\frac{d}{dt}K_{\dot{q}} & =8\left(q\cdot\dot{q}\right)\dot{q}+4\left\Vert q\right\Vert ^{2}\ddot{q}\\
+\frac{d}{dt}K_{v} & =\dot{v}\\
+K_{q} & =8\left\Vert \dot{q}\right\Vert ^{2}\cdot q
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+2\left(q\cdot\dot{q}\right)\dot{q}+\left\Vert q\right\Vert ^{2}\ddot{q}-\left\Vert \dot{q}\right\Vert ^{2}\cdot q & =0\\
+\dot{v} & =0
+\end{align*}
+
+\end_inset
+
+Уравнения связи 
+\begin_inset Formula 
+\begin{align*}
+q\cdot\dot{q} & =0\\
+v & =\omega\times\mathbf{e}_{z}\\
+ & =\mathbf{vec}\left[\left(2\tilde{q}\circ\dot{q}\right)\circ\mathbf{e}_{z}\right]\\
+v_{x}-\mathbf{e}_{x}\cdot\left(\tilde{q}\circ\dot{q}\circ\mathbf{e}_{z}\right) & =0\\
+v_{y}-\mathbf{e}_{y}\cdot\left(\tilde{q}\circ\dot{q}\circ\mathbf{e}_{z}\right) & =0
+\end{align*}
+
+\end_inset
+
+Силы реакции 
+\begin_inset Formula 
+\begin{align*}
+f_{1} & =\lambda_{1}q\\
+f_{2} & =0\\
+f_{3} & =-\lambda_{2}\mathbf{e}_{x}\cdot\left(\tilde{q}\circ I\circ\mathbf{e}_{z}\right)-\lambda_{3}\mathbf{e}_{y}\cdot\left(\tilde{q}\circ I\circ\mathbf{e}_{z}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Дифференцируем 
+\begin_inset Formula 
+\begin{align*}
+q\cdot\ddot{q}+\dot{q}\cdot\dot{q} & =0\\
+\mathbf{e}_{*}\cdot\left(\left\Vert \dot{q}\right\Vert ^{2}\mathbf{e}_{z}+\tilde{q}\circ\ddot{q}\circ\mathbf{e}_{z}\right) & =0\\
+\dot{v}_{*}-\mathbf{e}_{*}\cdot\left(\tilde{q}\circ\ddot{q}\circ\mathbf{e}_{z}\right) & =0
+\end{align*}
+
+\end_inset
+
+Динамика твёрдого тела 
+\begin_inset Formula 
+\begin{align*}
+2\left(q\cdot\dot{q}\right)\dot{q}+\left\Vert q\right\Vert ^{2}\ddot{q}-\left\Vert \dot{q}\right\Vert ^{2}\cdot q & =\lambda q\\
+\ddot{q} & =\frac{\lambda q}{\left\Vert q\right\Vert ^{2}}-\frac{2\left(q\cdot\dot{q}\right)\dot{q}}{\left\Vert q\right\Vert ^{2}}+\frac{\left\Vert \dot{q}\right\Vert ^{2}\cdot q}{\left\Vert q\right\Vert ^{2}}\\
+\lambda & =\frac{2\left(q\cdot\dot{q}\right)^{2}}{\left\Vert q\right\Vert ^{2}}-2\left\Vert \dot{q}\right\Vert ^{2}
+\end{align*}
+
+\end_inset
+
+тогда 
+\begin_inset Formula 
+\[
+2\left(q\cdot\dot{q}\right)\dot{q}+\left\Vert q\right\Vert ^{2}\ddot{q}-\left\Vert \dot{q}\right\Vert ^{2}\cdot q=\left(\frac{2\left(q\cdot\dot{q}\right)^{2}}{\left\Vert q\right\Vert ^{2}}-2\left\Vert \dot{q}\right\Vert ^{2}\right)q
+\]
+
+\end_inset
+
+подставляем 
+\begin_inset Formula $\left\Vert q\right\Vert ^{2}=1$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\ddot{q}+\left\Vert \dot{q}\right\Vert ^{2}q=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\omega & =2\tilde{q}\circ\dot{q}\\
+\frac{1}{2}q\circ\dot{\omega}-q\left\Vert \dot{q}\right\Vert ^{2} & =\ddot{q}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\dot{\omega}=0
+\]
+
+\end_inset
+
+Если тензор инерции произвольный 
+\begin_inset Formula 
+\begin{align*}
+T & =\frac{\omega^{T}J\omega}{2}\\
+ & =2\left(\tilde{q}\circ\dot{q}\right)^{T}J\left(\tilde{q}\circ\dot{q}\right)
+\end{align*}
+
+\end_inset
+
+Производные лагранжиана 
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial T}{\partial\dot{q}} & =4\left(\tilde{q}\circ\dot{q}\right)^{T}J\tilde{q}\circ I\\
+\frac{d}{dt}\frac{\partial T}{\partial\dot{q}} & =4\left(\dot{\tilde{q}}\circ\dot{q}+\tilde{q}\circ\ddot{q}\right)^{T}J\tilde{q}\circ I+4\left(\tilde{q}\circ\dot{q}\right)^{T}J\dot{\tilde{q}}\circ I\\
+\frac{\partial T}{\partial q} & =4\left(\tilde{q}\circ\dot{q}\right)^{T}J\left(I\circ\dot{q}\right)\\
+\end{align*}
+
+\end_inset
+
+Уравнения Лагранжа 
+\begin_inset Formula 
+\[
+4\left(\dot{\tilde{q}}\circ\dot{q}+\tilde{q}\circ\ddot{q}\right)^{T}J\tilde{q}^{\circ}+4\left(\tilde{q}\circ\dot{q}\right)^{T}J\dot{\tilde{q}}\circ I-4\left(\tilde{q}\circ\dot{q}\right)^{T}J\left(I\circ\dot{q}\right)=0
+\]
+
+\end_inset
+
+Произведение кватернионов можно представить как умножение матрицы на вектор
+ 
+\end_layout
+
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+T & =2\left(\tilde{q}\circ\dot{q}\right)^{T}J\left(\tilde{q}\circ\dot{q}\right)\\
+ & =2\dot{q}^{T}Q\left(q\right)JQ^{T}\left(q\right)\dot{q}\\
+ & =2\tilde{q}^{T}Y^{T}\left(\dot{q}\right)JY\left(\dot{q}\right)\tilde{q}\\
+T_{\dot{q}} & =4Q\left(q\right)JQ^{T}\left(q\right)\dot{q}\\
+T_{q} & =4Y^{T}\left(\dot{q}\right)JY\left(\dot{q}\right)\tilde{q}\\
+\frac{d}{dt}T_{\dot{q}} & =4Q\left(\dot{q}\right)JQ^{T}\left(q\right)\dot{q}+4Q\left(q\right)JQ^{T}\left(\dot{q}\right)\dot{q}+4Q\left(q\right)JQ^{T}\left(q\right)\ddot{q}
+\end{align*}
+
+\end_inset
+
+Уравнения Лагранжа 
+\begin_inset Formula 
+\[
+Q\left(\dot{q}\right)JQ^{T}\left(q\right)\dot{q}+Q\left(q\right)JQ^{T}\left(\dot{q}\right)\dot{q}+Q\left(q\right)JQ^{T}\left(q\right)\ddot{q}-Y^{T}\left(\dot{q}\right)JY\left(\dot{q}\right)\tilde{q}=0
+\]
+
+\end_inset
+
+Уравнение связи 
+\begin_inset Formula 
+\begin{align*}
+q\cdot\dot{q} & =0\\
+\dot{q}\cdot\dot{q}+q\cdot\ddot{q} & =0\\
+\dot{q}\cdot\dot{q}+q\cdot\ddot{q} & =0
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\left[Q\left(\dot{q}\right)JQ^{T}\left(q\right)\dot{q}+Q\left(q\right)JQ^{T}\left(\dot{q}\right)\dot{q}-Y^{T}\left(\dot{q}\right)JY\left(\dot{q}\right)\tilde{q}\right]+Q\left(q\right)JQ^{T}\left(q\right)\ddot{q} & =\lambda q\\
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Мяч катится по вращающейся плоскости
+\end_layout
+
+\begin_layout Standard
+Ориентация плосксти относительно мировой СК задана кватернионом 
+\begin_inset Formula $\mu$
+\end_inset
+
+.
+ Ориентация шара относительно плоскости задана кватернионом 
+\begin_inset Formula $q$
+\end_inset
+
+.
+ Ориентация шара относительно мировой СК 
+\begin_inset Formula 
+\[
+\eta=\mu\circ q.
+\]
+
+\end_inset
+
+Угловая скорость мяча 
+\begin_inset Formula 
+\begin{align*}
+\omega & =2\tilde{\eta}\circ\dot{\eta}\\
+\dot{\eta} & =\dot{\mu}\circ q+\mu\circ\dot{q}\\
+\omega & =2\left(\tilde{q}\circ\tilde{\mu}\right)\circ\left(\dot{\mu}\circ q+\mu\circ\dot{q}\right)\\
+ & =\tilde{q}\circ\alpha\circ q+\beta\\
+\alpha & \equiv2\tilde{\mu}\circ\dot{\mu}\\
+\beta & \equiv2\tilde{q}\circ\dot{q}
+\end{align*}
+
+\end_inset
+
+Кинетическая энергия мяча 
+\begin_inset Formula 
+\[
+T=\frac{\left\Vert \omega\right\Vert ^{2}}{2}+\frac{\left\Vert v\right\Vert ^{2}}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

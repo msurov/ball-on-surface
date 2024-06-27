@@ -1,0 +1,374 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Пример: материальна точка на вращающейся плоскости
+\end_layout
+
+\begin_layout Standard
+Пусть на систему наложена связь 
+\begin_inset Formula $a_{x}\dot{x}+a_{y}\dot{y}=0$
+\end_inset
+
+.
+ Тогда квазискорости имеет смысл выбрать как 
+\begin_inset Formula 
+\begin{align*}
+\dot{\pi}_{1} & =a_{x}\dot{x}-a_{y}\dot{y}\\
+\dot{\pi}_{2} & =a_{x}\dot{x}+a_{y}\dot{y}
+\end{align*}
+
+\end_inset
+
+тогда 
+\begin_inset Formula 
+\begin{align*}
+\frac{d}{dt}\left(\begin{array}{c}
+\pi_{1}\\
+\pi_{2}
+\end{array}\right) & =\left(\begin{array}{cc}
+a_{x} & -a_{y}\\
+a_{x} & a_{y}
+\end{array}\right)\frac{d}{dt}\left(\begin{array}{c}
+x\\
+y
+\end{array}\right)=A\dot{q}\\
+\dot{\pi} & =A\dot{q}\\
+\dot{q} & =B\dot{\pi}
+\end{align*}
+
+\end_inset
+
+Неголономная связь 
+\begin_inset Formula $\dot{\pi}_{2}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Энергию переписываю в квазискоростях
+\begin_inset Formula 
+\begin{align*}
+K & =\frac{\dot{\pi}^{T}B^{T}B\dot{\pi}+\left\Vert q\right\Vert ^{2}\dot{\theta}^{2}+2q_{\times}B\dot{\pi}\dot{\theta}}{2}\\
+K_{\dot{\pi}} & =B^{T}B\dot{\pi}+B^{T}q_{\times}\dot{\theta}\\
+\frac{d}{dt}K_{\dot{\pi}} & =B^{T}B\ddot{\pi}+B^{T}\dot{q}_{\times}\dot{\theta}++B^{T}q_{\times}\ddot{\theta}\\
+K_{\pi}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dot{u}=a\left(q\right)\dot{q}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dot{q}=b\left(q\right)\dot{u}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+есть произвольная функция 
+\begin_inset Formula 
+\[
+f\left(x,y\right)
+\]
+
+\end_inset
+
+я определяю преобразование координат 
+\begin_inset Formula 
+\begin{align*}
+y^{i} & =\beta_{j}^{i}z^{j}\\
+z^{i} & =\alpha_{j}^{i}y^{j},
+\end{align*}
+
+\end_inset
+
+где 
+\begin_inset Formula $\alpha,\beta$
+\end_inset
+
+ – функции 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Определяю новую функцию 
+\begin_inset Formula $f^{*}\left(x,z\right)\equiv f\left(x,\beta_{j}^{i}z^{j}\right)$
+\end_inset
+
+.
+ Нужно вычислить 
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial f}{\partial y^{k}} & =\frac{\partial f^{*}\left(x,z\right)}{\partial z^{l}}\alpha_{k}^{l}\\
+\frac{d}{dt}\frac{\partial f}{\partial y^{k}} & =\frac{d}{dt}\frac{\partial f^{*}\left(x,z\right)}{\partial z^{l}}\alpha_{k}^{l}=\left(\frac{d}{dt}\frac{\partial f^{*}\left(x,z\right)}{\partial z^{l}}\right)\alpha_{k}^{l}+\frac{\partial f^{*}\left(x,z\right)}{\partial z^{l}}\left(\frac{d}{dt}\alpha_{k}^{l}\right)
+\end{align*}
+
+\end_inset
+
+Вычислим, также, 
+\begin_inset Formula $\frac{\partial f}{\partial x^{k}}$
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial f^{*}\left(x,z\right)}{\partial x^{k}} & =\frac{\partial f\left(x,y\right)}{\partial x^{k}}+\frac{\partial f\left(x,y\right)}{\partial y^{l}}\frac{\partial y^{l}}{\partial x^{k}}\\
+ & =\frac{\partial f\left(x,y\right)}{\partial x^{k}}+\frac{\partial f\left(x,y\right)}{\partial y^{l}}\frac{\partial\beta_{j}^{l}}{\partial x^{k}}z^{j}
+\end{align*}
+
+\end_inset
+
+тогда 
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial f\left(x,y\right)}{\partial x^{k}} & =\frac{\partial f^{*}\left(x,z\right)}{\partial x^{k}}-\frac{\partial f\left(x,y\right)}{\partial y^{l}}\frac{\partial\beta_{j}^{l}}{\partial x^{k}}z^{j}\\
+ & =\frac{\partial f^{*}\left(x,z\right)}{\partial x^{k}}-\frac{\partial f^{*}\left(x,z\right)}{\partial z^{l}}\alpha_{s}^{l}\frac{\partial\beta_{j}^{s}}{\partial x^{k}}z^{j}
+\end{align*}
+
+\end_inset
+
+уравнения Лагранжа 
+\begin_inset Formula $\frac{d}{dt}f_{y}-f_{x}=0$
+\end_inset
+
+ превращаются в 
+\begin_inset Formula 
+\[
+\left(\frac{d}{dt}\frac{\partial f^{*}\left(x,z\right)}{\partial z^{l}}\right)\alpha_{k}^{l}+\frac{\partial f^{*}\left(x,z\right)}{\partial z^{l}}\left(\frac{d}{dt}\alpha_{k}^{l}\right)-\frac{\partial f^{*}\left(x,z\right)}{\partial x^{k}}+\frac{\partial f^{*}\left(x,z\right)}{\partial z^{l}}\alpha_{s}^{l}\frac{\partial\beta_{j}^{s}}{\partial x^{k}}z^{j}=0
+\]
+
+\end_inset
+
+чтобы привести к привычному виду, нужно умножить на 
+\begin_inset Formula $\beta_{v}^{k}$
+\end_inset
+
+.
+ Получим
+\begin_inset Formula 
+\[
+\left(\frac{d}{dt}\frac{\partial f^{*}\left(x,z\right)}{\partial z^{l}}\right)\alpha_{k}^{l}\beta_{v}^{k}+\frac{\partial f^{*}\left(x,z\right)}{\partial z^{l}}\left(\frac{d}{dt}\alpha_{k}^{l}\right)\beta_{v}^{k}-\frac{\partial f^{*}\left(x,z\right)}{\partial x^{k}}\beta_{v}^{k}+\frac{\partial f^{*}\left(x,z\right)}{\partial z^{l}}\alpha_{s}^{l}\frac{\partial\beta_{j}^{s}}{\partial x^{k}}z^{j}\beta_{v}^{k}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d}{dt}\frac{\partial f^{*}\left(x,z\right)}{\partial z^{v}}-\frac{\partial f^{*}\left(x,z\right)}{\partial x^{k}}\beta_{v}^{k}+\frac{\partial f^{*}\left(x,z\right)}{\partial z^{l}}\alpha_{s}^{l}\frac{\partial\beta_{j}^{s}}{\partial x^{k}}\beta_{v}^{k}z^{j}+\frac{\partial f^{*}\left(x,z\right)}{\partial z^{l}}\left(\frac{d}{dt}\alpha_{k}^{l}\right)\beta_{v}^{k}=0
+\]
+
+\end_inset
+
+Что делать с хвостом 
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial f^{*}\left(x,z\right)}{\partial z^{l}}\alpha_{s}^{l}\frac{\partial\beta_{j}^{s}}{\partial x^{k}}\beta_{v}^{k}z^{j}+\frac{\partial f^{*}\left(x,z\right)}{\partial z^{l}}\left(\frac{d}{dt}\alpha_{k}^{l}\right)\beta_{v}^{k} & =\\
+\frac{\partial f^{*}\left(x,z\right)}{\partial z^{l}}\left[\alpha_{s}^{l}\frac{\partial\beta_{j}^{s}}{\partial x^{k}}\beta_{v}^{k}z^{j}+\frac{\partial\alpha_{k}^{l}}{\partial x^{t}}\dot{x}^{t}\beta_{v}^{k}\right]
+\end{align*}
+
+\end_inset
+
+если 
+\begin_inset Formula $\dot{x}=y$
+\end_inset
+
+, то 
+\begin_inset Formula $y^{i}=\beta_{j}^{t}z^{j}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{align*}
+\left[\frac{\partial\beta_{j}^{s}}{\partial x^{k}}\alpha_{s}^{l}\beta_{v}^{k}+\frac{\partial\alpha_{k}^{l}}{\partial x^{s}}\beta_{j}^{s}\beta_{v}^{k}\right]z^{j} & =\\
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{\partial\beta_{j}^{s}\alpha_{n}^{j}}{\partial x^{k}}=0=\frac{\partial\beta_{j}^{s}}{\partial x^{k}}\alpha_{n}^{j}+\beta_{j}^{s}\frac{\partial\alpha_{n}^{j}}{\partial x^{k}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+y^{i} & =\beta_{j}^{i}z^{j}\\
+z^{i} & =\alpha_{j}^{i}y^{j},
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\beta_{j}^{i}\alpha_{k}^{j}=\delta_{k}^{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha_{k}^{l}\beta_{v}^{k}=\delta_{v}^{l}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

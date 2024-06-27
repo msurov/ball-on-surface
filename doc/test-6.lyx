@@ -1,0 +1,136 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+исходная динамика
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\dot{\Omega} & =u\\
+\dot{\rho} & =a\left(...\right)\\
+\dot{\phi} & =b\left(...\right)\\
+\dot{\zeta} & =c\left(...\right)
+\end{align*}
+
+\end_inset
+
+преобразование координат 
+\begin_inset Formula 
+\begin{align*}
+\Delta\Omega & =\Omega-\Omega_{*}\\
+\Delta\rho & =\rho-\rho_{*}\\
+\Delta\zeta & =\zeta-\zeta_{*}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\Delta\Omega & =u\\
+\Delta\rho & =a\left(\rho,\zeta,\Omega\right)\\
+ & \approx a\left(\rho_{*},\zeta_{*},\Omega_{*}\right)+\left[\frac{\partial a}{\partial\rho}\right]_{*}\Delta\rho+\left[\frac{\partial a}{\partial\zeta}\right]_{*}\Delta\zeta+\left[\frac{\partial a}{\partial\Omega}\right]_{*}\Delta\Omega\\
+\Delta\zeta & =c\left(\rho_{*},\zeta_{*},\Omega_{*}\right)+\left[\frac{\partial c}{\partial\rho}\right]_{*}\Delta\rho+\left[\frac{\partial c}{\partial\zeta}\right]_{*}\Delta\zeta+\left[\frac{\partial c}{\partial\Omega}\right]_{*}\Delta\Omega
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f:\dot{\rho},\dot{\phi},\dot{\zeta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\zeta_{\rho}=\frac{\rho\dot{\theta}\left(k+1\right)\pm\sqrt{\rho^{2}\dot{\theta}^{2}\left(k-1\right)^{2}+4\rho gk\tan\alpha}}{2r}$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

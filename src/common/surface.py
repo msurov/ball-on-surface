@@ -55,6 +55,7 @@ class ParaboloidSurface(Surface):
 
 class ConeSurface(Surface):
   def __init__(self, k, eps=1e-3):
+    assert eps > 0
     self.k = k
     self.eps = eps
 
@@ -77,6 +78,22 @@ class Plane(Surface):
 
   def derivative(self, x: float, y: float, xder: int = 0, yder: int = 0) -> float:
     return 0.
+
+class Sphere(Surface):
+  def __init__(self, radius : float):
+    self.radius = radius
+
+  def derivative(self, x: float, y: float, xder: int = 0, yder: int = 0) -> float:
+    r = self.radius
+    q = np.sqrt(r**2 - x**2 - y**2)
+    match (xder, yder):
+      case (0,0): return -r + q
+      case (1,0): return -x/q
+      case (0,1): return -y/q
+      case (2,0): return -x**2/q**3 - 1/q
+      case (0,2): return -y**2/q**3 - 1/q
+      case (1,1): return -x*y/q**3
+      case _: return None
 
 def shifted_surface(surf, dist, x, y, eps=1e-5, max_iter=100):
   u = x

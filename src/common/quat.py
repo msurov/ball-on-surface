@@ -326,7 +326,6 @@ def quat_from_rodrigues(r):
     v[b] = [1,0,0]
     return quat_from_angleaxis(angle, v)
 
-
 def quat_proj(q, l):
     R'''
         Find projection of rotation `q` by axis `l`
@@ -340,6 +339,37 @@ def quat_proj(q, l):
     q = q / np.linalg.norm(q)
     return q
 
+def get_quat_mat(q):
+  R'''
+    Represents the quaternion product
+        q ○ a
+    as matrix-vector product
+        Q(q) a
+    the function computes matrix Q for the given tuple q
+  '''
+  w,x,y,z = q
+  return np.array([
+    [w, -x, -y, -z],
+    [x, w, -z, y],
+    [y, z, w, -x],
+    [z, -y, x, w]
+  ])
+
+def get_quat_right_mat(q):
+  R'''
+    Represents the quaternion product
+        a ○ q
+    as matrix-vector product
+        Q(q) a
+    the function computes matrix Q for the given tuple q
+  '''
+  w,x,y,z = q
+  return np.array([
+    [w, -x, -y, -z],
+    [x, w, z, -y],
+    [y, -z, w, x],
+    [z, y, -x, w]
+  ])
 
 def test_mul():
     a = rpy2quat(np.random.normal(size=(10,3)))

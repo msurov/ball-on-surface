@@ -5,7 +5,8 @@ from common.surface import shifted_surface
 from common.trajectory import RigidBodyTrajectory
 from common.interp import linear_interp
 from .dynamics import SystemParameters
-from common.blender_print import print
+from blender.digital_display import set_display_number, animate_display
+from blender.helpers import find_object, get_object_bounding_box, get_object_size
 
 
 def load_sim_data():
@@ -19,26 +20,6 @@ def load_sim_data():
     'table_trajectory': table_traj,
     'parameters': par,
   }
-
-def find_object(name):
-  for obj in bpy.data.objects:
-    if obj.name == name:
-      return obj
-  return None
-
-def get_object_bounding_box(obj):
-  mesh = obj.data
-  assert isinstance(mesh, bpy.types.Mesh)
-  verts = mesh.vertices
-  points = np.array([(elem.co.x, elem.co.y, elem.co.z) for elem in verts])
-  min_xyz = np.min(points, axis=0)
-  max_xyz = np.max(points, axis=0)
-  return min_xyz, max_xyz
-
-def get_object_size(obj):
-  min_xyz, max_xyz = get_object_bounding_box(obj)
-  dx, dy, dz = max_xyz - min_xyz
-  return dx, dy, dz
 
 def fixup_table(par : SystemParameters):
   def f(x, y) -> float:
@@ -65,7 +46,7 @@ def fixup_ball(par : SystemParameters):
   obj.scale.y = \
   obj.scale.z = par.ball_radius * 2 / actual_diameter
 
-def insert_ball_frames(traj : RigidBodyTrajectory):
+def animate_ball_motion(traj : RigidBodyTrajectory):
   scene = bpy.data.scenes['Scene']
   fps = scene.render.fps
   tstart = traj.t[0]
@@ -82,7 +63,33 @@ def insert_ball_frames(traj : RigidBodyTrajectory):
     ball.rotation_quaternion = q
     ball.keyframe_insert(data_path="rotation_quaternion", frame=i)
 
-def insert_table_frames(traj : RigidBodyTrajectory):
+def animate_time(traj : RigidBodyTrajectory):
+  display = find_object('display-4')
+  t = traj.t
+  animate_display(display, t, t)
+
+def animate_table_speed(traj : RigidBodyTrajectory):
+  display = find_object('display-1')
+  t = traj.t
+  w = traj.w[:,2]
+  w[::11] += 1e-2 * np.random.normal(size=w[::11].shape)
+  animate_display(display, t, w)
+
+def animate_ball_x(traj : RigidBodyTrajectory):
+  display = find_object('display-2')
+  t = traj.t
+  x = traj.p[:,0]
+  x[::17] += 1e-2 * np.random.normal(size=x[::17].shape)
+  animate_display(display, t, x)
+
+def animate_ball_y(traj : RigidBodyTrajectory):
+  display = find_object('display-3')
+  t = traj.t
+  y = traj.p[:,1]
+  y[::23] += 1e-2 * np.random.normal(size=y[::23].shape)
+  animate_display(display, t, y)
+
+def animate_table_motion(traj : RigidBodyTrajectory):
   scene = bpy.data.scenes['Scene']
   fps = scene.render.fps
   tstart = traj.t[0]
@@ -118,5 +125,9 @@ def main():
   fixup_table(par)
   fixup_ball(par)
   setup_anim(ball_traj)
-  insert_ball_frames(ball_traj)
-  insert_table_frames(table_traj)
+  animate_ball_motion(ball_traj)
+  animate_table_motion(table_traj)
+  animate_time(table_traj)
+  animate_table_speed(table_traj)
+  animate_ball_x(ball_traj)
+  animate_ball_y(ball_traj)

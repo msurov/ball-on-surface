@@ -1,0 +1,329 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+динамика вращательного движения 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dot{\omega}=-\omega\times J\omega+T_{b}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+динамика поступательного движения
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ddot{p}_{w}=-g\mathbf{e}_{z}+\frac{1}{m}F_{w}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{w}=-r\mathbf{e}_{z}\times F_{w}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+нормаль от точки контакта к центру шара
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $h_{w}=-\mathbf{e}_{z}r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $h_{b}=-R_{bw}\mathbf{e}_{z}r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dot{R}_{wb}=R_{wb}\omega_{b,wb}^{\wedge}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\dot{h}_{b} & =-\dot{R}_{bw}\mathbf{e}_{z}r\\
+ & =-\left(R_{wb}\omega_{b,wb}^{\wedge}\right)^{T}\mathbf{e}_{z}r\\
+ & =\omega_{b,wb}^{\wedge}R_{bw}\mathbf{e}_{z}r\\
+ & =-\omega_{b,wb}^{\wedge}\left(h_{b}\right)\\
+ & =h_{b}\times\omega_{b,wb}
+\end{align*}
+
+\end_inset
+
+Радиус вектор 
+\begin_inset Formula 
+\begin{align*}
+p_{b} & =R_{bw}p_{w}\\
+\dot{p}_{b} & =\left(R_{wb}\omega_{b,wb}^{\wedge}\right)^{T}p_{w}+R_{bw}\dot{p}_{w}\\
+ & =-\omega_{b,wb}^{\wedge}p_{b}+R_{bw}\dot{p}_{w}\\
+\ddot{p}_{b} & =-\dot{\omega}_{b,wb}^{\wedge}p_{b}-\omega_{b,wb}^{\wedge}R_{bw}\dot{p}_{w}-\omega_{b,wb}^{\wedge}\dot{p}_{b}+R_{bw}\ddot{p}_{w}\\
+ & =-\left(\dot{\omega}_{b,wb}^{\wedge}+\omega_{b,wb}^{\wedge}\omega_{b,wb}^{\wedge}\right)p_{b}-2\omega_{b,wb}^{\wedge}\dot{p}_{b}+R_{bw}\ddot{p}_{w}
+\end{align*}
+
+\end_inset
+
+Динамика 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\ddot{p} & =-\left(\dot{\omega}^{\wedge}+\omega^{\wedge}\omega^{\wedge}\right)p-2\omega^{\wedge}\dot{p}-gR_{bw}\mathbf{e}_{z}+\frac{1}{m}F\\
+\dot{\omega} & =-\omega\times J\omega+T
+\end{align*}
+
+\end_inset
+
+момент и сила связаны 
+\begin_inset Formula $T=h\times F$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\ddot{p} & =-\left(\dot{\omega}^{\wedge}+\omega^{\wedge}\omega^{\wedge}\right)p-2\omega^{\wedge}\dot{p}-gR_{bw}\mathbf{e}_{z}+\frac{1}{m}F\\
+\dot{\omega} & =-\omega\times J\omega+h\times F
+\end{align*}
+
+\end_inset
+
+учитываем связи
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\dot{p} & =-r\omega^{\wedge}R_{bw}\mathbf{e}_{z}\\
+\ddot{p} & =-r\dot{\omega}^{\wedge}R_{bw}\mathbf{e}_{z}+r\omega^{\wedge}\omega^{\wedge}R_{bw}\mathbf{e}_{z}\\
+\end{align*}
+
+\end_inset
+
+вектор нормали в собственной СК 
+\begin_inset Formula 
+\[
+h=-rR_{bw}\mathbf{e}_{z}
+\]
+
+\end_inset
+
+тогда
+\begin_inset Formula 
+\begin{align*}
+\dot{p} & =\omega^{\wedge}h\\
+\ddot{p} & =\dot{\omega}^{\wedge}h+\omega^{\wedge}h^{\wedge}\omega\\
+\left(p^{\wedge}+h^{\wedge}\right)\left(\dot{\omega}\right)+\frac{1}{m}F & =\omega^{\wedge}h^{\wedge}\omega+\omega^{\wedge}\omega^{\wedge}p+2\omega^{\wedge}\dot{p}+gR_{bw}\mathbf{e}_{z}\\
+\left(p^{\wedge}+h^{\wedge}\right)\left(-\omega\times J\omega+h\times F\right)+\frac{1}{m}F & =\omega^{\wedge}h^{\wedge}\omega+\omega^{\wedge}\omega^{\wedge}p+2\omega^{\wedge}\dot{p}+gR_{bw}\mathbf{e}_{z}\\
+-\left(p^{\wedge}+h^{\wedge}\right)\left(\omega\times J\omega\right)+\frac{1}{m}\left[m\left(p+h\right)^{\wedge}h^{\wedge}+I\right]F & =\omega^{\wedge}h^{\wedge}\omega+\omega^{\wedge}\omega^{\wedge}p+2\omega^{\wedge}\dot{p}+gR_{bw}\mathbf{e}_{z}\\
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b^{\wedge}\left[a^{\wedge}b^{\wedge}+I\right]^{-1}=\frac{1}{a\cdot b-1}b^{\wedge}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(a\cdot b\right)b^{\wedge}=b^{\wedge}a^{\wedge}b^{\wedge}+2b^{\wedge}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a\times\left(b\times c\right)=b\left(a\cdot c\right)-c\left(a\cdot b\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a^{\wedge}b^{\wedge}=ba^{T}-a^{T}bI$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $b^{\wedge}a^{\wedge}b^{\wedge}=-ba^{T}b^{\wedge}+\left(a^{T}b\right)b^{\wedge}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

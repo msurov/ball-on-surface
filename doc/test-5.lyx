@@ -1,0 +1,244 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Formula $\left(n\cdot\omega\right)\frac{\partial n}{\partial x}\left(\mathbf{e}_{x}\times n\right)^{T}\omega$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbf{e}_{x}\times n=\left(\begin{array}{c}
+0\\
+-n_{z}\\
+n_{y}
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbf{e}_{y}\times n=\left(\begin{array}{c}
+n_{z}\\
+0\\
+-n_{x}
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(n\cdot\omega\right)\frac{\partial n}{\partial x}\left(\begin{array}{c}
+0\\
+-n_{z}\\
+n_{y}
+\end{array}\right)^{T}\omega=\frac{\partial n}{\partial x}\left(-n_{z}\omega_{y}+n_{y}\omega_{z}\right)\left(n\cdot\omega\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(n\cdot\omega\right)\frac{\partial n}{\partial y}\left(\begin{array}{c}
+n_{z}\\
+0\\
+-n_{x}
+\end{array}\right)\omega=\frac{\partial n}{\partial y}\left(n_{z}\omega_{x}-n_{x}\omega_{z}\right)\left(n\cdot\omega\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+–
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\dot{n}n^{T}\omega & =-r\frac{\partial n}{\partial x}\mathbf{e}_{x}^{T}n^{\wedge}\omega n^{T}\omega-r\frac{\partial n}{\partial y}\mathbf{e}_{y}^{T}n^{\wedge}\omega n^{T}\omega\\
+ & =-r\frac{\partial n}{\partial x}\left(-n_{z}\omega_{y}+n_{y}\omega_{z}\right)\left(n\cdot\omega\right)-r\frac{\partial n}{\partial y}\left(n_{z}\omega_{x}-n_{x}\omega_{z}\right)\left(n\cdot\omega\right)\\
+ & =-r\left[\frac{\partial n}{\partial x}\left(-n_{z}\omega_{y}+n_{y}\omega_{z}\right)+\frac{\partial n}{\partial y}\left(n_{z}\omega_{x}-n_{x}\omega_{z}\right)\right]\left(n\cdot\omega\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+ok: 
+\begin_inset Formula $\dot{\omega}=\gamma-\frac{mr}{mr^{2}+M}n^{\wedge}\left[gR_{tw}\mathbf{e}_{z}-r\dot{n}\times\omega-rn\times\gamma-a\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dot{\omega}=\gamma-\frac{k}{r}n^{\wedge}\left[gR_{tw}\mathbf{e}_{z}-r\dot{n}\times\omega-rn\times\gamma-a\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dot{\omega}=-\mu\times\omega-\dot{\mu}-\frac{k}{r}n^{\wedge}\left[gR_{tw}\mathbf{e}_{z}-r\dot{n}^{\wedge}\omega-rn^{\wedge}\left(-\mu\times\omega-\dot{\mu}\right)-2r\mu^{\wedge}n^{\wedge}\omega+\left(\mu^{\wedge}\mu^{\wedge}+\dot{\mu}^{\wedge}\right)p\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dot{\omega}=-\mu^{\wedge}\omega-\dot{\mu}-\frac{k}{r}n^{\wedge}\left[gR_{tw}\mathbf{e}_{z}-r\dot{n}^{\wedge}\omega+r\left(n^{\wedge}\mu^{\wedge}\omega-2\mu^{\wedge}n^{\wedge}\omega\right)+rn^{\wedge}\dot{\mu}+\left(\mu^{\wedge}\mu^{\wedge}+\dot{\mu}^{\wedge}\right)p\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dot{\omega}=-\mu^{\wedge}\omega-\dot{\mu}-\left[\frac{k}{r}n^{\wedge}gR_{tw}\mathbf{e}_{z}-\frac{k}{r}n^{\wedge}r\dot{n}^{\wedge}\omega+\frac{k}{r}n^{\wedge}r\left(n^{\wedge}\mu^{\wedge}\omega-2\mu^{\wedge}n^{\wedge}\omega\right)+\frac{k}{r}n^{\wedge}rn^{\wedge}\dot{\mu}+\frac{k}{r}n^{\wedge}\left(\mu^{\wedge}\mu^{\wedge}+\dot{\mu}^{\wedge}\right)p\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dot{\omega}=-\frac{k}{r}n^{\wedge}gR_{tw}\mathbf{e}_{z}-\frac{k}{r}n^{\wedge}\mu^{\wedge}\mu^{\wedge}p+\left[-\mu^{\wedge}+kn^{\wedge}\dot{n}^{\wedge}-kn^{\wedge}n^{\wedge}\mu^{\wedge}+2kn^{\wedge}\mu^{\wedge}n^{\wedge}\right]\omega+\left(\frac{k}{r}n^{\wedge}p^{\wedge}-I-kn^{\wedge}n^{\wedge}\right)\dot{\mu}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

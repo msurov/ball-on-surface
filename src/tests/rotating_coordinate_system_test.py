@@ -2,7 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.interpolate import make_interp_spline
 from scipy.integrate import solve_ivp
-from quat import quat_vec_mul, quat_mul_vec, quat_rot, quat_conj, quat_mul, wedge
+from common.quat import quat_vec_mul, quat_mul_vec, quat_rot, quat_conj, quat_mul
+from common.linalg import wedge
+from common.rotations import solve_poisson_kinematics
 
 
 def find_orientation(t: np.ndarray, q0: np.ndarray, self_angvel: callable):
@@ -21,7 +23,7 @@ class RotatingCoordinateSystem:
     self.angvel_sp.extrapolate = None
     step = 1e-2
     t = np.linspace(t[0], t[-1], 1 + int((t[-1] - t[0]) / step))
-    q = find_orientation(t, np.array([0., 0., 1., 0.]), self.angvel_sp)
+    q = solve_poisson_kinematics(t, self.angvel_sp, np.array([0., 0., 1., 0.]), max_step=1e-3)
     self.q_sp = make_interp_spline(t, q, k=3)
 
   def self_angular_velocity(self, t):

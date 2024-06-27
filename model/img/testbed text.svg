@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50mm"
+   height="50mm"
+   viewBox="-1 -1 61.083562 61.083562"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="testbed text.svg"
+   inkscape:export-filename="testbed text.png"
+   inkscape:export-xdpi="520.19202"
+   inkscape:export-ydpi="520.19202"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="4.0872334"
+     inkscape:cx="173.83397"
+     inkscape:cy="77.925571"
+     inkscape:window-width="2560"
+     inkscape:window-height="1361"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-6.339531,-7.1500334)">
+    <text
+       xml:space="preserve"
+       style="font-size:7.7611px;font-family:Calibri;-inkscape-font-specification:Calibri;fill:#ffffff;stroke:#000000;stroke-width:0.2;stroke-miterlimit:6"
+       x="6.2144742"
+       y="12.428946"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-weight:bold;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2"
+         x="6.2144742"
+         y="12.428946">table ang speed</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.7611px;font-family:Calibri;-inkscape-font-specification:Calibri;fill:#ffffff;stroke:#000000;stroke-width:0.2;stroke-miterlimit:6"
+       x="6.5486917"
+       y="27.117245"
+       id="text1-0"><tspan
+         sodipodi:role="line"
+         id="tspan1-6"
+         style="font-weight:bold;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2"
+         x="6.5486917"
+         y="27.117245">ball coord x</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.7611px;font-family:Calibri;-inkscape-font-specification:Calibri;fill:#ffffff;stroke:#000000;stroke-width:0.2;stroke-miterlimit:6"
+       x="6.5253415"
+       y="41.204441"
+       id="text1-0-1"><tspan
+         sodipodi:role="line"
+         id="tspan1-6-9"
+         style="font-weight:bold;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2"
+         x="6.5253415"
+         y="41.204441">ball coord y</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.7611px;font-family:Calibri;-inkscape-font-specification:Calibri;fill:#ffffff;stroke:#000000;stroke-width:0.2;stroke-miterlimit:6"
+       x="6.8307047"
+       y="58.620586"
+       id="text1-0-1-8"><tspan
+         sodipodi:role="line"
+         id="tspan1-6-9-2"
+         style="font-weight:bold;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2"
+         x="6.8307047"
+         y="58.620586">time</tspan></text>
+  </g>
+</svg>

@@ -30,29 +30,6 @@ def compute_coriolis_mat(M, q, dq):
   C = DM - DM.T / 2
   return C @ dq
 
-'''
-def lagrange_eqs_with_constr(M, U, A, t, q, dq):
-  R"""
-    Lagrangian
-      L(q,dq,t) = dq' M(q,t) dq - U(q,t)
-    constraint
-      A'(q) dq = 0
-    will find expression for ddq
-  """
-  n,_ = q.shape
-  I = ca.DM.eye(n)
-  P = I - A @ ca.pinv(A.T @ A) @ A.T
-  t1 = ca.jtimes(M @ dq, q, dq)
-  t2 = ca.jacobian(M @ dq, t)
-  t3 = ca.jacobian(dq.T @ M @ dq / 2 - U, q).T
-  t4 = P @ (t1 + t2 - t3)
-  t5 = ca.jtimes(A.T, q, dq) @ dq
-  X = ca.vertcat(P @ M, A.T)
-  Y = ca.vertcat(t4, t5)
-  ddq = -ca.pinv(X) @ Y
-  return ddq
-'''
-
 def lagrange_eqs_with_constr(L, A, t, q, dq):
   R"""
     Lagrangian
@@ -155,14 +132,8 @@ def test():
   q3 = sol2.y[0:4].T
   dq3 = sol2.y[4:8].T
 
-  plt.gca().set_prop_cycle(None)
-  plt.plot(sol1.t, q1, lw=0.5)
-  plt.gca().set_prop_cycle(None)
-  plt.plot(sol2.t, q2, '--', lw=1)
-  plt.gca().set_prop_cycle(None)
-  plt.plot(sol3.t, q3, '--', lw=2)
-  plt.grid(True)
-  plt.show()
+  assert np.allclose(q1, q2)
+  assert np.allclose(q1, q3)
 
 if __name__ == '__main__':
   test()

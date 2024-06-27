@@ -1,0 +1,1744 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style russian
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part
+Динамика шара, катящегося по вращающейся поверхности
+\end_layout
+
+\begin_layout Section
+Уравнения динамики
+\end_layout
+
+\begin_layout Standard
+Уравнения динамики
+\begin_inset Formula 
+\begin{align*}
+\dot{v}_{w} & =-\mathbf{e}_{z}g+\frac{1}{m}f_{w}\\
+J\dot{\omega}_{s,ws} & =-\omega_{s,ws}\times J\omega_{s,ws}+\tau_{s}
+\end{align*}
+
+\end_inset
+
+где 
+\begin_inset Formula $v_{w}$
+\end_inset
+
+ – скорость в неподвижной СК, 
+\begin_inset Formula $\omega_{s,ws}$
+\end_inset
+
+ – угловая скорость шара в собствнной СК.
+ Поскольку 
+\begin_inset Formula $J=MI$
+\end_inset
+
+, сразу упростим 
+\begin_inset Formula 
+\[
+M\dot{\omega}_{s,ws}=\tau_{s},
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $M$
+\end_inset
+
+ – момент инерции шара.
+\end_layout
+
+\begin_layout Subsection
+Преобразование координат
+\end_layout
+
+\begin_layout Standard
+Неподвижная система координат и система координат стола находятся в одной
+ и той же точке, но повёрнуты друг относительно друга.
+ Тогда координаты шара преобразуются как
+\begin_inset Formula 
+\[
+p_{w}=R_{wt}p_{t},
+\]
+
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+где 
+\begin_inset Formula $p_{w}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ – координаты шара в неподвижной СК, 
+\begin_inset Formula $p_{t}$
+\end_inset
+
+ – в СК стола, 
+\begin_inset Formula $R_{wt}$
+\end_inset
+
+ – матрица поворота из СК стола в неподвижную СК.
+ Её производная описывается уравнением Пуассона
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\dot{R}_{wt} & =R_{wt}\omega_{t,wt}^{\wedge},
+\end{align*}
+
+\end_inset
+
+где 
+\begin_inset Formula $\omega_{t,wt}^{\wedge}$
+\end_inset
+
+ – угловая скорость стола относительно неподвижной СК в СК стола.
+ Выразим скорость шара 
+\begin_inset Formula $v_{w}$
+\end_inset
+
+ через его координаты 
+\begin_inset Formula $p_{t}$
+\end_inset
+
+ и скорость 
+\begin_inset Formula $v_{t}$
+\end_inset
+
+ в СК стола
+\begin_inset Formula 
+\begin{align*}
+v_{w} & =R_{wt}v_{t}+\dot{R}_{wt}p_{t}\\
+v_{w} & =R_{wt}v_{t}+R_{wt}\omega_{t,wt}^{\wedge}p_{t}
+\end{align*}
+
+\end_inset
+
+Выразим ускорение шара в неподвижной СК 
+\begin_inset Formula $\dot{v}_{w}$
+\end_inset
+
+ через его координаты скорость и ускорение в СК стола
+\begin_inset Formula 
+\begin{align*}
+\dot{v}_{w} & =\dot{R}_{wt}v_{t}+R_{wt}\dot{v}_{t}+\dot{R}_{wt}\omega_{t,wt}^{\wedge}p_{t}+R_{wt}\dot{\omega}_{t,wt}^{\wedge}p_{t}+R_{wt}\omega_{t,wt}^{\wedge}\dot{p}_{t}\\
+ & =R_{wt}\omega_{t,wt}^{\wedge}v_{t}+R_{wt}\dot{v}_{t}+R_{wt}\omega_{t,wt}^{\wedge}\omega_{t,wt}^{\wedge}p_{t}+R_{wt}\dot{\omega}_{t,wt}^{\wedge}p_{t}+R_{wt}\omega_{t,wt}^{\wedge}v_{t}\\
+ & =R_{wt}\left(2\omega_{t,wt}^{\wedge}v_{t}+\dot{v}_{t}+\left(\omega_{t,wt}^{\wedge}\omega_{t,wt}^{\wedge}+\dot{\omega}_{t,wt}^{\wedge}\right)p_{t}\right).
+\end{align*}
+
+\end_inset
+
+Выразим отсюда 
+\begin_inset Formula $\dot{v}_{t}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\dot{v}_{t} & =R_{tw}\dot{v}_{w}-2\omega_{t,wt}^{\wedge}v_{t}-\left(\omega_{t,wt}^{\wedge}\omega_{t,wt}^{\wedge}+\dot{\omega}_{t,wt}^{\wedge}\right)p_{t}.
+\end{align*}
+
+\end_inset
+
+Выразим угловую скорость шара 
+\begin_inset Formula $\omega_{s,ws}$
+\end_inset
+
+ в собственной СК через угловую скорость шара 
+\begin_inset Formula $\omega_{t,ts}$
+\end_inset
+
+ в СК стола.
+ По определению
+\begin_inset Formula 
+\begin{align*}
+\dot{R}_{ws} & =R_{ws}\omega_{s,ws}^{\wedge}\\
+\dot{R}_{wt} & =R_{wt}\omega_{t,wt}^{\wedge}\\
+R_{ws} & =R_{wt}R_{ts}\\
+\dot{R}_{ts} & =R_{ts}\omega_{s,ts}^{\wedge}
+\end{align*}
+
+\end_inset
+
+Вычисляем 
+\begin_inset Formula 
+\begin{align*}
+\dot{R}_{ws} & =\dot{R}_{wt}R_{ts}+R_{wt}\dot{R}_{ts}\\
+R_{ws}\omega_{s,ws}^{\wedge} & =R_{wt}\omega_{t,wt}^{\wedge}R_{ts}+R_{wt}R_{ts}\omega_{s,ts}^{\wedge}\\
+\omega_{s,ws}^{\wedge} & =R_{st}\omega_{t,wt}^{\wedge}R_{ts}+\omega_{s,ts}^{\wedge}\\
+\omega_{s,ws} & =\omega_{s,wt}+\omega_{s,ts}\\
+R_{ts}\omega_{s,ws} & =\omega_{t,wt}+\omega_{t,ts}
+\end{align*}
+
+\end_inset
+
+Вычислим угловое ускорение 
+\begin_inset Formula $\dot{\omega}_{t,ts}$
+\end_inset
+
+ продифференцировав последнее уравнение 
+\begin_inset Formula 
+\begin{align*}
+\dot{R}_{ts}\omega_{s,ws}+R_{ts}\dot{\omega}_{s,ws} & =\dot{\omega}_{t,wt}+\dot{\omega}_{t,ts}\\
+R_{ts}\omega_{s,ts}^{\wedge}\omega_{s,ws}+R_{ts}\dot{\omega}_{s,ws} & =\dot{\omega}_{t,wt}+\dot{\omega}_{t,ts}
+\end{align*}
+
+\end_inset
+
+ тогда получим
+\begin_inset Formula 
+\[
+\dot{\omega}_{t,ts}=R_{ts}\omega_{s,ts}^{\wedge}\omega_{s,ws}+R_{ts}\dot{\omega}_{s,ws}-\dot{\omega}_{t,wt}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\dot{\omega}_{t,ts}=R_{ts}\omega_{s,ts}^{\wedge}\left(\omega_{s,wt}+\omega_{s,ts}\right)+R_{ts}\dot{\omega}_{s,ws}-\dot{\omega}_{t,wt}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\dot{\omega}_{t,ts}=R_{ts}\left(\omega_{s,ts}^{\wedge}\omega_{s,wt}\right)+R_{ts}\dot{\omega}_{s,ws}-\dot{\omega}_{t,wt}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\dot{\omega}_{t,ts}=\omega_{t,ts}\times\omega_{t,wt}+R_{ts}\dot{\omega}_{s,ws}-\dot{\omega}_{t,wt}
+\]
+
+\end_inset
+
+В итоге имеем соотношения 
+\begin_inset Formula 
+\begin{align*}
+\dot{\omega}_{t,ts} & =\omega_{t,ts}\times\omega_{t,wt}+R_{ts}\dot{\omega}_{s,ws}-\dot{\omega}_{t,wt}\\
+\dot{v}_{t} & =R_{tw}\dot{v}_{w}-2\omega_{t,wt}^{\wedge}v_{t}-\left(\omega_{t,wt}^{\wedge}\omega_{t,wt}^{\wedge}+\dot{\omega}_{t,wt}^{\wedge}\right)p_{t}\\
+\omega_{s,ws} & =\omega_{s,wt}+\omega_{s,ts}\\
+v_{w} & =R_{wt}v_{t}+R_{wt}\omega_{t,wt}^{\wedge}p_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Уравнения динамики в новых координатах
+\end_layout
+
+\begin_layout Standard
+Подставляем уравнения 
+\begin_inset Formula 
+\begin{align*}
+m\dot{v}_{w} & =-\mathbf{e}_{z}mg+f_{w}\\
+M\dot{\omega}_{s,ws} & =\tau_{s}\\
+\omega_{s,ws} & =\omega_{s,wt}+\omega_{s,ts}\\
+v_{w} & =R_{wt}v_{t}+R_{wt}\omega_{t,wt}^{\wedge}p_{t}
+\end{align*}
+
+\end_inset
+
+в 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\dot{\omega}_{t,ts} & =\omega_{t,ts}\times\omega_{t,wt}+R_{ts}\dot{\omega}_{s,ws}-\dot{\omega}_{t,wt}\\
+\dot{v}_{t} & =R_{tw}\dot{v}_{w}-2\omega_{t,wt}^{\wedge}v_{t}-\left(\omega_{t,wt}^{\wedge}\omega_{t,wt}^{\wedge}+\dot{\omega}_{t,wt}^{\wedge}\right)p_{t}
+\end{align*}
+
+\end_inset
+
+Получим 
+\begin_inset Formula 
+\begin{align*}
+\dot{\omega}_{t,ts} & =\omega_{t,ts}\times\omega_{t,wt}+\frac{1}{M}\tau_{t}-\dot{\omega}_{t,wt}\\
+\dot{v}_{t} & =-R_{tw}\mathbf{e}_{z}g+\frac{1}{m}R_{tw}f_{w}-2\omega_{t,wt}^{\wedge}v_{t}-\left(\omega_{t,wt}^{\wedge}\omega_{t,wt}^{\wedge}+\dot{\omega}_{t,wt}^{\wedge}\right)p_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Новые обозначения
+\end_layout
+
+\begin_layout Standard
+Вводим обозначения
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+обозначение
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+описание
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+\omega & \equiv\omega_{t,ts}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+угловая скорость шара в СК стола
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+\mu & \equiv\omega_{t,wt}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+угловая скорость стола в СК стола
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+v & \equiv v_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+скорость шара в СК стола
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+p & \equiv p_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+положение шара в СК стола
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+\tau_{t} & \equiv\tau
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+момент, действующий на шар, в СК стола
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+f_{t} & \equiv f
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+сила, действующая на шар, в СК стола
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+тогда уравнения динамики будут
+\begin_inset Formula 
+\begin{align*}
+\dot{\omega} & =\omega\times\mu-\dot{\mu}+\frac{1}{M}\tau\\
+\dot{v} & =-gR_{tw}\mathbf{e}_{z}-2\mu^{\wedge}v-\left(\mu^{\wedge}\mu^{\wedge}+\dot{\mu}^{\wedge}\right)p+\frac{1}{m}f,
+\end{align*}
+
+\end_inset
+
+плюс, уравнения кинематики:
+\begin_inset Formula 
+\begin{align*}
+\dot{R}_{ts} & =\omega_{t,ts}^{\wedge}R_{ts}\\
+\dot{p} & =v.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example*
+Проверка уравнений: задать произвольную функцию 
+\begin_inset Formula $R_{wt}$
+\end_inset
+
+, для неё вычислить траекторию свободного полёта мяча, выполнить обратное
+ преобразование, проверить, что полученная траектория – парабола и скорость
+ вращения постоянна.
+\end_layout
+
+\begin_layout Example*
+\begin_inset Formula 
+\begin{align*}
+p_{w} & =R_{wt}p_{t}\\
+v_{w} & =R_{wt}\left(\omega_{t,wt}\times p_{t}+v_{t}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Динамика со связями
+\end_layout
+
+\begin_layout Standard
+Рассматриваем динамику 
+\begin_inset Formula 
+\begin{align*}
+\dot{\omega} & =\gamma+\frac{1}{M}\tau\\
+\dot{v} & =-gR_{tw}\mathbf{e}_{z}+a+\frac{1}{m}f.
+\end{align*}
+
+\end_inset
+
+где введены обозначения для углового ускорения 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ и ускорения 
+\begin_inset Formula $a$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\gamma & \equiv-\mu\times\omega-\dot{\mu}\\
+a & \equiv-2\mu\times v-\left(\mu^{\wedge}\mu^{\wedge}+\dot{\mu}^{\wedge}\right)p.
+\end{align*}
+
+\end_inset
+
+Рассмотрим неголономную связь
+\begin_inset Formula 
+\[
+v=r\omega\times n
+\]
+
+\end_inset
+
+или в неявном виде 
+\begin_inset Formula 
+\[
+\phi=v+rn^{\wedge}\omega=0.
+\]
+
+\end_inset
+
+Обобщённые силы реакции
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+f=\sum_{i}\lambda_{i}\frac{\partial\phi_{i}}{\partial v} & =\lambda\\
+\tau=\sum_{i}\lambda_{i}\frac{\partial\phi_{i}}{\partial\omega} & =r\lambda\times n
+\end{align*}
+
+\end_inset
+
+после подстановки в уравнения динамики дадут
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\dot{\omega} & =\gamma+\frac{1}{M}r\lambda\times n\\
+\dot{v} & =-gR_{tw}\mathbf{e}_{z}+a+\frac{1}{m}\lambda.
+\end{align*}
+
+\end_inset
+
+Дифференцируем уравнение связи 
+\begin_inset Formula 
+\[
+\dot{v}=-r\left(\frac{\partial n}{\partial x}v_{x}+\frac{\partial n}{\partial y}v_{y}\right)\times\omega-rn^{\wedge}\dot{\omega}
+\]
+
+\end_inset
+
+Подставляем в него уравнения динамики
+\begin_inset Formula 
+\[
+-gR_{tw}\mathbf{e}_{z}+a+\frac{1}{m}\lambda=-r\left(\frac{\partial n}{\partial x}v_{x}+\frac{\partial n}{\partial y}v_{y}\right)\times\omega-rn^{\wedge}\left(\gamma+\frac{1}{M}r\lambda\times n\right).
+\]
+
+\end_inset
+
+Выражаем 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\frac{1}{m}\left[I-\frac{mr^{2}}{M}n^{\wedge}n^{\wedge}\right]\lambda=gR_{tw}\mathbf{e}_{z}+r\omega\times\left(\frac{\partial n}{\partial x}v_{x}+\frac{\partial n}{\partial y}v_{y}\right)-rn\times\gamma-a
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=\frac{1}{m}\left[I-\frac{mr^{2}}{M}n^{\wedge}n^{\wedge}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B=gR_{tw}\mathbf{e}_{z}+r\omega\times\left(\frac{\partial n}{\partial x}v_{x}+\frac{\partial n}{\partial y}v_{y}\right)+r\gamma\times n-a
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A\lambda=B
+\]
+
+\end_inset
+
+В итоге
+\begin_inset Formula 
+\begin{align*}
+\gamma & =-\mu\times\omega-\dot{\mu}\\
+a & =-2\mu\times v-\left(\mu^{\wedge}\mu^{\wedge}+\dot{\mu}^{\wedge}\right)p\\
+\lambda & =m\left[I-\frac{mr^{2}}{M}n^{\wedge}n^{\wedge}\right]^{-1}\left[gR_{tw}\mathbf{e}_{z}+r\omega\times\left(\frac{\partial n}{\partial x}v_{x}+\frac{\partial n}{\partial y}v_{y}\right)+r\gamma\times n-a\right]\\
+v & =r\omega\times n\\
+\dot{\omega} & =\gamma+\frac{1}{M}r\lambda\times n\\
+\dot{v} & =-gR_{tw}\mathbf{e}_{z}+a+\frac{1}{m}\lambda.
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+если избавиться от скорости 
+\begin_inset Formula 
+\begin{align*}
+\gamma & =-\mu^{\wedge}\omega-\dot{\mu}\\
+a & =-2r\mu^{\wedge}\omega^{\wedge}n-\left(\mu^{\wedge}\mu^{\wedge}+\dot{\mu}^{\wedge}\right)p\\
+\lambda & =m\left[I-\frac{mr^{2}}{M}n^{\wedge}n^{\wedge}\right]^{-1}\left[gR_{tw}\mathbf{e}_{z}+r^{2}\omega^{\wedge}\left(\begin{array}{c|c|c}
+\frac{\partial n}{\partial x} & \frac{\partial n}{\partial y} & 0\end{array}\right)\omega^{\wedge}n+r\gamma\times n-a\right]\\
+v & =r\omega\times n\\
+\dot{\omega} & =\gamma+\frac{1}{M}r\lambda\times n\\
+\dot{v} & =-gR_{tw}\mathbf{e}_{z}+a+\frac{1}{m}\lambda.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Вращение стола вокруг вертикальной оси
+\end_layout
+
+\begin_layout Standard
+Подставляем 
+\begin_inset Formula $\mu=\omega_{t,wt}=\mathbf{e}_{z}\nu$
+\end_inset
+
+ в выражение для силы
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\gamma & \equiv-\nu\mathbf{e}_{z}\times\omega\\
+a & \equiv-2\nu\mathbf{e}_{z}\times v+\nu^{2}\left(\begin{array}{c}
+p_{x}\\
+p_{y}\\
+0
+\end{array}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{m}\left[I-\frac{mr^{2}}{M}n^{\wedge}n^{\wedge}\right]\lambda=g\mathbf{e}_{z}+r\omega\times\left(\frac{\partial n}{\partial x}v_{x}+\frac{\partial n}{\partial y}v_{y}\right)-rn\times\gamma-a
+\]
+
+\end_inset
+
+и уравнения динамики
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\dot{\omega} & =\gamma+\frac{1}{M}r\lambda\times n\\
+\dot{v} & =-gR_{tw}\mathbf{e}_{z}+a+\frac{1}{m}\lambda.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Упрощения
+\end_layout
+
+\begin_layout Standard
+Есть такое тождество (при условии 
+\begin_inset Formula $\left\Vert n\right\Vert =1$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n^{\wedge}\left[I-\frac{mr^{2}}{M}n^{\wedge}n^{\wedge}\right]^{-1}=\frac{1}{\frac{mr^{2}}{M}+1}n^{\wedge}.
+\]
+
+\end_inset
+
+Используем 
+\begin_inset Formula 
+\[
+v=r\omega\times n
+\]
+
+\end_inset
+
+Тогда 
+\begin_inset Formula 
+\begin{align*}
+\dot{\omega} & =\gamma-\frac{rm}{M}n^{\wedge}\left[I-\frac{mr^{2}}{M}n^{\wedge}n^{\wedge}\right]^{-1}\left[gR_{tw}\mathbf{e}_{z}+r\omega\times\dot{n}+r\gamma\times n-a\right]\\
+ & =\gamma-\frac{rm}{mr^{2}+M}n^{\wedge}\left[gR_{tw}\mathbf{e}_{z}+r\omega\times\dot{n}+r\gamma\times n-a\right]\\
+ & =\gamma-\frac{mr}{mr^{2}+M}n^{\wedge}\left[gR_{tw}\mathbf{e}_{z}-r\dot{n}\times\omega-rn\times\gamma-a\right]\\
+ & =\gamma-\frac{k}{r}n^{\wedge}\left[gR_{tw}\mathbf{e}_{z}-r\dot{n}\times\omega-rn\times\gamma-a\right]\\
+ & =-\mu\times\omega-\dot{\mu}-\frac{k}{r}n^{\wedge}\left[gR_{tw}\mathbf{e}_{z}-r\dot{n}^{\wedge}\omega-rn^{\wedge}\left(-\mu\times\omega-\dot{\mu}\right)-2r\mu^{\wedge}n^{\wedge}\omega+\left(\mu^{\wedge}\mu^{\wedge}+\dot{\mu}^{\wedge}\right)p\right]\\
+ & =-\mu^{\wedge}\omega-\dot{\mu}-\frac{k}{r}n^{\wedge}\left[gR_{tw}\mathbf{e}_{z}-r\dot{n}^{\wedge}\omega+r\left(n^{\wedge}\mu^{\wedge}\omega-2\mu^{\wedge}n^{\wedge}\omega\right)+rn^{\wedge}\dot{\mu}+\left(\mu^{\wedge}\mu^{\wedge}+\dot{\mu}^{\wedge}\right)p\right]\\
+ & =-\mu^{\wedge}\omega-\dot{\mu}-\left[\frac{kg}{r}n^{\wedge}R_{tw}\mathbf{e}_{z}-\frac{k}{r}n^{\wedge}r\dot{n}^{\wedge}\omega+\frac{k}{r}n^{\wedge}r\left(n^{\wedge}\mu^{\wedge}\omega-2\mu^{\wedge}n^{\wedge}\omega\right)+\frac{k}{r}n^{\wedge}rn^{\wedge}\dot{\mu}+\frac{k}{r}n^{\wedge}\left(\mu^{\wedge}\mu^{\wedge}+\dot{\mu}^{\wedge}\right)p\right]\\
+ & =\left[-\frac{kg}{r}n^{\wedge}R_{tw}\mathbf{e}_{z}\right]+\left[-\frac{k}{r}n^{\wedge}\mu^{\wedge}\mu^{\wedge}p\right]+\left[-\mu^{\wedge}+kn^{\wedge}\dot{n}^{\wedge}-kn^{\wedge}n^{\wedge}\mu^{\wedge}+2kn^{\wedge}\mu^{\wedge}n^{\wedge}\right]\omega+\left[\frac{k}{r}n^{\wedge}p^{\wedge}-I-kn^{\wedge}n^{\wedge}\right]\dot{\mu}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k\equiv\frac{mr^{2}}{mr^{2}+M}
+\]
+
+\end_inset
+
+В итоге 
+\begin_inset Formula 
+\[
+\dot{\omega}=\left[-\frac{kg}{r}n^{\wedge}R_{tw}\mathbf{e}_{z}\right]+\left[-\frac{k}{r}n^{\wedge}\mu^{\wedge}\mu^{\wedge}p\right]+\left[-\mu^{\wedge}+kn^{\wedge}\dot{n}^{\wedge}-kn^{\wedge}n^{\wedge}\mu^{\wedge}+2kn^{\wedge}\mu^{\wedge}n^{\wedge}\right]\omega+\left[\frac{k}{r}n^{\wedge}p^{\wedge}-I-kn^{\wedge}n^{\wedge}\right]\dot{\mu}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Вращение стола вокруг вертикальной оси
+\end_layout
+
+\begin_layout Standard
+В этом случае 
+\begin_inset Formula 
+\begin{align*}
+\mu & =\dot{\theta}\mathbf{e}_{z}\\
+\dot{\mu} & =\ddot{\theta}\mathbf{e}_{z}\\
+R_{tw}\mathbf{e}_{z} & =\mathbf{e}_{z}
+\end{align*}
+
+\end_inset
+
+Тогда 
+\begin_inset Formula 
+\begin{align*}
+\dot{\omega} & =\left[-\frac{kg}{r}n^{\wedge}\mathbf{e}_{z}\right]+\left[\frac{k}{r}n^{\wedge}D_{1,1,0}p\right]\dot{\theta}^{2}+\left[-\dot{\theta}\mathbf{e}_{z}^{\wedge}+kn^{\wedge}\dot{n}^{\wedge}-k\dot{\theta}n^{\wedge}n^{\wedge}\mathbf{e}_{z}^{\wedge}+2k\dot{\theta}n^{\wedge}\mathbf{e}_{z}^{\wedge}n^{\wedge}\right]\omega+\left[\frac{k}{r}n^{\wedge}p^{\wedge}-I-kn^{\wedge}n^{\wedge}\right]\mathbf{e}_{z}\ddot{\theta}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Качение шара по конусу
+\end_layout
+
+\begin_layout Standard
+Пусть поверхность стола представляет собой конус 
+\begin_inset Formula 
+\[
+h=\tan\alpha\sqrt{x^{2}+y^{2}}.
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ – угол между горизонтальной плоскостью и образующей конуса.
+\end_layout
+
+\begin_layout Standard
+Для конуса вводим циллиндрические координаты
+\begin_inset Formula 
+\begin{eqnarray*}
+\rho & \equiv & \sqrt{x^{2}+y^{2}}\\
+\phi & \equiv & \arctan\frac{y}{x}\\
+x & = & \rho\cos\phi\\
+y & = & \rho\sin\phi
+\end{eqnarray*}
+
+\end_inset
+
+Вычисляем производные 
+\begin_inset Formula 
+\begin{align*}
+\dot{\rho} & =\cos\phi\dot{x}+\sin\phi\dot{y}\\
+\dot{\phi} & =\frac{1}{1+\left(\frac{y}{x}\right)^{2}}\frac{\dot{y}x-y\dot{x}}{x^{2}}\\
+ & =\frac{\dot{y}\rho\cos\phi-\rho\sin\phi\dot{x}}{\rho^{2}}\\
+ & =\frac{-\sin\phi\dot{x}+\cos\phi\dot{y}}{\rho}
+\end{align*}
+
+\end_inset
+
+В этих координатах поверхность конуса запишется как
+\begin_inset Formula 
+\begin{eqnarray*}
+\sigma & = & \rho\left(\begin{array}{c}
+\cos\phi\\
+\sin\phi\\
+\tan\alpha
+\end{array}\right)\\
+n & = & \left(\begin{array}{c}
+-\sin\alpha\cos\phi\\
+-\sin\alpha\sin\phi\\
+\cos\alpha
+\end{array}\right)\\
+\dot{n} & = & \frac{1}{\sqrt{1+\tan^{2}\alpha}}\left(\begin{array}{c}
+\tan\alpha\sin\phi\\
+-\tan\alpha\cos\phi\\
+0
+\end{array}\right)\dot{\phi}
+\end{eqnarray*}
+
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Находим производные
+\begin_inset Formula 
+\begin{align*}
+\sigma & =\rho\left(\begin{array}{c}
+\cos\phi\\
+\sin\phi\\
+\tan\alpha
+\end{array}\right)\\
+\sigma_{\phi} & =\rho\left(\begin{array}{c}
+-\sin\phi\\
+\cos\phi\\
+0
+\end{array}\right)\\
+\sigma_{\rho} & =\left(\begin{array}{c}
+\cos\phi\\
+\sin\phi\\
+\tan\alpha
+\end{array}\right)\\
+\sigma_{\rho}\times\sigma_{\phi} & =\rho\left(\begin{array}{c}
+\cos\phi\\
+\sin\phi\\
+\tan\alpha
+\end{array}\right)\times\left(\begin{array}{c}
+-\sin\phi\\
+\cos\phi\\
+0
+\end{array}\right)=\rho\left(\begin{array}{c}
+-\tan\alpha\cos\phi\\
+-\tan\alpha\sin\phi\\
+1
+\end{array}\right)\\
+n & =\frac{\sigma_{\rho}\times\sigma_{\phi}}{\left\Vert \sigma_{\rho}\times\sigma_{\phi}\right\Vert }=\left(\begin{array}{c}
+-\sin\alpha\cos\phi\\
+-\sin\alpha\sin\phi\\
+\cos\alpha
+\end{array}\right)\\
+\dot{n} & =\left(\begin{array}{c}
+\sin\alpha\sin\phi\\
+-\sin\alpha\cos\phi\\
+0
+\end{array}\right)\dot{\phi}
+\end{align*}
+
+\end_inset
+
+Матрица преобразования
+\begin_inset Formula 
+\begin{align*}
+\zeta & =A\left(\phi,\rho\right)\omega\\
+ & =\left(\begin{array}{c}
+\sigma_{\rho}\\
+\sigma_{\phi}\\
+n
+\end{array}\right)\omega\\
+ & =\left(\begin{array}{ccc}
+\cos\phi\cos\alpha & \sin\phi\cos\alpha & \sin\alpha\\
+-\sin\phi & \cos\phi & 0\\
+-\cos\phi\sin\alpha & -\sin\phi\sin\alpha & \cos\alpha
+\end{array}\right)\omega\\
+ & =\mathbf{R}_{\mathbf{e}_{y},\alpha}\mathbf{R}_{\mathbf{e}_{z},-\phi}\omega\\
+\mathbf{R}_{\mathbf{e}_{z},\phi}\mathbf{R}_{\mathbf{e}_{y},-\alpha}\zeta & =\omega
+\end{align*}
+
+\end_inset
+
+Динамика в новых координатах 
+\begin_inset Formula 
+\begin{align*}
+\frac{dA}{d\phi} & =\frac{d\mathbf{R}_{\mathbf{e}_{y},\alpha}\mathbf{R}_{\mathbf{e}_{z},-\phi}}{d\phi}\\
+ & =-A\mathbf{e}_{z}^{\wedge}\\
+\frac{dA}{d\phi}A^{T} & =-A\mathbf{e}_{z}^{\wedge}A^{T}=-\left(A\mathbf{e}_{z}\right)^{\wedge}
+\end{align*}
+
+\end_inset
+
+Подставляем
+\begin_inset Formula 
+\begin{align*}
+\dot{\zeta} & =\dot{A}\omega+A\dot{\omega}\\
+ & =\dot{A}A^{T}\zeta+A\dot{\omega}\\
+ & =-\left(A\mathbf{e}_{z}\right)^{\wedge}\dot{\phi}\zeta+A\dot{\omega}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\dot{\omega} & =\left[-\frac{kg}{r}n^{\wedge}\mathbf{e}_{z}\right]+\left[\frac{k}{r}n^{\wedge}D_{1,1,0}p\right]\dot{\theta}^{2}+\left[-\dot{\theta}\mathbf{e}_{z}^{\wedge}+kn^{\wedge}\dot{n}^{\wedge}-k\dot{\theta}n^{\wedge}n^{\wedge}\mathbf{e}_{z}^{\wedge}+2k\dot{\theta}n^{\wedge}\mathbf{e}_{z}^{\wedge}n^{\wedge}\right]\omega+\left[\frac{k}{r}n^{\wedge}p^{\wedge}-I-kn^{\wedge}n^{\wedge}\right]\mathbf{e}_{z}\ddot{\theta}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $-\dot{\phi}\left(A\mathbf{e}_{z}\right)^{\wedge}=\dot{\phi}\left(\begin{array}{ccc}
+0 & \cos\alpha & 0\\
+-\cos\alpha & 0 & \sin\alpha\\
+0 & -\sin\alpha & 0
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A\left[-\frac{kg}{r}n^{\wedge}\mathbf{e}_{z}\right]=-\frac{gk}{r}\sin\alpha\mathbf{e}_{y}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A\left[\frac{k}{r}n^{\wedge}D_{1,1,0}p\right]=\rho\frac{k}{r}\cos\alpha\mathbf{e}_{y}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A\left[-\dot{\theta}\mathbf{e}_{z}^{\wedge}-k\dot{\theta}n^{\wedge}n^{\wedge}\mathbf{e}_{z}^{\wedge}+2k\dot{\theta}n^{\wedge}\mathbf{e}_{z}^{\wedge}n^{\wedge}\right]A^{T}=\left(\begin{array}{ccc}
+0 & \left(k+1\right)\cos\alpha & 0\\
+-\left(k+1\right)\cos\alpha & 0 & \left(1-k\right)\sin\alpha\\
+0 & -\sin\alpha & 0
+\end{array}\right)\dot{\theta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A\left[kn^{\wedge}\dot{n}^{\wedge}\right]A^{T}=-k\sin\alpha\dot{\phi}\left(\begin{array}{ccc}
+0 & 0 & 0\\
+0 & 0 & 1\\
+0 & 0 & 0
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A\left[\frac{k}{r}n^{\wedge}p^{\wedge}-I-kn^{\wedge}n^{\wedge}\right]\mathbf{e}_{z}=\left(\begin{array}{c}
+k\sin\alpha-\sin\alpha\\
+0\\
+-\cos\alpha
+\end{array}\right)+\mathbf{e}_{x}\frac{k\rho}{r}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\dot{\zeta} & =\underbrace{\left[-\frac{gk}{r}\sin\alpha\mathbf{e}_{y}\right]}_{a_{1}}+\underbrace{\left[\rho\frac{k}{r}\cos\alpha\mathbf{e}_{y}\right]}_{\rho a_{2}}\dot{\theta}^{2}+\underbrace{\dot{\theta}\left[\begin{array}{ccc}
+0 & \left(k+1\right)\cos\alpha & 0\\
+-\left(k+1\right)\cos\alpha & 0 & \left(1-k\right)\sin\alpha\\
+0 & -\sin\alpha & 0
+\end{array}\right]}_{\dot{\theta}A_{3}}\zeta\\
+ & +\underbrace{\dot{\phi}\left[\begin{array}{ccc}
+0 & \cos\alpha & 0\\
+-\cos\alpha & 0 & \left(1-k\right)\sin\alpha\\
+0 & -\sin\alpha & 0
+\end{array}\right]}_{\dot{\phi}A_{4}}\zeta+\left[\underbrace{\left(\begin{array}{c}
+\left(k-1\right)\sin\alpha\\
+0\\
+-\cos\alpha
+\end{array}\right)}_{a_{5}}+\underbrace{\mathbf{e}_{x}\frac{k\rho}{r}}_{\rho a_{6}}\right]\ddot{\theta}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\rho & =\sqrt{x^{2}+y^{2}}\\
+\phi & =\arctan\frac{y}{x}\\
+\dot{\rho} & =\cos\phi\dot{x}+\sin\phi\dot{y}\\
+\dot{\phi} & =\frac{\dot{y}\cos\phi-\sin\phi\dot{x}}{\rho}\\
+\left(\begin{array}{c}
+\dot{\rho}\\
+\dot{\phi}
+\end{array}\right) & =\left(\begin{array}{cc}
+\cos\phi & \sin\phi\\
+-\frac{1}{\rho}\sin\phi & \frac{1}{\rho}\cos\phi
+\end{array}\right)\left(\begin{array}{c}
+\dot{x}\\
+\dot{y}
+\end{array}\right)\\
+v & =-rn^{\wedge}A^{T}\zeta\\
+\left(\begin{array}{c}
+\dot{\rho}\\
+\dot{\phi}
+\end{array}\right) & =r\left(\begin{array}{ccc}
+0 & \cos\alpha & 0\\
+-\frac{1}{\rho} & 0 & 0
+\end{array}\right)\zeta
+\end{align*}
+
+\end_inset
+
+В итоге 
+\begin_inset Formula 
+\begin{align*}
+\dot{\rho} & =r\cos\alpha\zeta_{\phi}\\
+\dot{\phi} & =-\frac{r}{\rho}\zeta_{\rho}\\
+\dot{\zeta}_{\rho} & =\dot{\theta}\left(k+1\right)\cos\alpha\zeta_{\phi}+\dot{\phi}\cos\alpha\zeta_{\phi}+\left(k-1\right)\sin\alpha\ddot{\theta}+\frac{k\rho}{r}\ddot{\theta}\\
+\dot{\zeta}_{\phi} & =-\frac{gk}{r}\sin\alpha+\rho\frac{k}{r}\cos\alpha\dot{\theta}^{2}-\cos\alpha\zeta_{\rho}\left(k\dot{\theta}+\dot{\theta}+\dot{\phi}\right)+\left(1-k\right)\sin\alpha\zeta_{n}\left(\dot{\theta}+\dot{\phi}\right)\\
+\dot{\zeta}_{n} & =-\sin\alpha\zeta_{\phi}\left(\dot{\theta}+\dot{\phi}\right)-\cos\alpha\ddot{\theta}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Анализ траекторий
+\end_layout
+
+\begin_layout Standard
+Существование крговых траекторий.
+ Предположим 
+\begin_inset Formula $\rho=\text{const}$
+\end_inset
+
+, тогда 
+\begin_inset Formula 
+\begin{align*}
+\zeta_{\phi} & =0\\
+\zeta_{n} & =0\\
+\zeta_{\rho} & =\text{const}
+\end{align*}
+
+\end_inset
+
+тогда 
+\begin_inset Formula 
+\begin{align*}
+0 & =-\frac{gk}{r}\sin\alpha+\rho\frac{k}{r}\cos\alpha\dot{\theta}^{2}-\dot{\theta}\left(k+1\right)\cos\alpha\zeta_{\rho}-\dot{\phi}\cos\alpha\zeta_{\rho}
+\end{align*}
+
+\end_inset
+
+вычисляем 
+\begin_inset Formula 
+\begin{align*}
+\zeta_{\rho}^{2}-\frac{\rho}{r}\dot{\theta}\left(k+1\right)\zeta_{\rho}-\frac{\rho gk}{r^{2}}\tan\alpha+\frac{\rho^{2}k}{r^{2}}\dot{\theta}^{2} & =0
+\end{align*}
+
+\end_inset
+
+решаем квадратное уравнение: 
+\begin_inset Formula 
+\[
+\zeta_{\rho}=\frac{\rho\dot{\theta}\left(k+1\right)\pm\sqrt{\rho^{2}\dot{\theta}^{2}\left(k-1\right)^{2}+4\rho gk\tan\alpha}}{2r}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho\dot{\theta}^{2}>-\frac{4gk\tan\alpha}{\left(k-1\right)^{2}}
+\]
+
+\end_inset
+
+Как найти период? 
+\begin_inset Formula 
+\begin{align*}
+T & =\frac{2\pi\rho}{r\zeta_{\rho}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Система управления
+\end_layout
+
+\begin_layout Standard
+TODO
+\end_layout
+
+\begin_layout Section
+Инварианты
+\end_layout
+
+\begin_layout Standard
+Скорее всего для конуса сохраняется обобщённый импульс
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\dot{\rho} & =r\cos\alpha\zeta_{\phi}\\
+\dot{\phi} & =-\frac{r}{\rho}\zeta_{\rho}\\
+\dot{\zeta}_{\rho} & =\dot{\theta}\left(k+1\right)\cos\alpha\zeta_{\phi}-\frac{r\cos\alpha}{\rho}\zeta_{\phi}\zeta_{\rho}+\left(k-1\right)\sin\alpha\ddot{\theta}+\frac{k\rho}{r}\ddot{\theta}\\
+\dot{\zeta}_{\phi} & =-\frac{gk\sin\alpha}{r}+\frac{\rho k\cos\alpha}{r}\dot{\theta}^{2}-\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\rho}+\frac{r\cos\alpha}{\rho}\zeta_{\rho}^{2}+\left(1-k\right)\sin\alpha\dot{\theta}\zeta_{n}-\frac{r\left(1-k\right)\sin\alpha}{\rho}\zeta_{\rho}\zeta_{n}\\
+\dot{\zeta}_{n} & =-\sin\alpha\zeta_{\phi}\dot{\theta}+\sin\alpha\frac{r}{\rho}\zeta_{\phi}\zeta_{\rho}-\cos\alpha\ddot{\theta}
+\end{align*}
+
+\end_inset
+
+Пусть 
+\begin_inset Formula $\zeta$
+\end_inset
+
+ – импульс системы, тогда 
+\end_layout
+
+\begin_layout Standard
+Линейная система 
+\begin_inset Formula $\dot{x}=Ax+Bu$
+\end_inset
+
+ имеет первый интеграл 
+\begin_inset Formula $Lx={\normalcolor const}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(Ax+Bu\right)=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Уравнения Чаплыгина
+\end_layout
+
+\begin_layout Standard
+Кинетическая энергия шара 
+\begin_inset Formula 
+\[
+K=\left(\rho\cos\alpha\right)+\frac{M}{2}\left(\dot{\eta}^{2}+\dot{\varepsilon}^{2}+\dot{\pi}^{2}+2\dot{\eta}\dot{\epsilon}\cos\pi\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula $\eta,\epsilon,\pi$
+\end_inset
+
+ – углы Эйлера 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+x & =\rho\cos\phi\\
+y & =\rho\sin\phi\\
+z & =\rho\tan\alpha\\
+\dot{x} & =\dot{\rho}\cos\phi-\rho\sin\phi\dot{\phi}\\
+\dot{y} & =\dot{\rho}\sin\phi+\rho\cos\phi\dot{\phi}\\
+\dot{z} & =\tan\alpha\dot{\rho}\\
+\left(\begin{array}{c}
+x_{w}\\
+y_{w}
+\end{array}\right) & =\rho R_{z,\theta}\left(\begin{array}{c}
+\cos\phi\\
+\sin\phi\\
+\tan\alpha
+\end{array}\right)\\
+\left(\begin{array}{c}
+\dot{x}_{w}\\
+\dot{y}_{w}
+\end{array}\right) & =\dot{\rho}R_{z,\theta}\left(\begin{array}{c}
+\cos\phi\\
+\sin\phi\\
+\tan\alpha
+\end{array}\right)+\rho R_{z,\theta}\mathbf{e}_{z}^{\wedge}\dot{\theta}\left(\begin{array}{c}
+\cos\phi\\
+\sin\phi\\
+\tan\alpha
+\end{array}\right)+\rho R_{z,\theta}\left(\begin{array}{c}
+-\sin\phi\\
+\cos\phi\\
+0
+\end{array}\right)\dot{\phi}\\
+ & =
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\left[\begin{array}{ccc}
+0 & \left(\tan\alpha+1\right)\cos\alpha & 0\\
+-\left(\tan\alpha+1\right)\cos\alpha & 0 & \left(1-\tan\alpha\right)\sin\alpha\\
+0 & -\sin\alpha & 0
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+\left(\begin{array}{c}
+\left(-\frac{\sqrt{2}\cos\left(2\alpha+\frac{\pi}{4}\right)}{2\cos\alpha}-\frac{1}{2\cos\alpha}+\frac{\rho}{r}\right)\tan\alpha\\
+0\\
+-\cos\alpha
+\end{array}\right) & =\left(\begin{array}{c}
+\left(-\frac{\sqrt{2}\cos\left(2\alpha+\frac{\pi}{4}\right)}{2\cos\alpha}-\frac{1}{2\cos\alpha}\right)\tan\alpha\\
+0\\
+-\cos\alpha
+\end{array}\right)+\left(\begin{array}{c}
+1\\
+0\\
+0
+\end{array}\right)\frac{\rho}{r}\tan\alpha\\
+ & =\left(\begin{array}{c}
+\sin\alpha-\tan\alpha\sin\alpha\\
+0\\
+-\cos\alpha
+\end{array}\right)+\mathbf{e}_{x}\frac{\rho}{r}\tan\alpha
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+\cos\left(2\alpha+\frac{\pi}{4}\right) & =\cos2\alpha\cos\frac{\pi}{4}-\sin2\alpha\sin\frac{\pi}{4}\\
+ & =\left(\cos^{2}\alpha-\sin^{2}\alpha\right)\frac{\sqrt{2}}{2}-2\sin\alpha\cos\alpha\frac{\sqrt{2}}{2}\\
+\frac{\sqrt{2}\cos\left(2\alpha+\frac{\pi}{4}\right)}{2\cos\alpha} & =\frac{1}{2}\left(\cos\alpha-\frac{\sin^{2}\alpha}{\cos\alpha}\right)-\sin\alpha\\
+-\frac{\sqrt{2}\cos\left(2\alpha+\frac{\pi}{4}\right)}{2\cos\alpha}-\frac{1}{2\cos\alpha} & =
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(\sqrt{2}\sin\left(2\alpha+\frac{\pi}{4}\right)-1\right)\cos\alpha=2\left(\cos\alpha-\sin\alpha\right)\sin\alpha\cos\alpha$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\cos2\alpha+1=\cos^{2}\alpha-\sin^{2}\alpha+1=2\cos^{2}\alpha$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{\left(\sqrt{2}\sin\left(2\alpha+\frac{\pi}{4}\right)-1\right)\cos\alpha}{\cos2\alpha+1}=\frac{2\left(\cos\alpha-\sin\alpha\right)\sin\alpha\cos\alpha}{2\cos^{2}\alpha}=\frac{\left(\cos\alpha-\sin\alpha\right)\sin\alpha}{\cos\alpha}=\left(1-\tan\alpha\right)\sin\alpha$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+\sqrt{2}\sin\left(\alpha+\frac{\pi}{4}\right) & =\sqrt{2}\left(\sin\alpha\cos\beta+\sin\beta\cos\alpha\right)\\
+ & =\sqrt{2}\left(\sin\alpha\frac{\sqrt{2}}{2}+\frac{\sqrt{2}}{2}\cos\alpha\right)\\
+ & =\sin\alpha+\cos\alpha\\
+\sqrt{2}\cos\left(\alpha+\frac{\pi}{4}\right) & =\sqrt{2}\cos\alpha\cos\frac{\pi}{4}-\sqrt{2}\sin\alpha\sin\frac{\pi}{4}\\
+ & =\sqrt{2}\cos\alpha\frac{\sqrt{2}}{2}-\sqrt{2}\sin\alpha\frac{\sqrt{2}}{2}\\
+ & =\cos\alpha-\sin\alpha
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $A\left[-\dot{\theta}\mathbf{e}_{z}^{\wedge}-k\dot{\theta}n^{\wedge}n^{\wedge}\mathbf{e}_{z}^{\wedge}+2k\dot{\theta}n^{\wedge}\mathbf{e}_{z}^{\wedge}n^{\wedge}+kn^{\wedge}\dot{n}^{\wedge}\right]A^{T}\zeta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $A\left[-\dot{\theta}\mathbf{e}_{z}^{\wedge}-k\dot{\theta}n^{\wedge}n^{\wedge}\mathbf{e}_{z}^{\wedge}+2k\dot{\theta}n^{\wedge}\mathbf{e}_{z}^{\wedge}n^{\wedge}\right]A^{T}\zeta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+\zeta & =\left(\begin{array}{ccc}
+\cos\phi\cos\alpha & \sin\phi\cos\alpha & \sin\alpha\\
+-\sin\phi & \cos\phi & 0\\
+-\cos\phi\sin\alpha & -\sin\phi\sin\alpha & \cos\alpha
+\end{array}\right)\omega
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula $a^{\wedge}b^{\wedge}*=b\left(a\cdot*\right)-*\left(a\cdot b\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{e}_{z}^{\wedge}n^{\wedge}*=n\left(\mathbf{e}_{z}\cdot*\right)-*\left(\mathbf{e}_{z}\cdot n\right)=n\mathbf{e}_{z}^{T}-I\mathbf{e}_{z}^{T}n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $n^{\wedge}\mathbf{e}_{z}^{\wedge}n^{\wedge}=n^{\wedge}n\mathbf{e}_{z}^{T}-In^{\wedge}\mathbf{e}_{z}^{T}n=-n^{\wedge}\mathbf{e}_{z}^{T}n=-n_{z}n^{\wedge}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $n^{\wedge}\mathbf{e}_{z}^{\wedge}*=\mathbf{e}_{z}^{T}n-In_{z}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $n^{\wedge}\mathbf{e}_{z}^{\wedge}*=\mathbf{e}_{z}\left(n\cdot*\right)-*\left(n\cdot\mathbf{e}_{z}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $n^{\wedge}\mathbf{e}_{z}^{\wedge}*=\mathbf{e}_{z}n^{T}-In_{z}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $n^{\wedge}n^{\wedge}\mathbf{e}_{z}^{\wedge}*=n^{\wedge}\mathbf{e}_{z}n^{T}-n_{z}n^{\wedge}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $kn^{\wedge}\mathbf{e}_{z}n^{T}\dot{\theta}-kn_{z}n^{\wedge}\dot{\theta}=kn^{\wedge}\left(\mathbf{e}_{z}n^{T}-n_{z}I\right)\dot{\theta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $kn^{\wedge}\frac{p}{r}^{\wedge}\mathbf{e}_{z}^{\wedge}-\mathbf{e}_{z}^{\wedge}-kn^{\wedge}n^{\wedge}\mathbf{e}_{z}^{\wedge}=kn^{\wedge}\left[\frac{p}{r}-n\right]^{\wedge}\mathbf{e}_{z}^{\wedge}-\mathbf{e}_{z}^{\wedge}=\left(kn^{\wedge}\left[\frac{p}{r}-n\right]^{\wedge}-I\right)\mathbf{e}_{z}^{\wedge}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

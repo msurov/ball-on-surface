@@ -1,0 +1,528 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Можно ли к лагранжиану добавлять квадрат неголономной связи?
+\end_layout
+
+\begin_layout Standard
+Рассматриваю лагранжеву систему с лагранжианом 
+\begin_inset Formula 
+\begin{eqnarray*}
+T & = & \frac{\dot{q}^{T}M\dot{q}}{2}
+\end{eqnarray*}
+
+\end_inset
+
+и неголономной связью 
+\begin_inset Formula 
+\[
+A^{T}\dot{q}=0.
+\]
+
+\end_inset
+
+Вопрос: можно ли добавить к лагранжиану 
+\begin_inset Formula $\alpha\frac{\dot{q}AA^{T}\dot{q}}{2}$
+\end_inset
+
+? Не изменит ли это уравнения движения? Проверяем.
+ Запишем уравнения движения для лагранжиана
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T=\frac{\dot{q}^{T}M\dot{q}}{2}+\alpha\frac{\dot{q}AA^{T}\dot{q}}{2}
+\]
+
+\end_inset
+
+Для этого вычислим производные
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+T_{\dot{q}} & =M\dot{q}+\alpha AA^{T}\dot{q}\\
+\frac{d}{dt}T_{\dot{q}} & =M\ddot{q}+\alpha AA^{T}\ddot{q}+\left(\nabla_{\dot{q}}M\right)\dot{q}+2\alpha A\left(\nabla_{\dot{q}}A^{T}\right)\dot{q}\\
+T_{q} & =\frac{\dot{q}^{T}}{2}\frac{\partial M\dot{q}}{\partial q}+\alpha\dot{q}^{T}A\frac{\partial A^{T}\dot{q}}{\partial q}
+\end{align*}
+
+\end_inset
+
+где 
+\begin_inset Formula $\left(\nabla_{\dot{q}}M\right)\equiv\frac{\partial M}{\partial q^{i}}\dot{q}^{i}$
+\end_inset
+
+.
+ Уравнения Лагранжа 1-го рода
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d}{dt}T_{\dot{q}}=T_{q}+A\lambda.
+\]
+
+\end_inset
+
+В явном виде
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\ddot{q}+\alpha AA^{T}\ddot{q}+\left(\nabla_{\dot{q}}M\right)\dot{q}+2\alpha A\left(\nabla_{\dot{q}}A^{T}\right)\dot{q}-\frac{1}{2}\left(\frac{\partial M\dot{q}}{\partial q}\right)^{T}\dot{q}-\alpha\left(\frac{\partial A^{T}\dot{q}}{\partial q}\right)^{T}A^{T}\dot{q}=A\lambda
+\]
+
+\end_inset
+
+Дифференцирую уравнения связи
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{T}\ddot{q}+\left(\nabla_{\dot{q}}A^{T}\right)\dot{q}=0.
+\]
+
+\end_inset
+
+Ввожу обозначение
+\begin_inset Formula 
+\[
+C\dot{q}:=\left(\nabla_{\dot{q}}M\right)\dot{q}-\frac{1}{2}\left(\frac{\partial M\dot{q}}{\partial q}\right)^{T}\dot{q}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\ddot{q}+\alpha AA^{T}\ddot{q}+C\dot{q}+2\alpha A\left(\nabla_{\dot{q}}A^{T}\right)\dot{q}-\alpha\left(\frac{\partial A^{T}\dot{q}}{\partial q}\right)^{T}A^{T}\dot{q}=A\lambda
+\]
+
+\end_inset
+
+Убираю нулевые слагаемые
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\ddot{q}+\alpha A\left(\nabla_{\dot{q}}A^{T}\right)\dot{q}+C\dot{q}=A\lambda
+\]
+
+\end_inset
+
+Разрешаю относительно 
+\begin_inset Formula $\ddot{q}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\ddot{q}=M^{-1}\left(A\lambda-\alpha A\left(\nabla_{\dot{q}}A^{T}\right)\dot{q}-C\dot{q}\right)
+\]
+
+\end_inset
+
+Подставляю в 
+\begin_inset Formula $A^{T}\ddot{q}+\left(\nabla_{\dot{q}}A^{T}\right)\dot{q}=0$
+\end_inset
+
+ и разрешаю относительно 
+\begin_inset Formula $\lambda$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda=\left(A^{T}M^{-1}A\right)^{-1}\left[A^{T}M^{-1}\left(\alpha A\left(\nabla_{\dot{q}}A^{T}\right)\dot{q}+C\dot{q}\right)-\left(\nabla_{\dot{q}}A^{T}\right)\dot{q}\right]
+\]
+
+\end_inset
+
+Подставляю 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ в уравнения движения
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\ddot{q}+C\dot{q}+\alpha A\left(\nabla_{\dot{q}}A^{T}\right)\dot{q}=A\left(A^{T}M^{-1}A\right)^{-1}\left[A^{T}M^{-1}\left(\alpha A\left(\nabla_{\dot{q}}A^{T}\right)\dot{q}+C\dot{q}\right)-\left(\nabla_{\dot{q}}A^{T}\right)\dot{q}\right]
+\]
+
+\end_inset
+
+Собираю все слагаемые с 
+\begin_inset Formula $\alpha$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha A\left(\nabla_{\dot{q}}A^{T}\right)\dot{q}=\alpha A\left(A^{T}M^{-1}A\right)^{-1}A^{T}M^{-1}A\left(\nabla_{\dot{q}}A^{T}\right)\dot{q}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Лагранжиан общего вида
+\end_layout
+
+\begin_layout Standard
+Рассматриваю преобразования
+\begin_inset Formula 
+\[
+\tilde{L}\left(q,\dot{q},t\right)=L\left(q,\dot{q},t\right)+\frac{\alpha}{2}\dot{q}^{T}A\left(q\right)A^{T}\left(q\right)\dot{q}
+\]
+
+\end_inset
+
+для лагранжевой системы с лагранжианом 
+\begin_inset Formula $L\left(q,\dot{q},t\right)$
+\end_inset
+
+ и неголономной связью 
+\begin_inset Formula $A^{T}\left(q\right)\dot{q}=0$
+\end_inset
+
+.
+ Уравнения Лагранжа 
+\begin_inset Formula 
+\begin{align*}
+\frac{d}{dt}L_{\dot{q}}-L_{q} & =A\lambda\\
+\frac{d}{dt}L_{\dot{q}} & =\frac{\partial^{2}L}{\partial\dot{q}\partial\dot{q}}\ddot{q}+\frac{\partial^{2}L}{\partial\dot{q}\partial q}\dot{q}+\frac{\partial^{2}L}{\partial\dot{q}\partial t}
+\end{align*}
+
+\end_inset
+
+Тогда уравнения будут 
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial^{2}L}{\partial\dot{q}\partial\dot{q}}\ddot{q}+\frac{\partial^{2}L}{\partial\dot{q}\partial q}\dot{q}+\frac{\partial^{2}L}{\partial\dot{q}\partial t}-\frac{\partial L}{\partial q} & =A\lambda\\
+L_{\dot{q}\dot{q}}\ddot{q}+L_{\dot{q}q}\dot{q}+L_{\dot{q}t}-L_{q} & =A\lambda
+\end{align*}
+
+\end_inset
+
+Проиводные функции 
+\begin_inset Formula $\tilde{L}:$
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{align*}
+\tilde{L}_{\dot{q}} & =L_{\dot{q}}+\alpha AA^{T}\dot{q}\\
+\tilde{L}_{q} & =L_{q}+\alpha\dot{q}^{T}A\left(q\right)\frac{\partial A^{T}\left(q\right)\dot{q}}{\partial q}\\
+\tilde{L}_{\dot{q}\dot{q}} & =L_{\dot{q}\dot{q}}+\alpha AA^{T}\\
+\tilde{L}_{\dot{q}q} & =L_{\dot{q}q}+2\alpha A\frac{\partial A^{T}\dot{q}}{\partial q}\\
+\tilde{L}_{\dot{q}t} & =L_{\dot{q}t}
+\end{align*}
+
+\end_inset
+
+Уравнения 
+\begin_inset Formula 
+\begin{align*}
+L_{\dot{q}\dot{q}}\ddot{q}+\alpha AA^{T}\ddot{q}+\left(L_{\dot{q}q}+2\alpha A\frac{\partial A^{T}\dot{q}}{\partial q}\right)\dot{q}+L_{\dot{q}t} & =A\lambda\\
+L_{\dot{q}\dot{q}}\ddot{q}+L_{\dot{q}q}\dot{q}+L_{\dot{q}t}+\alpha AA^{T}\ddot{q}+2\alpha A\frac{\partial A^{T}\dot{q}}{\partial q}\dot{q} & =A\lambda
+\end{align*}
+
+\end_inset
+
+Связь 
+\begin_inset Formula 
+\begin{align*}
+A^{T}\left(q\right)\dot{q} & =0\\
+A^{T}\left(q\right)\ddot{q}+\frac{\partial A^{T}\left(q\right)\dot{q}}{\partial q}\dot{q} & =0
+\end{align*}
+
+\end_inset
+
+Упрощаем
+\begin_inset Formula 
+\[
+L_{\dot{q}\dot{q}}\ddot{q}+L_{\dot{q}q}\dot{q}+L_{\dot{q}t}+\alpha A\frac{\partial A^{T}\dot{q}}{\partial q}\dot{q}=A\lambda
+\]
+
+\end_inset
+
+Решаем относительно 
+\begin_inset Formula $\ddot{q}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\ddot{q}=L_{\dot{q}\dot{q}}^{-1}A\lambda-L_{\dot{q}\dot{q}}^{-1}\left[L_{\dot{q}q}\dot{q}+L_{\dot{q}t}+\alpha A\frac{\partial A^{T}\dot{q}}{\partial q}\dot{q}\right]
+\]
+
+\end_inset
+
+Подставляю в 
+\begin_inset Formula 
+\[
+A^{T}L_{\dot{q}\dot{q}}^{-1}A\lambda=A^{T}L_{\dot{q}\dot{q}}^{-1}\left[L_{\dot{q}q}\dot{q}+L_{\dot{q}t}+\alpha A\frac{\partial A^{T}\dot{q}}{\partial q}\dot{q}\right]-\frac{\partial A^{T}\dot{q}}{\partial q}\dot{q}
+\]
+
+\end_inset
+
+Уравнения движения 
+\begin_inset Formula 
+\[
+L_{\dot{q}\dot{q}}\ddot{q}+L_{\dot{q}q}\dot{q}+L_{\dot{q}t}+\alpha A\frac{\partial A^{T}\dot{q}}{\partial q}\dot{q}=A\left(A^{T}L_{\dot{q}\dot{q}}^{-1}A\right)^{-1}\left[A^{T}L_{\dot{q}\dot{q}}^{-1}\left[L_{\dot{q}q}\dot{q}+L_{\dot{q}t}+\alpha A\frac{\partial A^{T}\dot{q}}{\partial q}\dot{q}\right]-\frac{\partial A^{T}\dot{q}}{\partial q}\dot{q}\right]
+\]
+
+\end_inset
+
+выписываю слагаемые с 
+\begin_inset Formula $\alpha$
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+\alpha A\frac{\partial A^{T}\dot{q}}{\partial q}\dot{q}=\alpha A\left(A^{T}L_{\dot{q}\dot{q}}^{-1}A\right)^{-1}A^{T}L_{\dot{q}\dot{q}}^{-1}A\frac{\partial A^{T}\dot{q}}{\partial q}\dot{q}
+\]
+
+\end_inset
+
+В итоге: к лагранжиану можно добавлять квадрат неголономной связи!
+\end_layout
+
+\begin_layout Section
+Уравнения Лагранжа со связями
+\end_layout
+
+\begin_layout Standard
+Задан лагранжиан 
+\begin_inset Formula $L\left(q,\dot{q},t\right)$
+\end_inset
+
+ и связь 
+\begin_inset Formula $A^{T}\left(q\right)\dot{q}=0$
+\end_inset
+
+.
+ Уравнения Лагранжа
+\begin_inset Formula 
+\begin{align*}
+L_{\dot{q}\dot{q}}\ddot{q}+\nabla_{\dot{q}}L_{\dot{q}}+L_{\dot{q}t}-L_{q} & =A\lambda\\
+A^{T}\left(q\right)\ddot{q}+\left(\nabla_{\dot{q}}A^{T}\right)\dot{q} & =0
+\end{align*}
+
+\end_inset
+
+Можно привести к виду 
+\begin_inset Formula 
+\begin{align*}
+PL_{\dot{q}\dot{q}}\ddot{q}+P\left(\nabla_{\dot{q}}L_{\dot{q}}+L_{\dot{q}t}-L_{q}\right) & =0\\
+A^{T}\left(q\right)\ddot{q}+\left(\nabla_{\dot{q}}A^{T}\right)\dot{q} & =0
+\end{align*}
+
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+где 
+\begin_inset Formula 
+\[
+P\equiv I-A\left(A^{T}A\right)^{-1}A^{T}.
+\]
+
+\end_inset
+
+Если в матричном виде, то 
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+PL_{\dot{q}\dot{q}}\\
+A^{T}
+\end{array}\right)\ddot{q}+\left(\begin{array}{c}
+P\left(\nabla_{\dot{q}}L_{\dot{q}}+L_{\dot{q}t}-L_{q}\right)\\
+\left(\nabla_{\dot{q}}A^{T}\right)\dot{q}
+\end{array}\right)=0
+\]
+
+\end_inset
+
+Причём, матрица 
+\begin_inset Formula $\left(\begin{array}{c}
+PL_{\dot{q}\dot{q}}\\
+A^{T}
+\end{array}\right)\in\mathbb{R}^{n+m\times n}$
+\end_inset
+
+ имеет ранг 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ Тогда 
+\begin_inset Formula 
+\[
+\ddot{q}=-\left(\begin{array}{c}
+PL_{\dot{q}\dot{q}}\\
+A^{T}
+\end{array}\right)^{+}\left(\begin{array}{c}
+P\left(\nabla_{\dot{q}}L_{\dot{q}}+L_{\dot{q}t}-L_{q}\right)\\
+\left(\nabla_{\dot{q}}A^{T}\right)\dot{q}
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Кинетическая энергия шара на конусе
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

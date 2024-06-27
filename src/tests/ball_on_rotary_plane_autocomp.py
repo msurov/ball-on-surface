@@ -7,7 +7,8 @@ from common.quat_casadi import (
   quat_mul_vec,
   quat_vec_part,
   quat_conj, 
-  quat_conj_mul
+  quat_conj_mul,
+  quat_mul_conj
 )
 from common.lagrange_method import lagrange_1st_kind
 import numpy as np
@@ -37,11 +38,8 @@ def calc_gen_acc_expression(table_angvel : float, table_angacc : float, J : ca.D
   ey = I[:,1]
   ez = I[:,2]
   t = ca.SX.sym('t') # time
-  theta = table_angvel * t + table_angacc * t**2 / 2 # table angular positon
-  mu = ca.vertcat(ca.cos(theta / 2), ez * ca.sin(theta / 2)) # quaternion of table orientation
   phi = ca.SX.sym('phi', 4) # quaternion of ball orientation wrt table
-  dphi = ca.SX.sym('phi', 4) # derivative of quaternion of ball orientation wrt table
-  psi = quat_mul(mu, phi) # quaternion of ball orientation wrt world
+  dphi = ca.SX.sym('dphi', 4) # derivative of quaternion of ball orientation wrt table
   x = ca.SX.sym('x') # ball x coordinate in table frame
   y = ca.SX.sym('y') # ball y coordinate in table frame
   dx = ca.SX.sym('x') # ball x coordinate in table frame
@@ -49,6 +47,9 @@ def calc_gen_acc_expression(table_angvel : float, table_angacc : float, J : ca.D
   gencoords = ca.vertcat(phi, x, y)
   genvels = ca.vertcat(dphi, dx, dy)
 
+  theta = table_angvel * t + table_angacc * t**2 / 2 # table angular positon
+  mu = ca.vertcat(ca.cos(theta / 2), ez * ca.sin(theta / 2)) # quaternion of table orientation
+  psi = quat_mul(mu, phi) # quaternion of ball orientation wrt world
   dpsi = ca.jtimes(psi, phi, dphi) + ca.jacobian(psi, t)
   w = 2 * quat_vec_part(quat_conj_mul(psi, dpsi)) # ball angular velocity
   lagrangian = 0.5 * w.T @ J @ w # ball rot energy
@@ -59,11 +60,11 @@ def calc_gen_acc_expression(table_angvel : float, table_angacc : float, J : ca.D
   lagrangian += 0.5 * m * v.T @ v # ball trans energy
 
   # matrix of constraints
-  w_wrt_table = 2 * quat_vec_part(quat_conj_mul(phi, dphi))
+  ball_angvel_wrt_table_in_table_frame = 2 * quat_vec_part(quat_mul_conj(dphi, phi))
   constraints = ca.vertcat(
     phi.T @ dphi,
-    dx + r * ex.T @ cross(ez, w_wrt_table),
-    dy + r * ey.T @ cross(ez, w_wrt_table),
+    dx + r * ex.T @ cross(ez, ball_angvel_wrt_table_in_table_frame),
+    dy + r * ey.T @ cross(ez, ball_angvel_wrt_table_in_table_frame),
   )
   A = ca.substitute(ca.jacobian(constraints, genvels), genvels, 0).T
 

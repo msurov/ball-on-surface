@@ -1,0 +1,224 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Пусть скорость 
+\begin_inset Formula $v$
+\end_inset
+
+ и угловая скорость 
+\begin_inset Formula $\omega$
+\end_inset
+
+ твёрдого тела выражаются через обобщённые координаты 
+\begin_inset Formula $q$
+\end_inset
+
+ и скорости 
+\begin_inset Formula $\dot{q}$
+\end_inset
+
+ как 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+v & =V\left(q,t\right)\dot{q}\\
+\omega & =W\left(q,t\right)\dot{q}
+\end{align*}
+
+\end_inset
+
+тогда кинетическая энергия тт запишется как 
+\begin_inset Formula 
+\begin{align*}
+T & =\frac{1}{2}\dot{q}^{T}W^{T}JW\dot{q}+\frac{m}{2}\dot{q}^{T}V^{T}V\dot{q}
+\end{align*}
+
+\end_inset
+
+Вычислим производные энергии 
+\begin_inset Formula 
+\begin{align*}
+T_{\dot{q}} & =W^{T}JW\dot{q}+mV^{T}V\dot{q}\\
+\frac{d}{dt}T_{\dot{q}} & =W^{T}JW\ddot{q}+mV^{T}V\ddot{q}+\\
+ & +W^{T}J\left(\frac{\partial W}{\partial q}\dot{q}+\frac{\partial W}{\partial t}\right)\dot{q}+mV^{T}\left(\frac{\partial V}{\partial q}\dot{q}+\frac{\partial V}{\partial t}\right)\dot{q}\\
+T_{q} & =\dot{q}^{T}W^{T}J\frac{\partial W\dot{q}}{\partial q}+\frac{m}{2}\dot{q}^{T}V^{T}\frac{\partial V\dot{q}}{\partial q}
+\end{align*}
+
+\end_inset
+
+Уравнения Лагранжа 
+\begin_inset Formula 
+\begin{align*}
+\underbrace{\left(W^{T}JW+mV^{T}V\right)}_{=:M\left(q,t\right)}\ddot{q}+\underbrace{W^{T}J\left(\nabla_{\dot{q}}W+\frac{\partial W}{\partial t}\right)\dot{q}+mV^{T}\left(\nabla_{\dot{q}}V+\frac{\partial V}{\partial t}\right)\dot{q}-\dot{q}^{T}W^{T}J\frac{\partial W\dot{q}}{\partial q}-\frac{m}{2}\dot{q}^{T}V^{T}\frac{\partial V\dot{q}}{\partial q}}_{=:C\left(q,\dot{q},t\right)\dot{q}} & =0\\
+M\ddot{q}+C\dot{q} & =0
+\end{align*}
+
+\end_inset
+
+Уравнения связи 
+\begin_inset Formula 
+\begin{align*}
+A\dot{q} & =0\\
+M\ddot{q}+C\dot{q} & =A^{T}\lambda
+\end{align*}
+
+\end_inset
+
+тогда 
+\begin_inset Formula 
+\begin{align*}
+\ddot{q}= & M^{-1}\left(A^{T}\lambda-C\dot{q}\right)\\
+\left(\nabla_{\dot{q}}A+\frac{\partial A}{\partial t}\right)\dot{q}+A\ddot{q} & =0\\
+\lambda & =\left(AM^{-1}A^{T}\right)^{-1}\left(AM^{-1}C\dot{q}-\left(\nabla_{\dot{q}}A+\frac{\partial A}{\partial t}\right)\dot{q}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(W^{T}JW+mV^{T}V\right)\ddot{q}+W^{T}J\left(\frac{\partial W}{\partial q}\dot{q}+\frac{\partial W}{\partial t}\right)\dot{q}+mV^{T}\left(\frac{\partial V}{\partial q}\dot{q}+\frac{\partial V}{\partial t}\right)\dot{q}-\dot{q}^{T}W^{T}J\frac{\partial W\dot{q}}{\partial q}-\frac{m}{2}\dot{q}^{T}V^{T}\frac{\partial V\dot{q}}{\partial q}=\lambda^{T}A
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\underbrace{\left(W^{T}JW\right)}_{=:M\left(q,t\right)}\ddot{q}+\underbrace{W^{T}J\left(\nabla_{\dot{q}}W\right)\dot{q}-\dot{q}^{T}W^{T}J\frac{\partial W\dot{q}}{\partial q}}_{=:C\left(q,\dot{q},t\right)\dot{q}} & =0\\
+M\ddot{q}+C\dot{q} & =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+СЛУ
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+M\ddot{q}+C\dot{q} & =q\lambda\\
+q^{T}\cdot\ddot{q}+\dot{q}^{T}\cdot\dot{q} & =0
+\end{align*}
+
+\end_inset
+
+Добавить к энергии то, что будет равно 0
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+T & =\frac{1}{2}\dot{q}^{T}W^{T}JW\dot{q}+\frac{\left(q\cdot\dot{q}\right)^{2}}{2}\\
+ & \frac{1}{2}\dot{q}^{T}W^{T}JW\dot{q}+\frac{\dot{q}^{T}qq^{T}\dot{q}}{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M=\frac{1}{2}W^{T}JW+\frac{1}{2}qq^{T}$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

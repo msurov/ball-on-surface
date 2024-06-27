@@ -1,0 +1,397 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style russian
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part
+Динамика шара, катящегося по неподвижной поверхности
+\end_layout
+
+\begin_layout Section
+Обозначения
+\end_layout
+
+\begin_layout Standard
+Поверхность задана в явном виде 
+\begin_inset Formula 
+\[
+p=\sigma\left(x,y\right)=\left(\begin{array}{c}
+x\\
+y\\
+h\left(x,y\right)
+\end{array}\right).
+\]
+
+\end_inset
+
+Вектор нормали к поверхности 
+\begin_inset Formula 
+\[
+n=\frac{\sigma_{x}\times\sigma_{y}}{\left\Vert \sigma_{x}\times\sigma_{y}\right\Vert }.
+\]
+
+\end_inset
+
+Частные производные вектора нормали 
+\begin_inset Formula 
+\begin{align*}
+n_{x} & =\frac{1}{\left\Vert \sigma_{x}\times\sigma_{y}\right\Vert }\left(I-nn^{T}\right)\left(\sigma_{xx}\times\sigma_{y}+\sigma_{x}\times\sigma_{xy}\right)\\
+n_{y} & =\frac{1}{\left\Vert \sigma_{x}\times\sigma_{y}\right\Vert }\left(I-nn^{T}\right)\left(\sigma_{xy}\times\sigma_{y}+\sigma_{x}\times\sigma_{yy}\right)
+\end{align*}
+
+\end_inset
+
+Частные производные вектора 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{flalign*}
+\sigma_{x} & =\left(\begin{array}{c}
+1\\
+0\\
+h_{x}
+\end{array}\right),\quad\sigma_{y}=\left(\begin{array}{c}
+0\\
+1\\
+h_{y}
+\end{array}\right),\\
+\sigma_{xx} & =\left(\begin{array}{c}
+0\\
+0\\
+h_{xx}
+\end{array}\right),\quad\sigma_{yy}=\left(\begin{array}{c}
+0\\
+0\\
+h_{yy}
+\end{array}\right),\quad\sigma_{xy}=0_{3}.
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Динамика твёрдого тела
+\end_layout
+
+\begin_layout Standard
+Динамика шара 
+\begin_inset Formula 
+\begin{align*}
+\dot{v} & =-\mathbf{e}_{z}g+\frac{1}{m}f\\
+J\dot{\omega}_{s} & =-\omega_{s}\times J\omega_{s}+t
+\end{align*}
+
+\end_inset
+
+где 
+\begin_inset Formula $m$
+\end_inset
+
+ – масса шара, 
+\begin_inset Formula $J$
+\end_inset
+
+ – тензор инерции шара, 
+\begin_inset Formula $v$
+\end_inset
+
+ – скорость движения центра шара в неподвижной СК, 
+\begin_inset Formula $g$
+\end_inset
+
+ – ускорение свободного падения, 
+\begin_inset Formula $f$
+\end_inset
+
+ – силы, действующие на шар, заданные в неподвижной СК, 
+\begin_inset Formula $\omega_{s}$
+\end_inset
+
+ – угловая скорость в собственной СК шара, 
+\begin_inset Formula $t_{s}$
+\end_inset
+
+ – суммарный момент, действующий на шар в СК шара.
+ Предполагая, что центр шара находится в его геометрическом центре и тензор
+ инерции имеет вид 
+\begin_inset Formula $J=MI,$
+\end_inset
+
+ где 
+\begin_inset Formula $M$
+\end_inset
+
+ – момент инерции, получим
+\begin_inset Formula 
+\begin{align*}
+\dot{v} & =-\mathbf{e}_{z}g+\frac{1}{m}f\\
+\dot{\omega}_{s} & =\frac{1}{M}t_{s}.
+\end{align*}
+
+\end_inset
+
+Также, можно показать, что в неподвижной СК уравнения будут выглядеть аналогичны
+м образом
+\begin_inset Formula 
+\begin{align*}
+m\dot{v} & =-\mathbf{e}_{z}mg+f\\
+M\dot{\omega}_{w} & =t_{w},
+\end{align*}
+
+\end_inset
+
+где 
+\begin_inset Formula $\omega_{w},t_{w}$
+\end_inset
+
+ – угловая скорость и момент в неподвижной СК.
+\end_layout
+
+\begin_layout Section
+Качение шара по неподвижной поверхности
+\end_layout
+
+\begin_layout Subsection
+Сила нормального давления
+\end_layout
+
+\begin_layout Subsection
+Тангенсальная сила
+\end_layout
+
+\begin_layout Standard
+Используя мгновенную ось вращения, проходящую через точку соприкасновения
+ мяча с поверхностью, получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+v & =r\omega_{w}\times n\\
+ & =-rn\times\omega_{w}
+\end{align*}
+
+\end_inset
+
+уравнение связи в неявном виде 
+\begin_inset Formula 
+\[
+\phi=v+rn^{\wedge}\omega_{w}=0
+\]
+
+\end_inset
+
+в индексной форме записи 
+\begin_inset Formula 
+\[
+v_{i}+re_{ijk}n_{j}\omega_{k}=0
+\]
+
+\end_inset
+
+Его частные производные 
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial\phi_{i}}{\partial v_{l}}=\frac{\partial v_{i}+re_{ijk}n_{j}\omega_{k}}{\partial v_{l}} & =\delta_{il}\\
+\frac{\partial\phi_{i}}{\partial\omega_{l}}=\frac{\partial v_{i}+re_{ijk}n_{j}\omega_{k}}{\partial\omega_{l}} & =re_{ijk}n_{j}\delta_{kl}=re_{ijl}n_{j}
+\end{align*}
+
+\end_inset
+
+Подставим в уравнения динамики
+\begin_inset Formula 
+\begin{align*}
+m\dot{v} & =-\mathbf{e}_{z}mg+\left[\sum_{i}\lambda_{i}\frac{\partial\phi_{i}}{\partial v}\right]\\
+M\dot{\omega} & =\left[\sum_{i}\lambda_{i}\frac{\partial\phi_{i}}{\partial\omega}\right],
+\end{align*}
+
+\end_inset
+
+получим
+\begin_inset Formula 
+\begin{align*}
+m\dot{v} & =-\mathbf{e}_{z}mg+\lambda_{i}\delta_{il}=-\mathbf{e}_{z}mg+\lambda\\
+M\dot{\omega} & =r\left[e_{lij}\lambda_{i}n_{j}\right]=r\lambda\times n
+\end{align*}
+
+\end_inset
+
+Продифференцируем уравнение связи по времени
+\begin_inset Formula 
+\begin{align*}
+\dot{v} & =-r\dot{n}\times\omega_{w}-rn\times\dot{\omega}_{w}\\
+ & =-r\left(\frac{\partial n}{\partial x}v_{x}+\frac{\partial n}{\partial y}v_{y}\right)\times\omega_{w}-rn^{\wedge}\dot{\omega}_{w}
+\end{align*}
+
+\end_inset
+
+и подставим в уравнение динамики 
+\begin_inset Formula 
+\begin{align*}
+\dot{v} & =-r\left(\frac{\partial n}{\partial x}v_{x}+\frac{\partial n}{\partial y}v_{y}\right)\times\omega_{w}-rn^{\wedge}\dot{\omega}_{w}\\
+-\mathbf{e}_{z}g+\frac{1}{m}\lambda & =-r\left(\frac{\partial n}{\partial x}v_{x}+\frac{\partial n}{\partial y}v_{y}\right)\times\omega_{w}+\frac{r^{2}}{M}n^{\wedge}n^{\wedge}\lambda\\
+\frac{1}{m}\left[I-\frac{mr^{2}}{M}n^{\wedge}n^{\wedge}\right]\lambda & =-r\left(\frac{\partial n}{\partial x}v_{x}+\frac{\partial n}{\partial y}v_{y}\right)\times\omega_{w}+\mathbf{e}_{z}g
+\end{align*}
+
+\end_inset
+
+если подставить 
+\begin_inset Formula $M=\frac{2}{5}mr^{2}$
+\end_inset
+
+, то 
+\begin_inset Formula 
+\[
+\left[I-\frac{mr^{2}}{M}n^{\wedge}n^{\wedge}\right]=\left[I+\frac{5}{2}n^{\wedge}n^{\wedge}\right]
+\]
+
+\end_inset
+
+Матрица невырождена, значит 
+\begin_inset Formula 
+\[
+\lambda=m\left[I-\frac{mr^{2}}{M}n^{\wedge}n^{\wedge}\right]^{-1}\left(\mathbf{e}_{z}g-r\left(\frac{\partial n}{\partial x}v_{x}+\frac{\partial n}{\partial y}v_{y}\right)\times\omega_{w}\right).
+\]
+
+\end_inset
+
+Проблема.
+ Если вычислять 
+\begin_inset Formula $\dot{n}$
+\end_inset
+
+ разными способами: 
+\begin_inset Formula 
+\begin{align*}
+\dot{n} & =\omega\times n\\
+\dot{n} & =\frac{\partial n}{\partial x}\dot{x}+\frac{\partial n}{\partial y}\dot{y}
+\end{align*}
+
+\end_inset
+
+то получим разные результаты.
+ Почему первый способ неправильный?! Тут нужно подумать.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+\left(\omega_{w}\times n\right)\times\omega_{w} & =\left\Vert \omega_{w}\right\Vert ^{2}n-\left(\omega_{w}\cdot n\right)\omega_{w}\\
+ & =\left(\omega_{w}^{T}\omega_{w}I-\omega_{w}\omega_{w}^{T}\right)\cdot n
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $a^{\wedge}a^{\wedge}=aa^{T}-a^{T}aI$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(a\times b\right)\times a=\left\Vert a\right\Vert ^{2}b-\left(a\cdot b\right)a$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $a\times\left(a\times b\right)=-\left(a\times b\right)\times a=-\left\Vert a\right\Vert ^{2}b+\left(a\cdot b\right)a=\left(aa^{T}-a^{T}aI\right)b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
