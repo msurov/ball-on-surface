@@ -1,16 +1,15 @@
 import numpy as np
-import matplotlib.pyplot as plt
-from scipy.integrate import solve_ivp
+import matplotlib.pyplot as plt   # type: ignore
+from scipy.integrate import solve_ivp   # type: ignore
 from common.surface import ConeSurface
 from common.integrate import integrate_table
 from common.quat import quat_rot, quat_mul
 from common.rotations import solve_poisson_kinematics
 from common.trajectory import RigidBodyTrajectory
 from common.linalg import normalized
-from .dynamics import SystemParameters
-from .dynamics import (
-  SystemParameters,
-  Dynamics,
+from ball_on_rotary_surface.ball_on_rotary_surface_dynamics import (
+  BallOnRotarySurfaceParameters,
+  BallOnRotarySurfaceDynamics
 )
 from common.frame_rotation import (
   FrameRotation,
@@ -19,7 +18,7 @@ from common.frame_rotation import (
   FrameAccelRot
 )
 
-def get_bodies_traj(t : np.ndarray, st : np.ndarray, tabrot : FrameRotation, par : SystemParameters):
+def get_bodies_traj(t : np.ndarray, st : np.ndarray, tabrot : FrameRotation, par : BallOnRotarySurfaceParameters):
   n = len(t)
   q_table_ball = solve_poisson_kinematics(t, st[:,2:5], np.array([1., 0., 0., 0.]), 'fixed')
   q_world_ball = np.zeros((n, 4))
@@ -48,7 +47,7 @@ def get_bodies_traj(t : np.ndarray, st : np.ndarray, tabrot : FrameRotation, par
   )
   return ball_traj, table_traj
 
-def get_auxiliary_signals(dynamics : Dynamics, t : np.ndarray, st : np.ndarray):
+def get_auxiliary_signals(dynamics : BallOnRotarySurfaceDynamics, t : np.ndarray, st : np.ndarray):
   n = len(t)
   friction_force = np.zeros((n, 3))
   normal_force = np.zeros((n,))
@@ -57,11 +56,11 @@ def get_auxiliary_signals(dynamics : Dynamics, t : np.ndarray, st : np.ndarray):
     normal_force[i] = dynamics.normal_force(t[i], st[i])
   return friction_force, normal_force
 
-def save_sim_data(time : np.ndarray, state : np.ndarray, tablerot : FrameRotation, par : SystemParameters):
+def save_sim_data(time : np.ndarray, state : np.ndarray, tablerot : FrameRotation, par : BallOnRotarySurfaceParameters):
   ball_traj, table_traj = get_bodies_traj(time, state, tablerot, par)
-  np.save('../data/table_trajectory.npy', table_traj)
-  np.save('../data/ball_trajectory.npy', ball_traj)
-  np.save('../data/parameters.npy', par)
+  np.save('./data/table_trajectory.npy', table_traj)
+  np.save('./data/ball_trajectory.npy', ball_traj)
+  np.save('./data/parameters.npy', par)
 
 def bounded_trajectory():
   simtime = 40
@@ -70,14 +69,14 @@ def bounded_trajectory():
   angvel_initial = 5.
   angaccel = 0.08
   surf = ConeSurface(cone_side_coef, eps=cone_side_coef**2 * ball_radius**2)
-  par = SystemParameters(
+  par = BallOnRotarySurfaceParameters(
     surface = surf,
     gravity_accel = 9.81,
     ball_mass = 0.05,
     ball_radius = ball_radius,
   )
   tablerot = FrameAccelRot([0, 0, 1], angvel_initial, angaccel)
-  d = Dynamics(par, tablerot)
+  d = BallOnRotarySurfaceDynamics(par, tablerot)
   x0 = 0.01
   y0 = 0.002
   w0 = np.array([0, 0., 0.])
@@ -117,14 +116,14 @@ def periodic_traj_1():
   angvel_initial = 5.
   angaccel = 0.0
   surf = ConeSurface(cone_side_coef, eps=cone_side_coef**2 * ball_radius**2)
-  par = SystemParameters(
+  par = BallOnRotarySurfaceParameters(
     surface = surf,
     gravity_accel = 9.81,
     ball_mass = 0.05,
     ball_radius = ball_radius,
   )
   tablerot = FrameAccelRot([0, 0, 1], angvel_initial, angaccel)
-  d = Dynamics(par, tablerot)
+  d = BallOnRotarySurfaceDynamics(par, tablerot)
   x0 = 0.4
   y0 = 0.0
   vec = normalized(surf.coords(x0, y0))
@@ -155,14 +154,14 @@ def circular_traj():
   angvel_initial = 5.
   angaccel = 0.0
   surf = ConeSurface(cone_side_coef, eps=cone_side_coef**2 * ball_radius**2)
-  par = SystemParameters(
+  par = BallOnRotarySurfaceParameters(
     surface = surf,
     gravity_accel = 9.81,
     ball_mass = 0.05,
     ball_radius = ball_radius,
   )
   tablerot = FrameAccelRot([0, 0, 1], angvel_initial, angaccel)
-  d = Dynamics(par, tablerot)
+  d = BallOnRotarySurfaceDynamics(par, tablerot)
   x0 = 0.4
   y0 = 0.0
   vec1 = normalized(surf.coords(x0, y0))
@@ -221,14 +220,14 @@ def circular_traj_analysis():
   angvel_initial = 5.
   angaccel = 0.0
   surf = ConeSurface(cone_side_coef, eps=cone_side_coef**2 * ball_radius**2)
-  par = SystemParameters(
+  par = BallOnRotarySurfaceParameters(
     surface = surf,
     gravity_accel = 9.81,
     ball_mass = 0.05,
     ball_radius = ball_radius,
   )
   tablerot = FrameAccelRot([0, 0, 1], angvel_initial, angaccel)
-  d = Dynamics(par, tablerot)
+  d = BallOnRotarySurfaceDynamics(par, tablerot)
   x0 = 0.4
   y0 = 0.0
   vec1 = normalized(surf.coords(x0, y0))

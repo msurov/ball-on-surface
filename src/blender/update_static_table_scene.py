@@ -4,7 +4,7 @@ import numpy as np
 from common.surface import shifted_surface
 from common.trajectory import RigidBodyTrajectory
 from common.interp import linear_interp
-from .dynamics import SystemParameters
+from ball_on_rotary_surface.parameters import BallOnRotarySurfaceParameters
 
 
 def load_sim_data():
@@ -37,7 +37,7 @@ def get_object_size(obj):
   dx, dy, dz = max_xyz - min_xyz
   return dx, dy, dz
 
-def fixup_table(par : SystemParameters):
+def fixup_table(par : BallOnRotarySurfaceParameters):
   def f(x, y) -> float:
     z,_,_,err = shifted_surface(par.surface, -par.ball_radius, x, y)
     assert err < 1e-5
@@ -55,7 +55,7 @@ def fixup_table(par : SystemParameters):
     if v.co.z > table_bottom:
       v.co.z = f(v.co.x, v.co.y)
 
-def fixup_ball(par : SystemParameters):
+def fixup_ball(par : BallOnRotarySurfaceParameters):
   obj = find_object('football/soccer ball')
   actual_diameter,*_ = get_object_size(obj)
   obj.scale.x = \

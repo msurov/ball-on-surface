@@ -1,10 +1,8 @@
-from abc import ABC, abstractmethod
-from dataclasses import dataclass
 import numpy as np
-from common.surface import Surface
 from common.quat import quat_rot, quat_conj
 from common.linalg import wedge
 from common.frame_rotation import FrameRotation
+from .parameters import BallOnRotarySurfaceParameters
 
 
 cross = np.cross
@@ -17,20 +15,8 @@ def norm_sq(v):
 def norm_sq_cross(a, b):
   return norm_sq(cross(a, b))
 
-@dataclass
-class SystemParameters:
-  surface : Surface
-  gravity_accel : float
-  ball_mass : float
-  ball_radius : float
-  ball_inertia : float = None
-
-  def __post_init__(self):
-    if self.ball_inertia is None:
-      self.ball_inertia = 2 * self.ball_mass * self.ball_radius**2 / 3
-
-class Dynamics:
-  def __init__(self, par : SystemParameters, tabrot : FrameRotation) -> None:
+class BallOnRotarySurfaceDynamics:
+  def __init__(self, par : BallOnRotarySurfaceParameters, tabrot : FrameRotation) -> None:
     self.par = par
     self.tabrot = tabrot
 

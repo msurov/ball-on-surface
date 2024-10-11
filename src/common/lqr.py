@@ -1,4 +1,4 @@
-from scipy.linalg import solve_continuous_are
+from scipy.linalg import solve_continuous_are # type: ignore
 import numpy as np
 
 def lqr_lti(A, B, Q, R):

@@ -51,13 +51,17 @@ class ParaboloidSurface(Surface):
       case (2,0): return 2 * self.kx
       case (0,2): return 2 * self.ky
       case (1,1): return 0
-      case _: return None
+      case _: assert False, 'Not implemented'
 
 class ConeSurface(Surface):
   def __init__(self, k, eps=1e-3):
     assert eps > 0
     self.k = k
     self.eps = eps
+
+  @property
+  def cone_side_angle(self) -> float:
+    return np.arctan(self.k)
 
   def derivative(self, x: float, y: float, xder: int = 0, yder: int = 0) -> float:
     k = self.k
@@ -70,7 +74,7 @@ class ConeSurface(Surface):
       case (2,0): return k**2 / h - k**4 * x**2 / h**3
       case (0,2): return k**2 / h - k**4 * y**2 / h**3
       case (1,1): return -k**4 * x * y / h**3
-      case _: return None
+      case _: assert False, 'Not implemented'
 
 class Plane(Surface):
   def __init__(self):
@@ -93,7 +97,7 @@ class Sphere(Surface):
       case (2,0): return -x**2/q**3 - 1/q
       case (0,2): return -y**2/q**3 - 1/q
       case (1,1): return -x*y/q**3
-      case _: return None
+      case _: assert False, 'Not implemented'
 
 def shifted_surface(surf, dist, x, y, eps=1e-5, max_iter=100):
   u = x

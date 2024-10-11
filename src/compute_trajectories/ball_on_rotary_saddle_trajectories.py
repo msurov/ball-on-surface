@@ -1,15 +1,14 @@
 import numpy as np
-import matplotlib.pyplot as plt
-from scipy.integrate import solve_ivp
+import matplotlib.pyplot as plt   # type: ignore
+from scipy.integrate import solve_ivp   # type: ignore
 from common.surface import ParaboloidSurface
 from common.quat import quat_rot, quat_mul
 from common.integrate import integrate_table
 from common.rotations import solve_poisson_kinematics
 from common.trajectory import RigidBodyTrajectory
-from .dynamics import SystemParameters
-from .dynamics import (
-  SystemParameters,
-  Dynamics
+from ball_on_rotary_surface.ball_on_rotary_surface_dynamics import (
+  BallOnRotarySurfaceParameters,
+  BallOnRotarySurfaceDynamics
 )
 from common.frame_rotation import (
   FrameRotation,
@@ -19,7 +18,7 @@ from common.frame_rotation import (
 )
 
 
-def get_bodies_traj(t : np.ndarray, st : np.ndarray, tabrot : FrameRotation, par : SystemParameters):
+def get_bodies_traj(t : np.ndarray, st : np.ndarray, tabrot : FrameRotation, par : BallOnRotarySurfaceParameters):
   n = len(t)
   q_table_ball = solve_poisson_kinematics(t, st[:,2:5], np.array([1., 0., 0., 0.]), 'fixed')
   q_world_ball = np.zeros((n, 4))
@@ -48,7 +47,7 @@ def get_bodies_traj(t : np.ndarray, st : np.ndarray, tabrot : FrameRotation, par
   )
   return ball_traj, table_traj
 
-def get_auxiliary_signals(dynamics : Dynamics, t : np.ndarray, st : np.ndarray):
+def get_auxiliary_signals(dynamics : BallOnRotarySurfaceDynamics, t : np.ndarray, st : np.ndarray):
   n = len(t)
   friction_force = np.zeros((n, 3))
   normal_force = np.zeros((n,))
@@ -62,14 +61,14 @@ def main():
   angvel_initial = 2.
   angaccel = 0.17
   surf = ParaboloidSurface(0.3, -0.3)
-  par = SystemParameters(
+  par = BallOnRotarySurfaceParameters(
     surface = surf,
     gravity_accel = 9.81,
     ball_mass = 0.03,
     ball_radius = 0.04
   )
   tablerot = FrameAccelRot([0., 0., 1.], angvel_initial, angaccel)
-  d = Dynamics(par, tablerot)
+  d = BallOnRotarySurfaceDynamics(par, tablerot)
   x0 = -0.2
   y0 = 0.06
   w0 = np.array([0., 0., 5.])
@@ -78,9 +77,9 @@ def main():
 
   ball_traj, table_traj = get_bodies_traj(sol.t, sol.y.T, tablerot, par)
 
-  np.save('../data/table_trajectory.npy', table_traj)
-  np.save('../data/ball_trajectory.npy', ball_traj)
-  np.save('../data/parameters.npy', par)
+  np.save('./data/table_trajectory.npy', table_traj)
+  np.save('./data/ball_trajectory.npy', ball_traj)
+  np.save('./data/parameters.npy', par)
 
   fricforce, normforce = get_auxiliary_signals(d, sol.t, sol.y.T)
 

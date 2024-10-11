@@ -1,0 +1,676 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{d}{dt}\frac{\partial L}{\partial\dot{q}^{i}}-\frac{\partial L}{\partial q^{i}}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dot{q}^{j}=A_{i}^{j}\omega^{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $B_{j}^{i}\dot{q}^{j}=\omega^{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A_{i}^{j}B_{s}^{i}=\delta_{s}^{j}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $L=\frac{1}{2}M_{ij}\dot{q}^{i}\dot{q}^{j}-U$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\tilde{L}=\frac{1}{2}M_{ij}A_{k}^{i}A_{n}^{j}\omega^{k}\omega^{n}-U$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{\partial\tilde{L}}{\partial q^{s}}=\frac{1}{2}\frac{\partial M_{ij}}{\partial q^{s}}A_{k}^{i}A_{n}^{j}\omega^{k}\omega^{n}+\frac{1}{2}M_{ij}\frac{\partial A_{k}^{i}}{\partial q^{s}}A_{n}^{j}\omega^{k}\omega^{n}+\frac{1}{2}M_{ij}A_{k}^{i}\frac{\partial A_{n}^{j}}{\partial q^{s}}\omega^{k}\omega^{n}-\frac{\partial U}{\partial q^{s}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\frac{\partial\tilde{L}}{\partial\omega^{s}}=M_{ij}A_{s}^{i}A_{n}^{j}\omega^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{d}{dt}\frac{\partial\tilde{L}}{\partial\omega^{s}}=\frac{\partial M_{ij}}{\partial q^{v}}A_{s}^{i}A_{n}^{j}\omega^{n}\dot{q}^{v}+M_{ij}\frac{\partial A_{s}^{i}}{\partial q^{v}}A_{n}^{j}\omega^{n}\dot{q}^{v}+M_{ij}A_{s}^{i}\frac{\partial A_{n}^{j}}{\partial q^{v}}\omega^{n}\dot{q}^{v}+M_{ij}A_{s}^{i}A_{n}^{j}\dot{\omega}^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\frac{\partial M_{ij}}{\partial q^{v}}A_{s}^{i}A_{n}^{j}A_{i}^{v}\omega^{n}\omega^{i}+M_{ij}\frac{\partial A_{s}^{i}}{\partial q^{v}}A_{n}^{j}A_{i}^{v}\omega^{n}\omega^{i}+M_{ij}A_{s}^{i}\frac{\partial A_{n}^{j}}{\partial q^{v}}A_{i}^{v}\omega^{n}\omega^{i}+M_{ij}A_{s}^{i}A_{n}^{j}\dot{\omega}^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+
+\begin_inset Formula $M_{ij}A_{s}^{i}A_{n}^{j}\dot{\omega}^{n}+\frac{\partial M_{ij}}{\partial q^{v}}A_{s}^{i}A_{n}^{j}A_{i}^{v}\omega^{n}\omega^{i}+M_{ij}\frac{\partial A_{s}^{i}}{\partial q^{v}}A_{n}^{j}A_{i}^{v}\omega^{n}\omega^{i}+M_{ij}A_{s}^{i}\frac{\partial A_{n}^{j}}{\partial q^{v}}A_{i}^{v}\omega^{n}\omega^{i}-\frac{1}{2}\frac{\partial M_{ij}}{\partial q^{s}}A_{k}^{i}A_{n}^{j}\omega^{k}\omega^{n}-\frac{1}{2}M_{ij}\frac{\partial A_{k}^{i}}{\partial q^{s}}A_{n}^{j}\omega^{k}\omega^{n}-\frac{1}{2}M_{ij}A_{k}^{i}\frac{\partial A_{n}^{j}}{\partial q^{s}}\omega^{k}\omega^{n}+\frac{\partial U}{\partial q^{s}}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A_{s}^{i}M_{ij}A_{n}^{j}\dot{\omega}^{n}+\frac{\partial M_{ij}}{\partial q^{v}}A_{s}^{i}A_{n}^{j}A_{i}^{v}\omega^{n}\omega^{i}+M_{ij}\frac{\partial A_{s}^{i}}{\partial q^{v}}A_{n}^{j}A_{i}^{v}\omega^{n}\omega^{i}+M_{ij}A_{s}^{i}\frac{\partial A_{n}^{j}}{\partial q^{v}}A_{i}^{v}\omega^{n}\omega^{i}-\frac{1}{2}\frac{\partial M_{ij}}{\partial q^{s}}A_{k}^{i}A_{n}^{j}\omega^{k}\omega^{n}-\frac{1}{2}M_{ij}\frac{\partial A_{k}^{i}}{\partial q^{s}}A_{n}^{j}\omega^{k}\omega^{n}-\frac{1}{2}M_{ij}A_{k}^{i}\frac{\partial A_{n}^{j}}{\partial q^{s}}\omega^{k}\omega^{n}+\frac{\partial U}{\partial q^{s}}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+
+\end_layout
+
+\begin_layout Standard
+исходное уравнение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $L=\frac{1}{2}M_{ij}\dot{q}^{i}\dot{q}^{j}-U$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{\partial L}{\partial\dot{q}^{s}}=M_{sj}\dot{q}^{j}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{d}{dt}\frac{\partial L}{\partial\dot{q}^{s}}=M_{sj}\ddot{q}^{j}+\frac{\partial M_{sj}}{\partial q^{v}}\dot{q}^{j}\dot{q}^{v}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{\partial L}{\partial q^{s}}=\frac{1}{2}\frac{\partial M_{ij}}{\partial q^{s}}\dot{q}^{i}\dot{q}^{j}-\frac{\partial U}{\partial q^{s}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M_{sj}\ddot{q}^{j}+\left[\frac{\partial M_{sj}}{\partial q^{i}}-\frac{1}{2}\frac{\partial M_{ij}}{\partial q^{s}}\right]\dot{q}^{i}\dot{q}^{j}+\frac{\partial U}{\partial q^{s}}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+
+\end_layout
+
+\begin_layout Standard
+сравниваем с 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A_{s}^{i}M_{ij}A_{n}^{j}\dot{\omega}^{n}+\left[A_{s}^{i}\frac{\partial M_{ij}}{\partial q^{v}}A_{n}^{j}A_{k}^{v}-\frac{1}{2}\frac{\partial M_{ij}}{\partial q^{s}}A_{k}^{i}A_{n}^{j}\right]\omega^{n}\omega^{k}+\frac{\partial U}{\partial q^{s}}+\left[M_{ij}\frac{\partial A_{s}^{i}}{\partial q^{v}}A_{n}^{j}A_{i}^{v}\omega^{n}\omega^{i}+M_{ij}A_{s}^{i}\frac{\partial A_{n}^{j}}{\partial q^{v}}A_{i}^{v}\omega^{n}\omega^{i}-\frac{1}{2}M_{ij}\frac{\partial A_{k}^{i}}{\partial q^{s}}A_{n}^{j}\omega^{k}\omega^{n}-\frac{1}{2}M_{ij}A_{k}^{i}\frac{\partial A_{n}^{j}}{\partial q^{s}}\omega^{k}\omega^{n}\right]=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+\SpecialChar softhyphen
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M_{sj}\ddot{q}^{j}+\left[\frac{\partial M_{sj}}{\partial q^{i}}-\frac{1}{2}\frac{\partial M_{ij}}{\partial q^{s}}\right]\dot{q}^{i}\dot{q}^{j}+\frac{\partial U}{\partial q^{s}}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ddot{q}^{j}=A_{i}^{j}\dot{\omega}^{i}+\frac{\partial A_{i}^{j}}{\partial q^{v}}\omega^{i}\dot{q}^{v}=A_{i}^{j}\dot{\omega}^{i}+\frac{\partial A_{i}^{j}}{\partial q^{v}}A_{f}^{v}\omega^{i}\omega^{f}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+корректное уравнение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M_{sj}A_{i}^{j}\dot{\omega}^{i}+M_{sj}\frac{\partial A_{i}^{j}}{\partial q^{v}}A_{f}^{v}\omega^{i}\omega^{f}+\left[\frac{\partial M_{sj}}{\partial q^{i}}-\frac{1}{2}\frac{\partial M_{ij}}{\partial q^{s}}\right]A_{v}^{i}A_{f}^{j}\omega^{f}\omega^{v}+\frac{\partial U}{\partial q^{s}}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+но в нём неизвестно 
+\begin_inset Formula $M$
+\end_inset
+
+, у меня есть только 
+\begin_inset Formula $Q$
+\end_inset
+
+, 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Q_{ij}=M_{ab}A_{i}^{a}A_{j}^{b}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Q_{ij}B_{v}^{i}B_{k}^{j}=M_{ab}A_{i}^{a}A_{j}^{b}B_{v}^{i}B_{k}^{j}=M_{vk}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M_{vk}=Q_{ij}B_{v}^{i}B_{k}^{j}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M_{sj}=Q_{vl}B_{s}^{v}B_{j}^{l}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{\partial M_{sj}}{\partial q^{i}}=\frac{\partial Q_{vl}}{\partial q^{i}}B_{s}^{v}B_{j}^{l}+Q_{vl}\frac{\partial B_{s}^{v}}{\partial q^{i}}B_{j}^{l}+Q_{vl}B_{s}^{v}\frac{\partial B_{j}^{l}}{\partial q^{i}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{\partial M_{ij}}{\partial q^{s}}=\frac{\partial Q_{vl}}{\partial q^{s}}B_{i}^{v}B_{j}^{l}+Q_{vl}\frac{\partial B_{i}^{v}}{\partial q^{s}}B_{j}^{l}+Q_{vl}B_{i}^{v}\frac{\partial B_{j}^{l}}{\partial q^{s}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Q_{vl}B_{s}^{v}\dot{\omega}^{l}+Q_{vl}B_{s}^{v}B_{j}^{l}\frac{\partial A_{i}^{j}}{\partial q^{t}}A_{f}^{t}\omega^{i}\omega^{f}+\left[\frac{\partial M_{sj}}{\partial q^{i}}-\frac{1}{2}\frac{\partial M_{ij}}{\partial q^{s}}\right]A_{t}^{i}A_{f}^{j}\omega^{f}\omega^{t}+\frac{\partial U}{\partial q^{s}}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial M_{sj}}{\partial q^{i}}A_{t}^{i}A_{f}^{j}\omega^{f}\omega^{t} & =\left[\frac{\partial Q_{vl}}{\partial q^{i}}B_{s}^{v}B_{j}^{l}+Q_{vl}\frac{\partial B_{s}^{v}}{\partial q^{i}}B_{j}^{l}+Q_{vl}B_{s}^{v}\frac{\partial B_{j}^{l}}{\partial q^{i}}\right]A_{t}^{i}A_{f}^{j}\omega^{f}\omega^{t}\\
+ & =B_{s}^{v}\frac{\partial Q_{vf}}{\partial q^{i}}A_{t}^{i}\omega^{f}\omega^{t}+Q_{vf}\frac{\partial B_{s}^{v}}{\partial q^{i}}A_{t}^{i}\omega^{f}\omega^{t}+Q_{vl}B_{s}^{v}\frac{\partial B_{j}^{l}}{\partial q^{i}}A_{t}^{i}A_{f}^{j}\omega^{f}\omega^{t}\\
+\frac{\partial M_{ij}}{\partial q^{s}}A_{t}^{i}A_{f}^{j}\omega^{f}\omega^{t} & =\left[\frac{\partial Q_{vl}}{\partial q^{s}}B_{i}^{v}B_{j}^{l}+Q_{vl}\frac{\partial B_{i}^{v}}{\partial q^{s}}B_{j}^{l}+Q_{vl}B_{i}^{v}\frac{\partial B_{j}^{l}}{\partial q^{s}}\right]A_{t}^{i}A_{f}^{j}\omega^{f}\omega^{t}\\
+ & =\frac{\partial Q_{vl}}{\partial q^{s}}B_{i}^{v}B_{j}^{l}A_{t}^{i}A_{f}^{j}\omega^{f}\omega^{t}+Q_{vl}\frac{\partial B_{i}^{v}}{\partial q^{s}}B_{j}^{l}A_{t}^{i}A_{f}^{j}\omega^{f}\omega^{t}+Q_{vl}B_{i}^{v}\frac{\partial B_{j}^{l}}{\partial q^{s}}A_{t}^{i}A_{f}^{j}\omega^{f}\omega^{t}\\
+ & =\frac{\partial Q_{tf}}{\partial q^{s}}\omega^{f}\omega^{t}+Q_{vf}\frac{\partial B_{i}^{v}}{\partial q^{s}}A_{t}^{i}\omega^{f}\omega^{t}+Q_{tl}\frac{\partial B_{j}^{l}}{\partial q^{s}}A_{f}^{j}\omega^{f}\omega^{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $I=AB$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{dI}{dt}=0=\frac{dA}{dt}B+A\frac{dB}{dt}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{dB}{dt}=-B\frac{dA}{dt}B$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{dA}{dt}=-A\frac{dB}{dt}A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставляем 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Q_{vl}B_{s}^{v}\dot{\omega}^{l}+Q_{vl}B_{s}^{v}B_{j}^{l}\frac{\partial A_{i}^{j}}{\partial q^{t}}A_{f}^{t}\omega^{i}\omega^{f}+B_{s}^{v}\frac{\partial Q_{vf}}{\partial q^{i}}A_{t}^{i}\omega^{f}\omega^{t}+Q_{vf}\frac{\partial B_{s}^{v}}{\partial q^{i}}A_{t}^{i}\omega^{f}\omega^{t}+Q_{vl}B_{s}^{v}\frac{\partial B_{j}^{l}}{\partial q^{i}}A_{t}^{i}A_{f}^{j}\omega^{f}\omega^{t}-\frac{1}{2}\left[\frac{\partial Q_{tf}}{\partial q^{s}}\omega^{f}\omega^{t}+Q_{vf}\frac{\partial B_{i}^{v}}{\partial q^{s}}A_{t}^{i}\omega^{f}\omega^{t}+Q_{tl}\frac{\partial B_{j}^{l}}{\partial q^{s}}A_{f}^{j}\omega^{f}\omega^{t}\right]+\frac{\partial U}{\partial q^{s}}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $B_{s}^{v}Q_{vl}\dot{\omega}^{l}+B_{s}^{v}\frac{\partial Q_{vf}}{\partial q^{i}}A_{t}^{i}\omega^{f}\omega^{t}-\frac{1}{2}\frac{\partial Q_{tf}}{\partial q^{s}}\omega^{f}\omega^{t}+\frac{\partial U}{\partial q^{s}}+Q_{vl}B_{s}^{v}B_{j}^{l}\frac{\partial A_{i}^{j}}{\partial q^{t}}A_{f}^{t}\omega^{i}\omega^{f}+Q_{vf}\frac{\partial B_{s}^{v}}{\partial q^{i}}A_{t}^{i}\omega^{f}\omega^{t}+Q_{vl}B_{s}^{v}\frac{\partial B_{j}^{l}}{\partial q^{i}}A_{t}^{i}A_{f}^{j}\omega^{f}\omega^{t}-\frac{1}{2}Q_{vf}\frac{\partial B_{i}^{v}}{\partial q^{s}}A_{t}^{i}\omega^{f}\omega^{t}-\frac{1}{2}Q_{tl}\frac{\partial B_{j}^{l}}{\partial q^{s}}A_{f}^{j}\omega^{f}\omega^{t}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+B_{s}^{v}Q_{vl}\dot{\omega}^{l}+B_{s}^{v}\frac{\partial Q_{vf}}{\partial q^{i}}A_{t}^{i}\omega^{f}\omega^{t}-\frac{1}{2}\frac{\partial Q_{tf}}{\partial q^{s}}\omega^{f}\omega^{t}+\frac{\partial U}{\partial q^{s}}\\
++Q_{vl}B_{s}^{v}B_{j}^{l}\frac{\partial A_{i}^{j}}{\partial q^{t}}A_{f}^{t}\omega^{i}\omega^{f}+Q_{vf}\frac{\partial B_{s}^{v}}{\partial q^{i}}A_{t}^{i}\omega^{f}\omega^{t}+Q_{vl}B_{s}^{v}\frac{\partial B_{j}^{l}}{\partial q^{i}}A_{t}^{i}A_{f}^{j}\omega^{f}\omega^{t}-\frac{1}{2}Q_{vf}\frac{\partial B_{i}^{v}}{\partial q^{s}}A_{t}^{i}\omega^{f}\omega^{t}-\frac{1}{2}Q_{tl}\frac{\partial B_{j}^{l}}{\partial q^{s}}A_{f}^{j}\omega^{f}\omega^{t} & =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если слева умножить на 
+\begin_inset Formula $A_{w}^{s}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+Q_{wl}\dot{\omega}^{l}+\frac{\partial Q_{wf}}{\partial q^{i}}A_{t}^{i}\omega^{f}\omega^{t}-A_{w}^{s}\frac{1}{2}\frac{\partial Q_{tf}}{\partial q^{s}}\omega^{f}\omega^{t}+\frac{\partial U}{\partial q^{s}}A_{w}^{s}\\
++Q_{wl}\left[\frac{\partial A_{t}^{j}}{\partial q^{i}}B_{j}^{l}A_{f}^{i}+\frac{\partial B_{j}^{l}}{\partial q^{i}}A_{t}^{i}A_{f}^{j}\right]\omega^{f}\omega^{t}+Q_{vf}\frac{\partial B_{s}^{v}}{\partial q^{i}}A_{w}^{s}A_{t}^{i}\omega^{f}\omega^{t}-\frac{1}{2}Q_{vf}\frac{\partial B_{i}^{v}}{\partial q^{s}}A_{w}^{s}A_{t}^{i}\omega^{f}\omega^{t}-\frac{1}{2}Q_{tl}\frac{\partial B_{j}^{l}}{\partial q^{s}}A_{w}^{s}A_{f}^{j}\omega^{f}\omega^{t} & =0
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+Q_{wl}\dot{\omega}^{l}+\left[\frac{\partial Q_{wf}}{\partial q^{i}}A_{t}^{i}-\frac{1}{2}\frac{\partial Q_{tf}}{\partial q^{i}}A_{w}^{i}\right]\omega^{f}\omega^{t}+\frac{\partial U}{\partial q^{s}}A_{w}^{s}\\
++Q_{wl}\left[\frac{\partial A_{t}^{j}}{\partial q^{i}}B_{j}^{l}+\frac{\partial B_{j}^{l}}{\partial q^{i}}A_{t}^{j}\right]A_{f}^{i}\omega^{f}\omega^{t}+A_{w}^{s}Q_{vf}\left(\frac{\partial B_{s}^{v}}{\partial q^{i}}-\frac{\partial B_{i}^{v}}{\partial q^{s}}\right)A_{t}^{i}\omega^{f}\omega^{t} & =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M_{sj}\ddot{q}^{j}+\left[\frac{\partial M_{sj}}{\partial q^{i}}-\frac{1}{2}\frac{\partial M_{ij}}{\partial q^{s}}\right]\dot{q}^{i}\dot{q}^{j}+\frac{\partial U}{\partial q^{s}}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

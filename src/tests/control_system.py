@@ -1,5 +1,5 @@
-from ball_on_rotary_table.ball_on_rotating_cone_dynamics import (
-  BallOnRotatingConeDynamics,
+from src.ball_on_rotary_surface.ball_on_rotary_cone_dynamics import (
+  BallOnRotaryConeDynamics,
   BallOnRotatingConeParameters
 )
 from common.linalg import wedge
@@ -158,7 +158,7 @@ def test():
   table_angvel = 7.0
   st_ref, period = find_circular_trajectory_ic(par, table_angvel, traj_radius)
   print('radius', traj_radius, '\ntable speed', table_angvel, '\nref state', st_ref)
-  dnx = BallOnRotatingConeDynamics(par)
+  dnx = BallOnRotaryConeDynamics(par)
   fb = construct_feedback(par, table_angvel, st_ref[2:5], traj_radius)
   simulate(dnx, fb, st_ref, table_angvel, st_ref)
 
@@ -179,7 +179,7 @@ def test2():
   table_angvel2 = 9.0
   st_ref, period = find_circular_trajectory_ic(par, table_angvel, traj_radius)
   st_ref2, period = find_circular_trajectory_ic(par, table_angvel2, traj_radius)
-  dnx = BallOnRotatingConeDynamics(par)
+  dnx = BallOnRotaryConeDynamics(par)
 
   def sys(t, st):
     dθ = st[0]
@@ -224,7 +224,7 @@ def test3():
   traj_radius = 0.4
   table_angvel = 5.0
   st_ref, period = find_circular_trajectory_ic(par, table_angvel, traj_radius)
-  dnx = BallOnRotatingConeDynamics(par)
+  dnx = BallOnRotaryConeDynamics(par)
 
   np.random.seed(0)
   δ = 0.02 * np.random.normal(size=5)

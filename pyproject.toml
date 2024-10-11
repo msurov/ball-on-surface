@@ -1,0 +1,30 @@
+[build-system]
+requires = [
+  "setuptools",
+  "setuptools-scm",
+  "wheel",
+  "tk",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ball-on-rotating-surface-dynamics"
+version = "0.0.1"
+authors = [
+    { name = "Maksim Surov", email = "surov.m.o@gmail.com" }
+]
+description = "Dynamics and numerical simulations of the ball on rotating surface system"
+readme = "readme.md"
+requires-python = ">=3.10"
+keywords = ["Simulation", "Mechanics"]
+license = { text = "GSL" }
+dependencies = [
+  "casadi>=3.6.7",
+  "numpy",
+  "matplotlib",
+  "scipy",
+]
+
+[project.scripts]
+ball_on_rotary_plane_compare_dynamics = "compute_trajectories.ball_on_rotary_plane_trajectories:compare_dynamics"
+ball_on_rotary_plane_fixed_frame = "compute_trajectories.ball_on_rotary_plane_trajectories:fxied_frame_trajectory"

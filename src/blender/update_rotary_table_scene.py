@@ -4,10 +4,16 @@ import numpy as np
 from common.surface import shifted_surface
 from common.trajectory import RigidBodyTrajectory
 from common.interp import linear_interp
-from .dynamics import SystemParameters
-from blender.digital_display import set_display_number, animate_display
-from blender.helpers import find_object, get_object_bounding_box, get_object_size
-
+from ball_on_rotary_surface.ball_on_rotary_surface_dynamics import SystemParameters
+from .digital_display import (
+  set_display_number,
+  animate_display
+)
+from .helpers import (
+  find_object,
+  get_object_bounding_box,
+  get_object_size
+)
 
 def load_sim_data():
   basepath,_ = split(bpy.data.filepath)

@@ -1,24 +1,11 @@
 import numpy as np
-from dataclasses import dataclass
 from common.quat import quat_vec_mul
 from common.linalg import wedge
-from common.surface import Surface
+from .parameters import BallOnSurfaceParameters
 
-
-@dataclass
-class SystemParameters:
-  surface : Surface
-  gravity_accel : float
-  ball_mass : float
-  ball_radius : float
-  ball_inertia : float = None
-
-  def __post_init__(self):
-    if self.ball_inertia is None:
-      self.ball_inertia = 2 * self.ball_mass * self.ball_radius**2 / 5
 
 class Dynamics:
-  def __init__(self, par : SystemParameters):
+  def __init__(self, par : BallOnSurfaceParameters):
     self.mass = par.ball_mass
     self.radius = par.ball_radius
     self.inertia = par.ball_inertia
@@ -83,7 +70,7 @@ class Dynamics:
     return self.kinetic_energy(st) + self.potential_energy(st)
 
 
-def compute_velocity(par : SystemParameters, st : np.ndarray):
+def compute_velocity(par : BallOnSurfaceParameters, st : np.ndarray):
   n,d = np.shape(st)
   assert d == 5
   v = np.zeros((n, 3))
@@ -93,7 +80,7 @@ def compute_velocity(par : SystemParameters, st : np.ndarray):
     v[i,:] = par.ball_radius * np.cross(n, w)
   return v
 
-def compute_ball_position(par : SystemParameters, st : np.ndarray):
+def compute_ball_position(par : BallOnSurfaceParameters, st : np.ndarray):
   n,d = np.shape(st)
   assert d == 5
   p = np.zeros((n, 3))

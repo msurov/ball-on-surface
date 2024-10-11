@@ -1,12 +1,12 @@
 import numpy as np
 from dataclasses import dataclass
-import matplotlib.pyplot as plt
-from scipy.integrate import solve_ivp
-from scipy.interpolate import make_interp_spline
+import matplotlib.pyplot as plt # type: ignore
+from scipy.integrate import solve_ivp # type: ignore
+from scipy.interpolate import make_interp_spline # type: ignore
 from common.quat import quat_vec_mul
 from common.surface import ParaboloidSurface
 from .dynamics import (
-  SystemParameters,
+  BallOnSurfaceParameters,
   Dynamics,
   compute_velocity,
   compute_ball_position
@@ -15,14 +15,14 @@ from common.trajectory import RigidBodyTrajectory
 
 @dataclass
 class SimulationResults:
-  t : np.array
-  p_ball : np.array
-  q_ball : np.array
-  v_ball : np.array
-  w_ball : np.array
-  energy : np.array
+  t : np.ndarray
+  p_ball : np.ndarray
+  q_ball : np.ndarray
+  v_ball : np.ndarray
+  w_ball : np.ndarray
+  energy : np.ndarray
 
-def compute_ball_orietnation(t : np.ndarray, w : np.ndarray):
+def compute_ball_orietnation(t : np.ndarray, w : np.ndarray) -> np.ndarray:
   q0 = np.array([1., 0., 0., 0.])
   wsp = make_interp_spline(t, w)
   def rhs(t, q):
@@ -31,7 +31,7 @@ def compute_ball_orietnation(t : np.ndarray, w : np.ndarray):
   sol = solve_ivp(rhs, [t[0], t[-1]], q0, t_eval=t)
   return sol.y.T
 
-def simulate(par : SystemParameters, x0 : float, y0 : float, w0 : np.ndarray, sim_interval : float):
+def simulate(par : BallOnSurfaceParameters, x0 : float, y0 : float, w0 : np.ndarray, sim_interval : float) -> SimulationResults:
   d = Dynamics(par)
   st0 = np.concatenate(((x0, y0), w0))
   sol = solve_ivp(lambda _,st: d(st), [0, sim_interval], st0, max_step=1e-2)
@@ -45,7 +45,7 @@ def simulate(par : SystemParameters, x0 : float, y0 : float, w0 : np.ndarray, si
 
 def main():
   surf = ParaboloidSurface(0.4, -0.13)
-  par = SystemParameters(
+  par = BallOnSurfaceParameters(
     surface = surf,
     gravity_accel = 9.81,
     ball_mass = 0.1,
@@ -57,8 +57,8 @@ def main():
 
   ball_traj = RigidBodyTrajectory(t=simres.t, p=simres.p_ball, q=simres.q_ball)
 
-  np.save('../data/ball_trajectory.npy', ball_traj)
-  np.save('../data/parameters.npy', par)
+  np.save('./data/ball_trajectory.npy', ball_traj)
+  np.save('./data/parameters.npy', par)
 
   plt.subplot(221)
   plt.plot(simres.p_ball[:,0], simres.p_ball[:,1])

@@ -1,6 +1,6 @@
-import ball_on_rotary_table.dynamics as dynamics
-from ball_on_rotary_table.ball_on_rotating_cone_dynamics import (
-  BallOnRotatingConeDynamics,
+import src.ball_on_rotary_surface.ball_on_rotary_surface_dynamics as ball_on_rotary_surface_dynamics
+from src.ball_on_rotary_surface.ball_on_rotary_cone_dynamics import (
+  BallOnRotaryConeDynamics,
   BallOnRotatingConeParameters
 )
 from common.linalg import wedge
@@ -58,14 +58,14 @@ def test():
   angvel_initial = 2.2
   angaccel = 0.7
   surf = ConeSurface(cone_side_coef, eps=1e-5)
-  par = dynamics.SystemParameters(
+  par = ball_on_rotary_surface_dynamics.SystemParameters(
     surface = surf,
     gravity_accel = 9.81,
     ball_mass = 0.07,
     ball_radius = ball_radius,
   )
   tablerot = FrameAccelRot([0, 0, 1], angvel_initial, angaccel)
-  d1 = dynamics.Dynamics(par, tablerot)
+  d1 = ball_on_rotary_surface_dynamics.Dynamics(par, tablerot)
   st0 = np.random.normal(size=5)
   sol1 = solve_ivp(d1, [0., 5.], st0, max_step=1e-2)
   x1 = sol1.y[0]
@@ -78,7 +78,7 @@ def test():
     ball_radius = par.ball_radius,
     ball_inertia = par.ball_inertia,
   )
-  d2 = BallOnRotatingConeDynamics(par2)
+  d2 = BallOnRotaryConeDynamics(par2)
   def rhs(t, st):
     angvel = angvel_initial + angaccel * t
     return dnx(t, st, angvel, angaccel)
@@ -135,14 +135,14 @@ def test_circular_trajectory():
   st0, period = find_circular_trajectory_ic(par, table_angvel, traj_radius)
   st0 = cyl2cart(st0, par)
 
-  par2 = dynamics.SystemParameters(
+  par2 = ball_on_rotary_surface_dynamics.SystemParameters(
     surface = ConeSurface(np.tan(cone_angle), eps=1e-5),
     gravity_accel = gravity_accel,
     ball_mass = ball_mass,
     ball_radius = ball_radius,
   )
   tablerot = FrameAccelRot([0, 0, 1], table_angvel, table_angaccel)
-  dnx2 = dynamics.Dynamics(par2, tablerot)
+  dnx2 = ball_on_rotary_surface_dynamics.Dynamics(par2, tablerot)
   sol1 = solve_ivp(dnx2, [0., period], st0, max_step=1e-2)
   x = sol1.y[0]
   y = sol1.y[1]
@@ -157,14 +157,14 @@ def test_invariant():
   ball_mass = 0.050
   gravity_accel = 9.81
 
-  par = dynamics.SystemParameters(
+  par = ball_on_rotary_surface_dynamics.SystemParameters(
     surface = ConeSurface(np.tan(cone_angle), eps=1e-5),
     gravity_accel = gravity_accel,
     ball_mass = ball_mass,
     ball_radius = ball_radius,
   )
   tablerot = FrameAccelRot([0, 0, 1], Ω, table_angaccel)
-  dnx = dynamics.Dynamics(par, tablerot)
+  dnx = ball_on_rotary_surface_dynamics.Dynamics(par, tablerot)
   st0 = np.random.normal(size=5)
   sol = solve_ivp(dnx, [0., 2.], st0, max_step=1e-3)
 

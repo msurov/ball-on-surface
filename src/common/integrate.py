@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.interpolate import make_interp_spline
+from scipy.interpolate import make_interp_spline  # type: ignore
 from common.linalg import wedge
 
 

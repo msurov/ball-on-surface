@@ -1,21 +1,20 @@
-from ball_on_rotary_table.ball_on_rotating_cone_dynamics import (
-  BallOnRotatingConeDynamics,
-  BallOnRotatingConeParameters
-)
-from common.linalg import wedge
+from ball_on_rotary_surface.parameters import BallOnRotarySurfaceParameters
+from ball_on_rotary_surface.ball_on_rotary_cone_dynamics import BallOnRotaryConeDynamics
 import numpy as np
-from scipy.integrate import solve_ivp
-import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp # type: ignore
+import matplotlib.pyplot as plt # type: ignore
+from common.surface import ConeSurface
 
 
-def find_circular_trajectory_ic(par : BallOnRotatingConeParameters, table_angvel : float, radius : float):
+def find_circular_trajectory_ic(par : BallOnRotarySurfaceParameters, table_angvel : float, radius : float):
+  assert isinstance(par.surface, ConeSurface)
   ρ = radius
   ϕ = 0.
   dθ = table_angvel
   r = par.ball_radius
   mr2 = par.ball_mass * r**2
   k = mr2 / (mr2 + par.ball_inertia)
-  tan_α = np.tan(par.cone_side_angle)
+  tan_α = np.tan(par.surface.cone_side_angle)
   g = par.gravity_accel
   ζn = 0.
   ζϕ = 0.
@@ -30,7 +29,7 @@ def compute_traj():
   ball_radius = 0.08
   gravity_accel = 9.81
   ball_mass = 0.050
-  par = BallOnRotatingConeParameters(
+  par = BallOnRotarySurfaceParameters(
     cone_side_angle = cone_angle,
     gravity_accel = gravity_accel,
     ball_mass = ball_mass,
@@ -43,7 +42,7 @@ def compute_traj():
   print('radius', traj_radius)
   print('table speed', table_angvel)
   print('ref state', st_ref)
-  dnx = BallOnRotatingConeDynamics(par)
+  dnx = BallOnRotaryConeDynamics(par)
   sys = lambda t, st: dnx(st, table_angvel, 0.)
   sol = solve_ivp(sys, [0, 2*period], st_ref, max_step=1e-2)
 
@@ -74,7 +73,7 @@ def compute_traj():
   r = 0.08
   g = 9.81
   m = 0.050
-  par = BallOnRotatingConeParameters(
+  par = BallOnRotarySurfaceParameters(
     cone_side_angle = cone_angle,
     gravity_accel = g,
     ball_mass = m,
@@ -83,7 +82,7 @@ def compute_traj():
 
   Ω = 5.0
   M = par.ball_inertia
-  dnx = BallOnRotatingConeDynamics(par)
+  dnx = BallOnRotaryConeDynamics(par)
   sys = lambda t, st: dnx(st, Ω, 0.)
   np.random.seed(0)
   state_initial = np.random.normal(size=5)

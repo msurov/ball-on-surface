@@ -1,10 +1,11 @@
 import numpy as np
 from typing import Literal
-from scipy.integrate import solve_ivp
-from scipy.interpolate import make_interp_spline
+from scipy.integrate import solve_ivp # type: ignore
+from scipy.interpolate import make_interp_spline # type: ignore
 from common.quat import quat_vec_mul, quat_mul_vec
 from common.linalg import wedge
 from typing import Callable
+from common.quat import quat_from_angleaxis, quat_rot
 
 
 FrameName = Literal['fixed', 'self']
@@ -39,5 +40,10 @@ def solve_poisson_kinematics(
 def angleaxis(axis : np.ndarray, angle : float):
   l = axis / np.linalg.norm(axis)
   l_x = wedge(l)
+  I = np.eye(3)
   R = I + l_x * np.sin(angle) + (1 - np.cos(angle)) * l_x @ l_x
   return R
+
+def rotate_vec(axis, angle, vec):
+  q = quat_from_angleaxis(angle, axis)
+  return quat_rot(q, vec)

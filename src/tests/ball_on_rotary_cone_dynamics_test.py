@@ -1,4 +1,4 @@
-from ball_on_rotary_table.dynamics import Dynamics, SystemParameters
+from src.ball_on_rotary_surface.ball_on_rotary_surface_dynamics import Dynamics, SystemParameters
 from tests.ball_on_rotary_cone_autocomp import calc_gen_acc_expression, compute_lin_vel
 from common.surface import Plane, ConeSurface
 from common.linalg import normalized

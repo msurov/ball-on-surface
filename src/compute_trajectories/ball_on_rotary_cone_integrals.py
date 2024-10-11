@@ -1,9 +1,9 @@
 from sympy import *
 from sympy.physics.mechanics import dynamicsymbols
 import numpy as np
-from .ball_on_rotating_cone_dynamics import (
-    BallOnRotatingConeParameters,
-    BallOnRotatingConeDynamics
+from .ball_on_rotary_cone_dynamics import (
+    BallOnRotarySurfaceParameters,
+    BallOnRotaryConeDynamics
 )
 
 
@@ -76,13 +76,13 @@ def accessability():
     print('L_2 = ', latex(L2))
 
 def test():
-    par = BallOnRotatingConeParameters(
+    par = BallOnRotarySurfaceParameters(
       cone_side_angle = -0.1,
       gravity_accel = 9.81,
       ball_mass = 0.07,
       ball_radius = 0.03
     )
-    dyn1 = BallOnRotatingConeDynamics(par)
+    dyn1 = BallOnRotaryConeDynamics(par)
     ρ = 0.34452
     ϕ = 0.634255
     ζ = np.array([1.24546, 0.214365, 2.63543])

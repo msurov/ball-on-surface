@@ -1,7 +1,7 @@
 import casadi as ca
-from ball_on_rotary_table.ball_on_rotating_cone_dynamics import (
+from src.ball_on_rotary_surface.ball_on_rotary_cone_dynamics import (
   BallOnRotatingConeParameters,
-  BallOnRotatingConeDynamics
+  BallOnRotaryConeDynamics
 )
 import numpy as np
 
