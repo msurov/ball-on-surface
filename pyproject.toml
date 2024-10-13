@@ -23,8 +23,11 @@ dependencies = [
   "numpy",
   "matplotlib",
   "scipy",
+  "sympy"
 ]
 
 [project.scripts]
 ball_on_rotary_plane_compare_dynamics = "compute_trajectories.ball_on_rotary_plane_trajectories:compare_dynamics"
-ball_on_rotary_plane_fixed_frame = "compute_trajectories.ball_on_rotary_plane_trajectories:fxied_frame_trajectory"
+ball_on_rotary_plane_fixed_frame = "compute_trajectories.ball_on_rotary_plane_trajectories:fixed_frame_trajectory"
+ball_on_rotary_cone_fixed_frame = "compute_trajectories.ball_on_rotary_cone_trajectories:fixed_frame_trajectory"
+ball_on_rotary_sphere_fixed_frame = "compute_trajectories.ball_on_rotary_sphere_trajectories:fixed_frame_trajectory"

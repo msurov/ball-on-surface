@@ -4,7 +4,10 @@ from scipy.integrate import solve_ivp  # type: ignore
 from common.surface import Sphere
 from common.quat import quat_rot, quat_mul
 from common.integrate import integrate_table
-from common.rotations import solve_poisson_kinematics
+from common.rotations import (
+  solve_poisson_kinematics,
+  rotate_vec
+)
 from common.trajectory import RigidBodyTrajectory
 from ball_on_rotary_surface.ball_on_rotary_surface_dynamics import (
   BallOnRotarySurfaceParameters,
@@ -109,6 +112,40 @@ def main():
   plt.ylabel(R'table ang speed')
   plt.grid(True)
 
+  plt.tight_layout()
+  plt.show()
+
+def fixed_frame_trajectory():
+  simtime = 20
+  table_angspeed = -8.
+  table_angaccel = 0.0
+  surf = Sphere(3.)
+  par = BallOnRotarySurfaceParameters(
+    surface = surf,
+    gravity_accel = 9.81,
+    ball_mass = 0.03,
+    ball_radius = 0.04
+  )
+  tablerot = FrameAccelRot([0., 0., 1.], table_angspeed, table_angaccel)
+  d = BallOnRotarySurfaceDynamics(par, tablerot)
+  x0 = 0.1
+  y0 = 0.0
+  w0 = np.array([15., 0., 0.])
+  st0 = np.concatenate(((x0, y0), w0))
+  sol = solve_ivp(d, [0, simtime], st0, max_step=1e-2)
+  pos = surf.coords(sol.y[0], sol.y[1]).T
+  table_angle = table_angspeed * sol.t
+  ball_pos = rotate_vec([0., 0., 1.], table_angle, pos)
+
+  plt.figure('ball on rotary plane')
+  plt.axis('equal')
+  plt.plot(ball_pos[:,0], ball_pos[:,1])
+  plt.plot(ball_pos[0,0], ball_pos[0,1], 'o')
+  plt.grid(True)
+  plt.xlabel('x')
+  plt.ylabel('y')
+  plt.axhline(0, color='gray')
+  plt.axvline(0, color='gray')
   plt.tight_layout()
   plt.show()
 

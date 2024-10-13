@@ -104,7 +104,7 @@ def backward_transform(ρφζ : Optional[np.ndarray], cone_side_angle : float = 
   return xyω
 
 def transform(xyω : Optional[np.ndarray] = None, ρφζ : Optional[np.ndarray] = None, cone_side_angle : float = 0.):
-  """
+  R"""
     Make transformations
     \[
       x&=&\rho\cos\phi\\y&=&\rho\sin\phi \\

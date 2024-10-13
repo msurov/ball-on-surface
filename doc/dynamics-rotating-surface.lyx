@@ -1473,6 +1473,14 @@ status open
 \end_layout
 
 \begin_layout Subsection
+Анализ траекторий мяча на вращающемся конусе
+\end_layout
+
+\begin_layout Standard
+Определяем координаты мяча
+\end_layout
+
+\begin_layout Section
 Динамика шара, катящегося по вращающейся плоскости
 \end_layout
 
@@ -1514,12 +1522,251 @@ status open
 
 \end_inset
 
-Таким образом, получаем 
-\begin_inset Formula $a_{1}:=\dot{\theta}\left(k+1\right),a_{2}:=\frac{k}{r}\dot{\theta}^{2},$
+
+\end_layout
+
+\begin_layout Subsection
+Анализ траекторий мяча на вращающейся плоскости
+\end_layout
+
+\begin_layout Standard
+Координаты шара в неподвижной СК
+\begin_inset Formula 
+\begin{align*}
+p & =R_{\theta}\left(\begin{array}{c}
+\rho\cos\phi\\
+\rho\sin\phi
+\end{array}\right)\\
+ & =\left(\begin{array}{cc}
+\cos\theta & -\sin\theta\\
+\sin\theta & \cos\theta
+\end{array}\right)\left(\begin{array}{c}
+\rho\cos\phi\\
+\rho\sin\phi
+\end{array}\right)\\
+ & =\rho\left(\begin{array}{c}
+\cos\theta\cos\phi-\sin\theta\sin\phi\\
+\sin\theta\cos\phi+\cos\theta\sin\phi
+\end{array}\right)\\
+ & =\rho\left(\begin{array}{c}
+\cos\theta+\phi\\
+\sin\theta+\phi
+\end{array}\right)\\
+\rho & =\left\Vert p\right\Vert \\
+\phi & =\arctan\frac{p_{y}}{p_{x}}-\theta
+\end{align*}
+
+\end_inset
+
+Скорость 
+\begin_inset Formula 
+\begin{align*}
+\dot{p} & =\dot{\rho}\left(\begin{array}{c}
+\cos\theta+\phi\\
+\sin\theta+\phi
+\end{array}\right)+\rho\left(\begin{array}{c}
+-\sin\theta+\phi\\
+\cos\theta+\phi
+\end{array}\right)\left(\dot{\theta}+\dot{\phi}\right)
+\end{align*}
+
+\end_inset
+
+Уравнения динамики 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\sin\left(\arctan\frac{p_{y}}{p_{x}}\right) & =\frac{p_{y}}{\left\Vert p\right\Vert }\\
+\cos\left(\arctan\frac{p_{y}}{p_{x}}\right) & =\frac{p_{x}}{\left\Vert p\right\Vert }
+\end{align*}
+
 \end_inset
 
 
-\begin_inset Formula $a_{3}:=\frac{r}{\rho}$
+\begin_inset Formula 
+\begin{align*}
+\dot{p}_{x} & =\frac{p_{x}}{\left\Vert p\right\Vert }r\zeta_{\phi}+\frac{p_{y}}{\left\Vert p\right\Vert }r\zeta_{\rho}-p_{y}\dot{\theta}\\
+\dot{p}_{y} & =\frac{p_{y}}{\left\Vert p\right\Vert }r\zeta_{\phi}-\frac{p_{x}}{\left\Vert p\right\Vert }r\zeta_{\rho}+p_{x}\dot{\theta}\\
+\dot{p} & =\frac{p}{\left\Vert p\right\Vert }r\zeta_{\phi}-J\frac{p}{\left\Vert p\right\Vert }r\zeta_{\rho}+Jp\dot{\theta}\\
+p\cdot\dot{p} & =\left\Vert p\right\Vert r\zeta_{\phi}\\
+\ddot{p} & =\left[\frac{\dot{p}}{\left\Vert p\right\Vert }-\frac{p\left(p\cdot\dot{p}\right)}{\left\Vert p\right\Vert ^{3}}\right]r\zeta_{\phi}-J\left[\frac{\dot{p}}{\left\Vert p\right\Vert }-\frac{p\left(p\cdot\dot{p}\right)}{\left\Vert p\right\Vert ^{3}}\right]r\zeta_{\rho}+J\dot{p}\dot{\theta}\\
+ & +\frac{p}{\left\Vert p\right\Vert }r\dot{\zeta}_{\phi}-J\frac{p}{\left\Vert p\right\Vert }r\dot{\zeta}_{\rho}\\
+\ddot{p} & =\left[\dot{p}-\frac{pr\zeta_{\phi}}{\left\Vert p\right\Vert }\right]\frac{1}{\left\Vert p\right\Vert }r\zeta_{\phi}-J\left[\dot{p}-\frac{pr\zeta_{\phi}}{\left\Vert p\right\Vert }\right]\frac{1}{\left\Vert p\right\Vert }r\zeta_{\rho}+\dot{\theta}J\left[\dot{p}\right]+\frac{p}{\left\Vert p\right\Vert }r\dot{\zeta}_{\phi}-J\frac{p}{\left\Vert p\right\Vert }r\dot{\zeta}_{\rho}\\
+\ddot{p} & =\left(1-k\right)\frac{p}{\left\Vert p\right\Vert }r\zeta_{\rho}\dot{\theta}+2J\frac{p}{\left\Vert p\right\Vert }r\zeta_{\phi}\dot{\theta}-J\frac{p}{\left\Vert p\right\Vert }r\dot{\theta}\left(k+1\right)\zeta_{\phi}+\left(k-1\right)p\dot{\theta}^{2}\\
+\ddot{p} & =\left(1-k\right)\frac{p}{\left\Vert p\right\Vert }r\zeta_{\rho}\dot{\theta}+\left(1-k\right)J\frac{p}{\left\Vert p\right\Vert }\zeta_{\phi}\dot{\theta}r-\left(1-k\right)p\dot{\theta}^{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\dot{\zeta}_{\rho} & =\dot{\theta}\left(k+1\right)\zeta_{\phi}-\frac{r}{\left\Vert p\right\Vert }\zeta_{\rho}\zeta_{\phi}\\
+\dot{\zeta}_{\phi} & =\left\Vert p\right\Vert \frac{k}{r}\dot{\theta}^{2}-\left(k+1\right)\zeta_{\rho}\dot{\theta}+\frac{r}{\left\Vert p\right\Vert }\zeta_{\rho}^{2}\\
+\dot{\zeta}_{n} & =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+Кривизна траектории 
+\begin_inset Formula 
+\begin{align*}
+\frac{dp}{ds} & =\frac{dp}{dt}\frac{dt}{ds}=\frac{\dot{p}}{\left\Vert \dot{p}\right\Vert }\\
+\frac{d^{2}p}{ds^{2}} & =\left(\frac{d}{dt}\frac{\dot{p}}{\left\Vert \dot{p}\right\Vert }\right)\frac{dt}{ds}\\
+ & =\frac{\ddot{p}\left\Vert \dot{p}\right\Vert -\dot{p}\frac{\dot{p}\cdot\ddot{p}}{\left\Vert \dot{p}\right\Vert }}{\left\Vert \dot{p}\right\Vert ^{2}}\frac{1}{\left\Vert \dot{p}\right\Vert }\\
+ & =\frac{\ddot{p}}{\left\Vert \dot{p}\right\Vert ^{2}}-\frac{\dot{p}\left(\dot{p}\cdot\ddot{p}\right)}{\left\Vert \dot{p}\right\Vert ^{4}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+—
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+\frac{d}{dx}\frac{f\left(x\right)}{\left\Vert f\left(x\right)\right\Vert } & =\frac{f'\left\Vert f\right\Vert -f\frac{f\cdot f'}{\left\Vert f\right\Vert }}{\left\Vert f\right\Vert ^{2}}=\frac{f'}{\left\Vert f\right\Vert }-\frac{f\left(f\cdot f'\right)}{\left\Vert f\right\Vert ^{3}}\\
+\frac{x+y\epsilon}{\left\Vert x+y\epsilon\right\Vert } & =\frac{x}{\left\Vert x\right\Vert }+\left(\frac{d}{d\epsilon}\frac{x+y\epsilon}{\left\Vert x+y\epsilon\right\Vert }\right)_{\epsilon=0}\epsilon\\
+ & =\frac{x}{\left\Vert x\right\Vert }+\left(\frac{y}{\left\Vert x\right\Vert }-\frac{x\left(x\cdot y\right)}{\left\Vert x\right\Vert ^{3}}\right)\epsilon\\
+ & =\frac{x}{\left\Vert x\right\Vert }+\left(\frac{y}{\left\Vert x\right\Vert }-\frac{x\left(x\cdot y\right)}{\left\Vert x\right\Vert ^{3}}\right)\epsilon\\
+p_{t+\epsilon} & =p+\dot{p}\epsilon\\
+ & =\left(\frac{p}{\left\Vert p\right\Vert }r\zeta_{\phi}-J\frac{p}{\left\Vert p\right\Vert }r\zeta_{\rho}+Jp\dot{\theta}\right)\epsilon\\
+\dot{p}_{t+\epsilon} & =\dot{p}+\ddot{p}\epsilon\\
+ & =\dot{p}+\left[\left(1-k\right)\frac{p}{\left\Vert p\right\Vert }r\zeta_{\rho}\dot{\theta}+\left(1-k\right)J\frac{p}{\left\Vert p\right\Vert }\zeta_{\phi}\dot{\theta}r-\left(1-k\right)p\dot{\theta}^{2}\right]\epsilon\\
+\zeta_{\phi|t+\epsilon} & =\zeta_{\phi}+\dot{\zeta}_{\phi}\epsilon\\
+ & =\zeta_{\phi}+\left(\left\Vert p\right\Vert \frac{k}{r}\dot{\theta}^{2}-\left(k+1\right)\zeta_{\rho}\dot{\theta}+\frac{r}{\left\Vert p\right\Vert }\zeta_{\rho}^{2}\right)\epsilon\\
+\zeta_{\rho|t+\epsilon} & =\zeta_{\rho}+\dot{\zeta}_{\rho}\epsilon\\
+ & =\zeta_{\rho}+\left(\dot{\theta}\left(k+1\right)\zeta_{\phi}-\frac{r}{\left\Vert p\right\Vert }\zeta_{\rho}\zeta_{\phi}\right)\epsilon\\
+\frac{d\left\Vert p\right\Vert }{dt} & =\frac{p\cdot\dot{p}}{\left\Vert p\right\Vert }
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+—
+\end_layout
+
+\begin_layout Plain Layout
+Уравнение окружности 
+\begin_inset Formula 
+\begin{align*}
+\left(p-c\right)\cdot\left(p-c\right) & =r^{2}\\
+\left(p-c\right)\cdot\dot{p} & =0\\
+p\cdot\dot{p} & =c\cdot\dot{p}\\
+\left\Vert p\right\Vert r\zeta_{\phi} & =c\cdot\dot{p}\\
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+p\cdot\dot{p} & =\left\Vert p\right\Vert r\zeta_{\phi}\\
+\frac{d\left\Vert p\right\Vert }{dt} & =\frac{p\cdot\dot{p}}{\left\Vert p\right\Vert }=\frac{\left\Vert p\right\Vert r\zeta_{\phi}}{\left\Vert p\right\Vert }=r\zeta_{\phi}\\
+\frac{d\left\Vert p-c\right\Vert }{dt} & =\frac{\left(p-c\right)\cdot\dot{p}}{\left\Vert p-c\right\Vert }=\frac{\left\Vert p\right\Vert r\zeta_{\phi}-c\cdot\dot{p}}{\left\Vert p-c\right\Vert }
+\end{align*}
+
+\end_inset
+
+если 
+\begin_inset Formula $\frac{d\left\Vert p-c\right\Vert }{dt}=0$
+\end_inset
+
+, то 
+\begin_inset Formula $\frac{\left\Vert p\right\Vert r\zeta_{\phi}-c\cdot\dot{p}}{\left\Vert p-c\right\Vert }=0$
+\end_inset
+
+, то 
+\begin_inset Formula $\left\Vert p\right\Vert r\zeta_{\phi}-c\cdot\dot{p}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Для каждого решения найдётся 
+\begin_inset Formula $c\in\mathbb{R}^{2}:$
+\end_inset
+
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula 
+\[
+\left\Vert p\right\Vert r\zeta_{\phi}=c\cdot\left(\frac{p}{\left\Vert p\right\Vert }r\zeta_{\phi}-J\frac{p}{\left\Vert p\right\Vert }r\zeta_{\rho}+Jp\dot{\theta}\right)
+\]
+
+\end_inset
+
+В следующий момент 
+\begin_inset Formula 
+\begin{align*}
+\left\Vert p\right\Vert ^{2}\zeta_{\phi} & =c\cdot\left(p\zeta_{\phi}-Jp\zeta_{\rho}+J\frac{\left\Vert p\right\Vert }{r}p\dot{\theta}\right)\\
+2\left(p\cdot\dot{p}\right)\zeta_{\phi}+\left(p\cdot p\right)\dot{\zeta}_{\phi} & =c\cdot\left(\dot{p}\zeta_{\phi}+p\dot{\zeta}_{\phi}-J\dot{p}\zeta_{\rho}-Jp\dot{\zeta}_{\rho}+J\frac{d}{dt}\frac{\left\Vert p\right\Vert }{r}p\dot{\theta}+J\frac{\left\Vert p\right\Vert }{r}\dot{p}\dot{\theta}\right)\\
+2\left\Vert p\right\Vert r\zeta_{\phi}^{2}+\left\Vert p\right\Vert ^{2}\left(\left\Vert p\right\Vert \frac{k}{r}\dot{\theta}^{2}-\left(k+1\right)\zeta_{\rho}\dot{\theta}+\frac{r}{\left\Vert p\right\Vert }\zeta_{\rho}^{2}\right) & =c\cdot\left(\left(I\zeta_{\phi}-J\zeta_{\rho}+J\frac{\left\Vert p\right\Vert }{r}\dot{\theta}\right)^{2}\frac{p}{\left\Vert p\right\Vert }r-Jp\dot{\theta}k\zeta_{\phi}+p\left\Vert p\right\Vert \frac{k}{r}\dot{\theta}^{2}-p\left(k+1\right)\zeta_{\rho}\dot{\theta}+p\frac{r}{\left\Vert p\right\Vert }\zeta_{\rho}^{2}+Jp\frac{r}{\left\Vert p\right\Vert }\zeta_{\rho}\zeta_{\phi}\right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+c\cdot\left(\frac{p}{\left\Vert p\right\Vert ^{2}}-J\frac{p}{\left\Vert p\right\Vert ^{2}}\frac{\zeta_{\rho}}{\zeta_{\phi}}+J\frac{p}{r\left\Vert p\right\Vert }\frac{\dot{\theta}}{\zeta_{\phi}}\right) & =1
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+\\
+\end{align*}
+
 \end_inset
 
 
@@ -1527,9 +1774,251 @@ status open
 \begin{align*}
 \dot{\rho} & =r\zeta_{\phi}\\
 \dot{\phi} & =-\frac{r}{\rho}\zeta_{\rho}\\
-\dot{\zeta}_{\rho} & =a_{1}\zeta_{\phi}-a_{3}\zeta_{\rho}\zeta_{\phi}\\
-\dot{\zeta}_{\phi} & =\rho a_{2}-\zeta_{\rho}a_{1}+a_{3}\zeta_{\rho}^{2}
+\frac{\dot{\rho}}{\dot{\phi}} & =-\frac{\rho\zeta_{\phi}}{\zeta_{\rho}}\\
+-\frac{\dot{\rho}}{\rho\dot{\phi}} & =\frac{\zeta_{\phi}}{\zeta_{\rho}}\\
+-\frac{\dot{\rho}}{\rho\dot{\phi}} & =
 \end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+\frac{\left\Vert p\right\Vert }{r}\left(\dot{p}-Jp\dot{\theta}\right) & =-Jp\zeta_{\rho}+p\zeta_{\phi}\\
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{array}{c}
+\\
+\\
+\end{array}\left(-Jv|v\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+\end_layout
+
+\begin_layout Standard
+Выражаем 
+\begin_inset Formula 
+\[
+\dot{p}=\frac{p}{\left\Vert p\right\Vert }r\zeta_{\phi}-J\frac{p}{\left\Vert p\right\Vert }r\zeta_{\rho}+Jp\dot{\theta}
+\]
+
+\end_inset
+
+В компактном виде 
+\begin_inset Formula $T:=\left(\begin{array}{c|c}
+-Jp & p\end{array}\right)$
+\end_inset
+
+.
+ Обратное преобразование 
+\begin_inset Formula $T^{-1}=\frac{1}{p^{T}p}\left(\begin{array}{c}
+p^{T}J\\
+p^{T}
+\end{array}\right).$
+\end_inset
+
+ Выписываем 
+\begin_inset Formula 
+\begin{align*}
+\dot{p} & =\\
+\frac{p}{\left\Vert p\right\Vert }r\zeta_{\phi}-J\frac{p}{\left\Vert p\right\Vert }r\zeta_{\rho}+Jp\dot{\theta} & =\\
+\frac{r}{\left\Vert p\right\Vert }\left(-Jp|p\right)\left(\begin{array}{c}
+\zeta_{\rho}\\
+\zeta_{\phi}
+\end{array}\right)+Jp\dot{\theta} & =
+\end{align*}
+
+\end_inset
+
+Обратное преобразование 
+\begin_inset Formula 
+\begin{align*}
+\frac{p^{T}\dot{p}}{\left\Vert p\right\Vert r} & =\zeta_{\phi}\\
+p^{T}J\dot{p} & =p\cdot J\frac{p}{\left\Vert p\right\Vert }r\zeta_{\phi}-p\cdot JJ\frac{p}{\left\Vert p\right\Vert }r\zeta_{\rho}+p\cdot JJp\dot{\theta}\\
+ & =\left\Vert p\right\Vert r\zeta_{\rho}-\left\Vert p\right\Vert ^{2}\dot{\theta}\\
+\frac{p^{T}J\dot{p}}{\left\Vert p\right\Vert r}+\frac{\left\Vert p\right\Vert \dot{\theta}}{r} & =\zeta_{\rho}
+\end{align*}
+
+\end_inset
+
+Тогда динамика второго порядка для 
+\begin_inset Formula $p$
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{align*}
+\ddot{p} & =\left(1-k\right)\frac{p}{\left\Vert p\right\Vert }r\left(\frac{p^{T}J\dot{p}}{\left\Vert p\right\Vert r}+\frac{\left\Vert p\right\Vert \dot{\theta}}{r}\right)\dot{\theta}+\left(1-k\right)J\frac{p}{\left\Vert p\right\Vert }\left(\frac{p^{T}\dot{p}}{\left\Vert p\right\Vert r}\right)\dot{\theta}r-\left(1-k\right)p\dot{\theta}^{2}\\
+ & =\left(1-k\right)p\left(\frac{p^{T}J\dot{p}}{p^{T}p}+\dot{\theta}\right)\dot{\theta}+\left(1-k\right)Jp\left(\frac{p^{T}\dot{p}}{p^{T}p}\right)\dot{\theta}-\left(1-k\right)p\dot{\theta}^{2}\\
+ & =\left(1-k\right)p\frac{p^{T}J\dot{p}}{p^{T}p}\dot{\theta}+\left(1-k\right)p\dot{\theta}^{2}-\left(1-k\right)p\dot{\theta}^{2}+\left(1-k\right)Jp\left(\frac{p^{T}\dot{p}}{p^{T}p}\right)\dot{\theta}\\
+ & =\left(1-k\right)p\frac{p^{T}J\dot{p}}{p^{T}p}\dot{\theta}+\left(1-k\right)Jp\left(\frac{p^{T}\dot{p}}{p^{T}p}\right)\dot{\theta}\\
+ & =\left(1-k\right)\frac{1}{p^{T}p}\left[pp^{T}J+Jpp^{T}\right]\dot{p}\dot{\theta}\\
+ & =\left(1-k\right)\dot{\theta}J\dot{p}
+\end{align*}
+
+\end_inset
+
+Получаем простое уравнение 
+\begin_inset Formula 
+\[
+\ddot{p}=\left(1-k\right)\dot{\theta}J\dot{p}
+\]
+
+\end_inset
+
+если проинтегрировать 
+\begin_inset Formula 
+\[
+\dot{p}=\left(1-k\right)\dot{\theta}Jp+C
+\]
+
+\end_inset
+
+Обозначаем 
+\begin_inset Formula $q:=\left(1-k\right)\dot{\theta}$
+\end_inset
+
+, тогда 
+\begin_inset Formula 
+\begin{align*}
+\ddot{x} & =-q\dot{y}\\
+\ddot{y} & =q\dot{x}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\dddot{x} & =-q\ddot{y}\\
+ & =-q^{2}\dot{x}\\
+x^{\left(3\right)}+q^{2}\dot{x} & =0\\
+x^{\left(2\right)}+q^{2}x & =C_{0}\\
+x & =x_{0}+A\sin\left(qt+\epsilon\right)\\
+\dot{x} & =Aq\cos\left(qt+\epsilon\right)\\
+\ddot{x} & =-Aq^{2}\sin\left(qt+\epsilon\right)\\
+\ddot{y} & =Aq^{2}\cos\left(qt+\epsilon\right)\\
+\dot{y} & =C_{1}+Aq\sin\left(qt+\epsilon\right)\\
+y & =C_{1}t+C_{2}-A\cos\left(qt+\epsilon\right)
+\end{align*}
+
+\end_inset
+
+Проверяем 
+\begin_inset Formula 
+\begin{align*}
+\ddot{x} & =-q\dot{y}\\
+\ddot{y} & =q\dot{x}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+-Aq^{2}\sin\left(qt+\epsilon\right) & =-q\left(C_{1}+Aq\sin\left(qt+\epsilon\right)\right)\\
+Aq^{2}\cos\left(qt+\epsilon\right) & =q\left(Aq\cos\left(qt+\epsilon\right)\right)
+\end{align*}
+
+\end_inset
+
+Отсюда 
+\begin_inset Formula $C_{1}=0$
+\end_inset
+
+.
+ Получаем 
+\begin_inset Formula 
+\begin{align*}
+x & =x_{0}+A\sin\left(qt+\epsilon\right)\\
+y & =y_{0}-A\cos\left(qt+\epsilon\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula $pp^{T}J=\left(\begin{array}{c}
+p_{x}\\
+p_{y}
+\end{array}\right)\left(p_{y},-p_{x}\right)=\left[\begin{array}{cc}
+p_{x}p_{y} & -p_{x}^{2}\\
+p_{y}^{2} & -p_{x}p_{y}
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}{cc}
+p_{x}^{2} & p_{x}p_{y}\\
+p_{x}p_{y} & p_{y}^{2}
+\end{array}\right]\left[\begin{array}{cc}
+0 & -1\\
+1 & 0
+\end{array}\right]=\left[\begin{array}{cc}
+p_{x}p_{y} & -p_{x}^{2}\\
+p_{y}^{2} & -p_{x}p_{y}
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}{cc}
+0 & -1\\
+1 & 0
+\end{array}\right]\left[\begin{array}{cc}
+p_{x}^{2} & p_{x}p_{y}\\
+p_{x}p_{y} & p_{y}^{2}
+\end{array}\right]=\left[\begin{array}{cc}
+-p_{x}p_{y} & -p_{y}^{2}\\
+p_{x}^{2} & p_{x}p_{y}
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}{cc}
+p_{x}p_{y} & -p_{x}^{2}\\
+p_{y}^{2} & -p_{x}p_{y}
+\end{array}\right]+\left[\begin{array}{cc}
+-p_{x}p_{y} & -p_{y}^{2}\\
+p_{x}^{2} & p_{x}p_{y}
+\end{array}\right]=Jp^{T}p$
+\end_inset
+
+
+\end_layout
 
 \end_inset
 

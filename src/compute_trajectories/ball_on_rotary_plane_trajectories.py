@@ -112,9 +112,9 @@ def compare_dynamics():
   plt.tight_layout()
   plt.show()
 
-def fxied_frame_trajectory():
+def fixed_frame_trajectory():
   simtime = 30
-  table_angspeed = 0.1
+  table_angspeed = 10.
   surf = Plane()
   par = BallOnRotarySurfaceParameters(
     surface = surf,
@@ -122,7 +122,7 @@ def fxied_frame_trajectory():
     ball_mass = 0.05,
     ball_radius = 0.5,
   )
-  ic = [20.2, -0.5, 2.3, 0.6, 3.]
+  ic = [1.2, 0.5, -2.3, 0.6, 3.]
   t, st = compute_traj_v2(ic, simtime, table_angspeed, par)
   x = st[:,0]
   r = np.zeros(x.shape + (3,))

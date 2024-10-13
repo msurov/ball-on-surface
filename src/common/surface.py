@@ -4,12 +4,15 @@ from abc import ABC, abstractmethod
 class Surface(ABC):
   @abstractmethod
   def derivative(self, x : float, y : float, xder : int = 0, yder : int = 0) -> float:
-    """
+    R"""
       computes z(x,y) and partial derivatives ∂z/∂x, ∂z/∂y, ∂2z/∂x∂y, etc. up to order 2
     """
-    pass
+    assert False
 
   def __call__(self, x, y) -> float:
+    R"""
+      computes z(x,y) and partial derivatives ∂z/∂x, ∂z/∂y, ∂2z/∂x∂y, etc. up to order 2
+    """
     return self.derivative(x, y, 0, 0)
 
   def coords(self, x, y) -> np.ndarray:

@@ -4,12 +4,19 @@ from scipy.integrate import solve_ivp   # type: ignore
 from common.surface import ConeSurface
 from common.integrate import integrate_table
 from common.quat import quat_rot, quat_mul
-from common.rotations import solve_poisson_kinematics
+from common.rotations import (
+  solve_poisson_kinematics,
+  rotate_vec
+)
 from common.trajectory import RigidBodyTrajectory
 from common.linalg import normalized
 from ball_on_rotary_surface.ball_on_rotary_surface_dynamics import (
   BallOnRotarySurfaceParameters,
   BallOnRotarySurfaceDynamics
+)
+from ball_on_rotary_surface.ball_on_rotary_cone_dynamics import (
+  BallOnRotaryConeDynamics,
+  transform
 )
 from common.frame_rotation import (
   FrameRotation,
@@ -252,6 +259,42 @@ def circular_traj_analysis():
   plt.grid(True)
   plt.gca().ticklabel_format(useOffset=False)
 
+  plt.tight_layout()
+  plt.show()
+
+def fixed_frame_trajectory():
+  simtime = 40.
+  table_angspeed = 7.
+  ball_radius = 0.07
+  cone_side_coef = -np.tan(np.deg2rad(2))
+  surf = ConeSurface(cone_side_coef, eps=cone_side_coef**2 * ball_radius**2)
+  par = BallOnRotarySurfaceParameters(
+    surface = surf,
+    gravity_accel = 9.81,
+    ball_mass = 0.05,
+    ball_radius = ball_radius,
+  )
+  d = BallOnRotaryConeDynamics(par)
+  ρ = 0.2
+  ϕ = 0.0
+  ζ0 = np.array([12., 3., 6.])
+  st0 = np.concatenate(([ρ, ϕ], ζ0))
+  rhs = lambda _, st: d(st, table_angspeed, 0.)
+  sol = solve_ivp(rhs, [0, simtime], st0, max_step=1e-2)
+  xyω = transform(ρϕζ=sol.y.T)
+  pos = surf.coords(xyω[:,0], xyω[:,1]).T
+  table_angle = table_angspeed * sol.t
+  ball_pos = rotate_vec([0., 0., 1.], table_angle, pos)
+
+  plt.figure('ball on rotary plane')
+  plt.axis('equal')
+  plt.plot(ball_pos[:,0], ball_pos[:,1])
+  plt.plot(ball_pos[0,0], ball_pos[0,1], 'o')
+  plt.grid(True)
+  plt.xlabel('x')
+  plt.ylabel('y')
+  plt.axhline(0, color='gray')
+  plt.axvline(0, color='gray')
   plt.tight_layout()
   plt.show()
 
