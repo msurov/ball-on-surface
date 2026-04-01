@@ -1,0 +1,442 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children no
+\language american
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008080
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\dot{\rho} & =r\cos\alpha\zeta_{\phi}\label{eq:ball-on-cone-dynamics}\\
+\dot{\phi} & =-\frac{r}{\rho}\zeta_{\rho}\nonumber \\
+\dot{\zeta}_{\rho} & =\left[\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\phi}-\frac{r}{\rho}\cos\alpha\zeta_{\rho}\zeta_{\phi}\right]\nonumber \\
+\dot{\zeta}_{\phi} & =\left[-\frac{gk}{r}\sin\alpha+\frac{\rho k}{r}\cos\alpha\dot{\theta}^{2}+\frac{r}{\rho}\cos\alpha\zeta_{\rho}^{2}-\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\rho}-\left(k-1\right)\sin\alpha\dot{\theta}\zeta_{n}+\frac{r\left(k-1\right)}{\rho}\sin\alpha\zeta_{\rho}\zeta_{n}\right]\nonumber \\
+\dot{\zeta}_{n} & =\left[-\sin\alpha\dot{\theta}\zeta_{\phi}+\frac{r}{\rho}\sin\alpha\zeta_{\rho}\zeta_{\phi}\right]\nonumber 
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+I & =a\left(\rho\right)\zeta_{\rho}^{2}+b\left(\rho\right)\zeta_{\phi}^{2}+c\left(\rho\right)\zeta_{n}^{2}\\
+ & +d\left(\rho\right)\zeta_{\rho}\zeta_{\phi}+e\left(\rho\right)\zeta_{\phi}\zeta_{n}+f\left(\rho\right)\zeta_{\rho}\zeta_{n}+w\left(\rho\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\dot{I} & =a'r\cos\alpha\zeta_{\phi}\zeta_{\rho}^{2}+b'r\cos\alpha\zeta_{\phi}\zeta_{\phi}^{2}+c'r\cos\alpha\zeta_{\phi}\zeta_{n}^{2}\\
+ & +2a\zeta_{\rho}\dot{\zeta}_{\rho}+2b\zeta_{\phi}\dot{\zeta}_{\phi}+2c\zeta_{n}\dot{\zeta}_{n}\\
+ & +d'r\cos\alpha\zeta_{\phi}\zeta_{\rho}\zeta_{\phi}+e'r\cos\alpha\zeta_{\phi}\zeta_{\phi}\zeta_{n}+f'r\cos\alpha\zeta_{\phi}\zeta_{\rho}\zeta_{n}+w'r\cos\alpha\zeta_{\phi}\\
+ & +d\dot{\zeta}_{\rho}\zeta_{\phi}+e\dot{\zeta}_{\phi}\zeta_{n}+f\dot{\zeta}_{\rho}\zeta_{n}\\
+ & +d\zeta_{\rho}\dot{\zeta}_{\phi}+e\zeta_{\phi}\dot{\zeta}_{n}+f\zeta_{\rho}\dot{\zeta}_{n}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\dot{I} & =a'r\cos\alpha\zeta_{\phi}\zeta_{\rho}^{2}+b'r\cos\alpha\zeta_{\phi}\zeta_{\phi}^{2}+c'r\cos\alpha\zeta_{\phi}\zeta_{n}^{2}\\
+ & +2a\zeta_{\rho}\left[\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\phi}-\frac{r}{\rho}\cos\alpha\zeta_{\rho}\zeta_{\phi}\right]\\
+ & +2b\zeta_{\phi}\left[-\frac{gk}{r}\sin\alpha+\frac{\rho k}{r}\cos\alpha\dot{\theta}^{2}+\frac{r}{\rho}\cos\alpha\zeta_{\rho}^{2}-\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\rho}-\left(k-1\right)\sin\alpha\dot{\theta}\zeta_{n}+\frac{r\left(k-1\right)}{\rho}\sin\alpha\zeta_{\rho}\zeta_{n}\right]\\
+ & +2c\zeta_{n}\left[-\sin\alpha\dot{\theta}\zeta_{\phi}+\frac{r}{\rho}\sin\alpha\zeta_{\rho}\zeta_{\phi}\right]\\
+ & +d'r\cos\alpha\zeta_{\phi}\zeta_{\rho}\zeta_{\phi}+e'r\cos\alpha\zeta_{\phi}\zeta_{\phi}\zeta_{n}+f'r\cos\alpha\zeta_{\phi}\zeta_{\rho}\zeta_{n}+w'r\cos\alpha\zeta_{\phi}\\
+ & +d\left[\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\phi}-\frac{r}{\rho}\cos\alpha\zeta_{\rho}\zeta_{\phi}\right]\zeta_{\phi}\\
+ & +e\left[-\frac{gk}{r}\sin\alpha+\frac{\rho k}{r}\cos\alpha\dot{\theta}^{2}+\frac{r}{\rho}\cos\alpha\zeta_{\rho}^{2}-\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\rho}-\left(k-1\right)\sin\alpha\dot{\theta}\zeta_{n}+\frac{r\left(k-1\right)}{\rho}\sin\alpha\zeta_{\rho}\zeta_{n}\right]\zeta_{n}\\
+ & +f\left[\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\phi}-\frac{r}{\rho}\cos\alpha\zeta_{\rho}\zeta_{\phi}\right]\zeta_{n}\\
+ & +d\zeta_{\rho}\left[-\frac{gk}{r}\sin\alpha+\frac{\rho k}{r}\cos\alpha\dot{\theta}^{2}+\frac{r}{\rho}\cos\alpha\zeta_{\rho}^{2}-\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\rho}-\left(k-1\right)\sin\alpha\dot{\theta}\zeta_{n}+\frac{r\left(k-1\right)}{\rho}\sin\alpha\zeta_{\rho}\zeta_{n}\right]\\
+ & +e\zeta_{\phi}\left[-\sin\alpha\dot{\theta}\zeta_{\phi}+\frac{r}{\rho}\sin\alpha\zeta_{\rho}\zeta_{\phi}\right]\\
+ & +f\zeta_{\rho}\left[-\sin\alpha\dot{\theta}\zeta_{\phi}+\frac{r}{\rho}\sin\alpha\zeta_{\rho}\zeta_{\phi}\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\dot{I} & =b'r\cos\alpha\zeta_{\phi}^{3}+a'r\cos\alpha\zeta_{\phi}\zeta_{\rho}^{2}+c'r\cos\alpha\zeta_{\phi}\zeta_{n}^{2}\\
+ & +2a\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\rho}\zeta_{\phi}-2a\frac{r}{\rho}\cos\alpha\zeta_{\rho}^{2}\zeta_{\phi}\\
+ & -2b\frac{gk}{r}\sin\alpha\zeta_{\phi}+2b\frac{\rho k}{r}\cos\alpha\dot{\theta}^{2}\zeta_{\phi}+2b\frac{r}{\rho}\cos\alpha\zeta_{\rho}^{2}\zeta_{\phi}-2b\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\rho}\zeta_{\phi}-2b\left(k-1\right)\sin\alpha\dot{\theta}\zeta_{n}\zeta_{\phi}+2b\frac{r\left(k-1\right)}{\rho}\sin\alpha\zeta_{\rho}\zeta_{n}\zeta_{\phi}\\
+ & -2c\sin\alpha\dot{\theta}\zeta_{n}\zeta_{\phi}+2c\frac{r}{\rho}\sin\alpha\zeta_{n}\zeta_{\rho}\zeta_{\phi}\\
+ & +d'r\cos\alpha\zeta_{\phi}^{2}\zeta_{\rho}+e'r\cos\alpha\zeta_{\phi}^{2}\zeta_{n}+f'r\cos\alpha\zeta_{\phi}\zeta_{\rho}\zeta_{n}+w'r\cos\alpha\zeta_{\phi}\\
+ & +d\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\phi}^{2}-d\frac{r}{\rho}\cos\alpha\zeta_{\rho}\zeta_{\phi}^{2}\\
+ & -e\frac{gk}{r}\sin\alpha\zeta_{n}+e\frac{\rho k}{r}\cos\alpha\dot{\theta}^{2}\zeta_{n}+e\frac{r}{\rho}\cos\alpha\zeta_{\rho}^{2}\zeta_{n}-e\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{n}\zeta_{\rho}-e\left(k-1\right)\sin\alpha\dot{\theta}\zeta_{n}\zeta_{n}+e\frac{r\left(k-1\right)}{\rho}\sin\alpha\zeta_{\rho}\zeta_{n}\zeta_{n}\\
+ & +f\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\phi}\zeta_{n}-f\frac{r}{\rho}\cos\alpha\zeta_{\rho}\zeta_{\phi}\zeta_{n}\\
+ & -\frac{gk}{r}\sin\alpha d\zeta_{\rho}+\frac{\rho k}{r}\cos\alpha\dot{\theta}^{2}d\zeta_{\rho}+\frac{r}{\rho}\cos\alpha\zeta_{\rho}^{2}d\zeta_{\rho}-\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\rho}d\zeta_{\rho}-\left(k-1\right)\sin\alpha\dot{\theta}\zeta_{n}d\zeta_{\rho}+\frac{r\left(k-1\right)}{\rho}\sin\alpha\zeta_{\rho}\zeta_{n}d\zeta_{\rho}\\
+ & -e\sin\alpha\dot{\theta}\zeta_{\phi}\zeta_{\phi}+e\frac{r}{\rho}\sin\alpha\zeta_{\rho}\zeta_{\phi}\zeta_{\phi}\\
+ & -f\sin\alpha\dot{\theta}\zeta_{\phi}\zeta_{\rho}+f\frac{r}{\rho}\sin\alpha\zeta_{\rho}\zeta_{\phi}\zeta_{\rho}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\dot{I} & =\left[b'r\cos\alpha\right]\zeta_{\phi}^{3}\\
+ & \left[+d\frac{r}{\rho}\cos\alpha\right]\zeta_{\rho}^{3}\\
+ & \left[+a'r\cos\alpha\zeta_{\phi}\zeta_{\rho}^{2}-2a\frac{r}{\rho}\cos\alpha\zeta_{\rho}^{2}\zeta_{\phi}+2b\frac{r}{\rho}\cos\alpha\zeta_{\rho}^{2}\zeta_{\phi}+f\frac{r}{\rho}\sin\alpha\zeta_{\rho}^{2}\zeta_{\phi}\right]\\
+ & \left[+c'r\cos\alpha\right]\zeta_{\phi}\zeta_{n}^{2}\\
+ & \left[+d'r\cos\alpha-d\frac{r}{\rho}\cos\alpha+e\frac{r}{\rho}\sin\alpha\right]\zeta_{\phi}^{2}\zeta_{\rho}\\
+ & \left[+e'r\cos\alpha\right]\zeta_{\phi}^{2}\zeta_{n}\\
+ & \left[+e\frac{r}{\rho}\cos\alpha+d\frac{r\left(k-1\right)}{\rho}\sin\alpha\right]\zeta_{\rho}^{2}\zeta_{n}\\
+ & \left[+e\frac{r\left(k-1\right)}{\rho}\sin\alpha\right]\zeta_{\rho}\zeta_{n}^{2}\\
+ & \left[-f\frac{r}{\rho}\cos\alpha+2b\frac{r\left(k-1\right)}{\rho}\sin\alpha+2c\frac{r}{\rho}\sin\alpha+f'r\cos\alpha\right]\zeta_{\rho}\zeta_{\phi}\zeta_{n}\\
+\hline \\ & \left[+2a\left(k+1\right)\cos\alpha\dot{\theta}-2b\left(k+1\right)\cos\alpha\dot{\theta}-f\sin\alpha\dot{\theta}\right]\zeta_{\rho}\zeta_{\phi}\\
+ & \left[-2b\left(k-1\right)\sin\alpha\dot{\theta}-2c\sin\alpha\dot{\theta}+f\left(k+1\right)\cos\alpha\dot{\theta}\right]\zeta_{n}\zeta_{\phi}\\
+ & \left[-e\left(k+1\right)\cos\alpha\dot{\theta}-d\left(k-1\right)\sin\alpha\dot{\theta}\right]\zeta_{n}\zeta_{\rho}\\
+\hline \\ & \left[+d\left(k+1\right)\cos\alpha\dot{\theta}-e\sin\alpha\dot{\theta}\right]\zeta_{\phi}^{2}\\
+ & \left[-e\left(k-1\right)\sin\alpha\dot{\theta}\right]\zeta_{n}^{2}\\
+ & \left[-d\left(k+1\right)\cos\alpha\dot{\theta}\right]\zeta_{\rho}^{2}\\
+\\\hline \\ & \left[-2b\frac{gk}{r}\sin\alpha+2b\frac{\rho k}{r}\cos\alpha\dot{\theta}^{2}+w'r\cos\alpha\right]\zeta_{\phi}\\
+ & \left[-d\frac{gk}{r}\sin\alpha+d\frac{\rho k}{r}\cos\alpha\dot{\theta}^{2}\right]\zeta_{\rho}\\
+ & \left[-e\frac{gk}{r}\sin\alpha+e\frac{\rho k}{r}\cos\alpha\dot{\theta}^{2}\right]\zeta_{n}\\
+\\\\\\\\\\
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+—
+—
+—
+—
+—
+—
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+b & =\mathrm{const}\\
+d & =0\\
+c & =\mathrm{const}\\
+e & =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\dot{I}= & \left[+a'r\cos\alpha-2a\frac{r}{\rho}\cos\alpha+2b\frac{r}{\rho}\cos\alpha+f\frac{r}{\rho}\sin\alpha\right]\zeta_{\rho}^{2}\zeta_{\phi}\\
+ & \left[-f\frac{r}{\rho}\cos\alpha+2b\frac{r\left(k-1\right)}{\rho}\sin\alpha+2c\frac{r}{\rho}\sin\alpha+f'r\cos\alpha\right]\zeta_{\rho}\zeta_{\phi}\zeta_{n}\\
+ & \left[+2a\left(k+1\right)\cos\alpha\dot{\theta}-2b\left(k+1\right)\cos\alpha\dot{\theta}-f\sin\alpha\dot{\theta}\right]\zeta_{\rho}\zeta_{\phi}\\
+ & \left[-2b\left(k-1\right)\sin\alpha\dot{\theta}-2c\sin\alpha\dot{\theta}+f\left(k+1\right)\cos\alpha\dot{\theta}\right]\zeta_{n}\zeta_{\phi}\\
+ & \left[-2b\frac{gk}{r}\sin\alpha+2b\frac{\rho k}{r}\cos\alpha\dot{\theta}^{2}+w'r\cos\alpha\right]\zeta_{\phi}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+I & =a\left(\rho\right)\zeta_{\rho}^{2}+b\zeta_{\phi}^{2}+c\zeta_{n}^{2}+f\left(\rho\right)\zeta_{\rho}\zeta_{n}+w\left(\rho\right)\\
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+—
+—
+—
+—
+—
+—
+
+\end_layout
+
+\begin_layout Standard
+Поскольку 
+\begin_inset Formula $b=\mathrm{const}$
+\end_inset
+
+,
+ могу проинтегрировать 
+\begin_inset Formula 
+\[
+w'=-\rho\frac{2bk\dot{\theta}^{2}}{r^{2}}+\frac{2bgk\tan\alpha}{r^{2}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+w=-\frac{\rho^{2}}{2}\frac{2bk\dot{\theta}^{2}}{r^{2}}+\frac{2bgk\tan\alpha}{r^{2}}\rho+C_{1}
+\]
+
+\end_inset
+
+выражаю 
+\begin_inset Formula $f$
+\end_inset
+
+:
+ 
+\begin_inset Formula 
+\[
+f=\frac{2b\left(k-1\right)\tan\alpha}{\left(k+1\right)}+\frac{2c\tan\alpha}{\left(k+1\right)}=\mathrm{const}
+\]
+
+\end_inset
+
+далее 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula 
+\[
+a=b+\frac{f\tan\alpha}{2\left(k+1\right)}=\mathrm{const}
+\]
+
+\end_inset
+
+далее 
+\begin_inset Formula 
+\[
+-f\frac{r}{\rho}\cos\alpha+2b\frac{r\left(k-1\right)}{\rho}\sin\alpha+2c\frac{r}{\rho}\sin\alpha+\cancel{f'r\cos\alpha}=0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f=2b\left(k-1\right)\tan\alpha+2c\tan\alpha
+\]
+
+\end_inset
+
+далее 
+\begin_inset Formula 
+\begin{align*}
+f & =\frac{2a}{\tan\alpha}-\frac{2b}{\tan\alpha}\\
+f & =\frac{2b\left(k-1\right)\tan\alpha}{\left(k+1\right)}+\frac{2c\tan\alpha}{\left(k+1\right)}\\
+f & =2b\left(k-1\right)\tan\alpha+2c\tan\alpha
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+c & =-b\left(k-1\right)\\
+f & =0\\
+a & =b\\
+w & =-\frac{\rho^{2}}{2}\frac{2bk\dot{\theta}^{2}}{r^{2}}+\frac{2bgk\tan\alpha}{r^{2}}\rho+C_{1}
+\end{align*}
+
+\end_inset
+
+Тогда 
+\begin_inset Formula 
+\[
+I_{3}=\zeta_{\rho}^{2}+\zeta_{\phi}^{2}-\left(k-1\right)\zeta_{n}^{2}-\frac{k\rho^{2}\dot{\theta}^{2}}{r^{2}}+\frac{2gk\tan\alpha}{r^{2}}\rho
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,565 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children no
+\language american
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008080
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Качение шара по вращающемуся конусу.
+\end_layout
+
+\begin_layout Standard
+
+\lang russian
+\begin_inset Formula 
+\begin{align*}
+\dot{\rho} & =r\cos\alpha\zeta_{\phi}\\
+\dot{\phi} & =-\frac{r}{\rho}\zeta_{\rho}\\
+\dot{\zeta}_{\rho} & =\dot{\theta}\left(k+1\right)\cos\alpha\zeta_{\phi}-\frac{r}{\rho}\cos\alpha\zeta_{\rho}\zeta_{\phi}+\left(k-1\right)\sin\alpha\ddot{\theta}+\frac{k\rho}{r}\ddot{\theta}\\
+\dot{\zeta}_{\phi} & =-\frac{gk}{r}\sin\alpha+\rho\frac{k}{r}\cos\alpha\dot{\theta}^{2}-\cos\alpha\left(k\dot{\theta}\zeta_{\rho}+\dot{\theta}\zeta_{\rho}-\frac{r}{\rho}\zeta_{\rho}^{2}\right)+\left(1-k\right)\sin\alpha\left(\dot{\theta}\zeta_{n}-\frac{r}{\rho}\zeta_{\rho}\zeta_{n}\right)\\
+\dot{\zeta}_{n} & =-\sin\alpha\left(\dot{\theta}\zeta_{\phi}-\frac{r}{\rho}\zeta_{\rho}\zeta_{\phi}\right)-\cos\alpha\ddot{\theta}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $I=P\left(\phi,\rho\right)\zeta_{\rho}+Q\left(\phi,\rho\right)\zeta_{\phi}+R\left(\phi,\rho\right)\zeta_{n}+N\left(\phi,\rho\right)\dot{\theta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\dot{I} & =P_{\rho}\dot{\rho}\zeta_{\rho}+P_{\phi}\dot{\phi}\zeta_{\rho}\\
+ & +Q_{\rho}\dot{\rho}\zeta_{\phi}+Q_{\phi}\dot{\phi}\zeta_{\phi}\\
+ & +R_{\rho}\dot{\rho}\zeta_{n}+R_{\phi}\dot{\phi}\zeta_{n}\\
+ & +N_{\rho}\dot{\rho}\dot{\theta}+N_{\phi}\dot{\phi}\dot{\theta}\\
+ & +P\dot{\zeta}_{\rho}+Q\dot{\zeta}_{\phi}+R\dot{\zeta}_{n}+N\ddot{\theta}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\dot{I} & =P_{\rho}r\cos\alpha\zeta_{\phi}\zeta_{\rho}-\frac{r}{\rho}\zeta_{\rho}P_{\phi}\zeta_{\rho}\\
+ & +Q_{\rho}r\cos\alpha\zeta_{\phi}\zeta_{\phi}-\frac{r}{\rho}\zeta_{\rho}Q_{\phi}\zeta_{\phi}\\
+ & +R_{\rho}r\cos\alpha\zeta_{\phi}\zeta_{n}-\frac{r}{\rho}\zeta_{\rho}R_{\phi}\zeta_{n}\\
+ & +N_{\rho}r\cos\alpha\zeta_{\phi}\dot{\theta}-\frac{r}{\rho}\zeta_{\rho}N_{\phi}\dot{\theta}\\
+ & +P\dot{\zeta}_{\rho}+Q\dot{\zeta}_{\phi}+R\dot{\zeta}_{n}+N\ddot{\theta}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\dot{I} & =P_{\rho}r\cos\alpha\zeta_{\phi}\zeta_{\rho}-\frac{r}{\rho}P_{\phi}\zeta_{\rho}^{2}\\
+ & +Q_{\rho}r\cos\alpha\zeta_{\phi}^{2}-\frac{r}{\rho}Q_{\phi}\zeta_{\phi}\zeta_{\rho}\\
+ & +R_{\rho}r\cos\alpha\zeta_{\phi}\zeta_{n}-\frac{r}{\rho}R_{\phi}\zeta_{n}\zeta_{\rho}\\
+ & +N_{\rho}r\cos\alpha\dot{\theta}\zeta_{\phi}-\frac{r}{\rho}N_{\phi}\dot{\theta}\zeta_{\rho}\\
+ & +P\left[\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\phi}-\frac{r\cos\alpha}{\rho}\zeta_{\rho}\zeta_{\phi}+\left(k-1\right)\sin\alpha\ddot{\theta}+\frac{k\rho}{r}\ddot{\theta}\right]\\
+ & +Q\left[-\frac{gk\sin\alpha}{r}+\frac{\rho k\cos\alpha}{r}\dot{\theta}^{2}-\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\rho}+\frac{r\cos\alpha}{\rho}\zeta_{\rho}^{2}+\left(1-k\right)\sin\alpha\dot{\theta}\zeta_{n}-\frac{r\left(1-k\right)\sin\alpha}{\rho}\zeta_{\rho}\zeta_{n}\right]\\
+ & +R\left[-\sin\alpha\dot{\theta}\zeta_{\phi}+\frac{r\sin\alpha}{\rho}\zeta_{\rho}\zeta_{\phi}-\cos\alpha\ddot{\theta}\right]\\
+ & +N\ddot{\theta}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+\zeta^{0} & :P\left(k-1\right)\sin\alpha\ddot{\theta}+P\frac{k\rho}{r}\ddot{\theta}-Q\frac{gk}{r}\sin\alpha+Q\rho\frac{k}{r}\cos\alpha\dot{\theta}^{2}-R\cos\alpha\ddot{\theta}+N\ddot{\theta}=0\\
+\zeta_{\rho} & :Q\left[-\cos\alpha\left(k\dot{\theta}\zeta_{\rho}+\dot{\theta}\zeta_{\rho}\right)\right]=0\\
+\zeta_{n} & :Q\left[\left(1-k\right)\sin\alpha\left(\dot{\theta}\zeta_{n}\right)\right]=0\\
+\zeta_{\phi} & :+P\left[\dot{\theta}\left(k+1\right)\cos\alpha\zeta_{\phi}\right]+R\left[-\sin\alpha\left(\dot{\theta}\zeta_{\phi}\right)\right]=0\\
+\zeta_{\rho}^{2} & :-\frac{r}{\rho}P_{\phi}\zeta_{\rho}^{2}+Q\left[\frac{r\cos\alpha}{\rho}\zeta_{\rho}^{2}\right]=0\\
+\zeta_{\phi}^{2} & :Q_{\rho}r\cos\alpha\zeta_{\phi}^{2}=0\\
+\zeta_{n}^{2} & :0\\
+\zeta_{\rho}\zeta_{\phi} & :P_{\rho}r\cos\alpha\zeta_{\phi}\zeta_{\rho}-\frac{r}{\rho}Q_{\phi}\zeta_{\phi}\zeta_{\rho}+P\left[-\frac{r\cos\alpha}{\rho}\zeta_{\rho}\zeta_{\phi}\right]+R\left[+\frac{r\sin\alpha}{\rho}\zeta_{\rho}\zeta_{\phi}\right]=0\\
+\zeta_{\rho}\zeta_{n} & :-\frac{r}{\rho}R_{\phi}\zeta_{n}\zeta_{\rho}+Q\left[-\frac{r\left(1-k\right)\sin\alpha}{\rho}\zeta_{\rho}\zeta_{n}\right]=0\\
+\zeta_{\phi}\zeta_{n} & :R_{\rho}r\cos\alpha\zeta_{\phi}\zeta_{n}=0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\dot{I} & =\left[-\frac{r}{\rho}P_{\phi}+Q\frac{r\cos\alpha}{\rho}\right]\zeta_{\rho}^{2}\\
+ & +\left[Q_{\rho}r\cos\alpha\right]\zeta_{\phi}^{2}\\
+ & +\left[-\frac{r}{\rho}Q_{\phi}+P_{\rho}r\cos\alpha+R\frac{r\sin\alpha}{\rho}-P\frac{r\cos\alpha}{\rho}\right]\zeta_{\rho}\zeta_{\phi}\\
+ & +\left[-\frac{r}{\rho}R_{\phi}-Q\frac{r\left(1-k\right)\sin\alpha}{\rho}\right]\zeta_{\rho}\zeta_{n}\\
+ & +\left[R_{\rho}r\cos\alpha\right]\zeta_{\phi}\zeta_{n}\\
+ & +\left[N_{\rho}r\cos\alpha+P\left(k+1\right)\cos\alpha-R\sin\alpha\right]\dot{\theta}\zeta_{\phi}\\
+ & +\left[-\frac{r}{\rho}N_{\phi}-Q\left(k+1\right)\cos\alpha\right]\dot{\theta}\zeta_{\rho}\\
+ & +\left[Q\left(1-k\right)\sin\alpha\right]\dot{\theta}\zeta_{n}\\
+ & +\left[P\left(k-1\right)\sin\alpha+P\frac{k\rho}{r}-R\cos\alpha+N\right]\ddot{\theta}\\
+ & +\left[Q\frac{\rho k\cos\alpha}{r}\right]\dot{\theta}^{2}\\
+ & -\left[Q\frac{gk\sin\alpha}{r}\right]\\
+\\
+\end{align*}
+
+\end_inset
+
+Судя по всему 
+\begin_inset Formula 
+\[
+Q\equiv0
+\]
+
+\end_inset
+
+Тогда
+\begin_inset Formula 
+\begin{align*}
+I & =\left[-\frac{r}{\rho}P_{\phi}\right]\zeta_{\rho}^{2}\\
+ & +\left[+P_{\rho}r\cos\alpha+R\frac{r\sin\alpha}{\rho}-P\frac{r\cos\alpha}{\rho}\right]\zeta_{\rho}\zeta_{\phi}\\
+ & +\left[-\frac{r}{\rho}R_{\phi}\right]\zeta_{\rho}\zeta_{n}\\
+ & +\left[R_{\rho}r\cos\alpha\right]\zeta_{\phi}\zeta_{n}\\
+ & +\left[N_{\rho}r\cos\alpha+P\left(k+1\right)\cos\alpha-R\sin\alpha\right]\dot{\theta}\zeta_{\phi}\\
+ & +\left[-\frac{r}{\rho}N_{\phi}\right]\dot{\theta}\zeta_{\rho}\\
+ & +\left[P\left(k-1\right)\sin\alpha+P\frac{k\rho}{r}-R\cos\alpha+N\right]\ddot{\theta}\\
+\\\\\\\\\\\\
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+P_{\phi} & =0\\
+R_{\phi} & =0\\
+R_{\rho} & =0\\
+N_{\phi} & =0\\
+P_{\rho}r\cos\alpha+R\frac{r\sin\alpha}{\rho}-P\frac{r\cos\alpha}{\rho} & =0\\
+N_{\rho}r\cos\alpha+P\left(k+1\right)\cos\alpha-R\sin\alpha & =0\\
+P\left(k-1\right)\sin\alpha+P\frac{k\rho}{r}-R\cos\alpha+N & =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+P & =P\left(\rho\right)\quad P_{\rho}=P'\\
+R & =\mathrm{const}\\
+N & =N\left(\rho\right)\quad N_{\rho}=N'
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\frac{dP}{d\rho}r\cos\alpha-P\frac{r\cos\alpha}{\rho}+R\frac{r\sin\alpha}{\rho} & =0\\
+\frac{dN}{d\rho}r\cos\alpha+P\left(k+1\right)\cos\alpha-R\sin\alpha & =0\\
+P\left[\left(k-1\right)\sin\alpha+\frac{k\rho}{r}\right]+N-R\cos\alpha & =0
+\end{align*}
+
+\end_inset
+
+Можно получить также 
+\begin_inset Formula 
+\begin{align*}
+\frac{dP}{d\rho} & =P\frac{1}{\rho}-R\frac{\tan\alpha}{\rho}\\
+\frac{dN}{d\rho} & =-P\left(k+1\right)\frac{1}{r}+R\frac{\tan\alpha}{r}
+\end{align*}
+
+\end_inset
+
+Поскольку 
+\begin_inset Formula $R$
+\end_inset
+
+ константа,
+ можно решить ДУ:
+\begin_inset Formula 
+\[
+\frac{dP}{d\rho}=P\frac{1}{\rho}-R\frac{\tan\alpha}{\rho}
+\]
+
+\end_inset
+
+Можно ещё достать одно уравнение:
+ 
+\begin_inset Formula 
+\[
+P'\left[\left(k-1\right)\sin\alpha+\frac{k\rho}{r}\right]+P\frac{k}{r}+N'-R\cos\alpha=0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+P=\frac{\left(k-1+\rho\sin\alpha\frac{k-1}{r}+\rho\cos^{2}\alpha\right)}{\left(k-1\right)\sin\alpha+\rho\frac{k-1}{r}}\frac{R}{\cos\alpha}
+\]
+
+\end_inset
+
+Тогда 
+\begin_inset Formula 
+\[
+N=R\cos\alpha-P\left[\left(k-1\right)\sin\alpha+\frac{k\rho}{r}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+
+\end_layout
+
+\begin_layout Standard
+Если же всё-таки решить ДУ
+\begin_inset Formula 
+\[
+\frac{dP}{d\rho}=P\frac{1}{\rho}-R\frac{\tan\alpha}{\rho}
+\]
+
+\end_inset
+
+Это линейное неоднородное ДУ,
+ поэтому 
+\begin_inset Formula 
+\begin{align*}
+P & =C\rho\\
+C' & =-R\frac{\tan\alpha}{\rho^{2}}\\
+C & =R\tan\alpha\frac{1}{\rho}+C_{1}\\
+P & =R\tan\alpha+C_{1}\rho\\
+P' & =C_{1}
+\end{align*}
+
+\end_inset
+
+Попробуем подставить 
+\begin_inset Formula 
+\begin{align*}
+N & =R\cos\alpha-\left(k-1\right)R\sin\alpha\tan\alpha\frac{1}{\rho}-\left(k-1\right)C_{1}\sin\alpha-C_{1}\frac{k}{r}\rho-\frac{k}{r}R\tan\alpha\\
+N' & =\left(k-1\right)R\sin\alpha\tan\alpha\frac{1}{\rho^{2}}-C_{1}\frac{k}{r}\\
+\end{align*}
+
+\end_inset
+
+подставляем в ДУ
+\begin_inset Formula 
+\begin{align*}
+\frac{dN}{d\rho}r\cos\alpha+P\left(k+1\right)\cos\alpha-R\sin\alpha & =0\\
+\left[\left(k-1\right)R\sin\alpha\tan\alpha\frac{1}{\rho^{2}}-C_{1}\frac{k}{r}\right]r\cos\alpha+\left[R\tan\alpha+C_{1}\rho\right]\left(k+1\right)\cos\alpha-R\sin\alpha & =0\\
+R\frac{\left(k-1\right)r\sin^{2}\alpha}{\rho^{2}}+\left(k\rho+\rho-k\right)\cos\alpha C_{1}+Rk\sin\alpha & =0
+\end{align*}
+
+\end_inset
+
+Поскольку 
+\begin_inset Formula $R$
+\end_inset
+
+ и 
+\begin_inset Formula $C_{1}$
+\end_inset
+
+ константы,
+ то единственная возможность – потребовать...
+ Какая-то херня получается.
+\end_layout
+
+\begin_layout Subsection*
+Вращение стола с постоянной скоростью
+\end_layout
+
+\begin_layout Standard
+Может быть,
+ тут и нет никакого интеграла,
+ посколькуо 
+\begin_inset Formula $\ddot{\theta}\ne0$
+\end_inset
+
+.
+ Если потребовать 
+\begin_inset Formula $\ddot{\theta}=0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\dot{\theta}=\mathrm{const}$
+\end_inset
+
+,
+ то получим
+\begin_inset Formula 
+\begin{align*}
+I & =\left[-\frac{r}{\rho}P_{\phi}\right]\zeta_{\rho}^{2}\\
+ & +\left[+P_{\rho}r\cos\alpha+R\frac{r\sin\alpha}{\rho}-P\frac{r\cos\alpha}{\rho}\right]\zeta_{\rho}\zeta_{\phi}\\
+ & +\left[-\frac{r}{\rho}R_{\phi}\right]\zeta_{\rho}\zeta_{n}\\
+ & +\left[R_{\rho}r\cos\alpha\right]\zeta_{\phi}\zeta_{n}\\
+ & +\left[N_{\rho}r\cos\alpha+P\left(k+1\right)\cos\alpha-R\sin\alpha\right]\dot{\theta}\zeta_{\phi}\\
+ & +\left[-\frac{r}{\rho}N_{\phi}\right]\dot{\theta}\zeta_{\rho}
+\end{align*}
+
+\end_inset
+
+тогда 
+\begin_inset Formula 
+\begin{align*}
+R & =\mathrm{const}\\
+P & =P\left(\rho\right)\\
+N & =N\left(\rho\right)
+\end{align*}
+
+\end_inset
+
+тогда 
+\begin_inset Formula 
+\begin{align*}
+\frac{dP}{d\rho} & =\frac{P}{\rho}-R\frac{\tan\alpha}{\rho}\\
+\Rightarrow\quad P & =R\tan\alpha+C_{1}\rho
+\end{align*}
+
+\end_inset
+
+подставляем в уравнение 
+\begin_inset Formula 
+\[
+\frac{dN}{d\rho}=-\frac{k+1}{r}P+R\frac{\tan\alpha}{r}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\frac{dN}{d\rho} & =-\frac{k+1}{r}C_{1}\rho-\frac{k\tan\alpha}{r}R\\
+N & =-\frac{k+1}{r}C_{1}\frac{\rho^{2}}{2}-\frac{k\tan\alpha}{r}R\rho+C_{2}
+\end{align*}
+
+\end_inset
+
+Тогда интеграл будет:
+\begin_inset Formula 
+\begin{align*}
+I & =\left[R\tan\alpha+C_{1}\rho\right]\zeta_{\rho}+R\zeta_{n}+\left[-\frac{k+1}{r}C_{1}\frac{\rho^{2}}{2}-\frac{k\tan\alpha}{r}R\rho+C_{2}\right]\dot{\theta}
+\end{align*}
+
+\end_inset
+
+В частном случае:
+\begin_inset Formula 
+\begin{align*}
+I\left(R=0,C_{1}=1,C_{2}=0\right) & =\rho\zeta_{\rho}-\frac{k+1}{r}\frac{\rho^{2}}{2}\dot{\theta}\\
+I\left(R=1,C_{1}=0,C_{2}=0\right) & =\tan\alpha\zeta_{\rho}+\zeta_{n}-\frac{k\tan\alpha}{r}\rho\dot{\theta}
+\end{align*}
+
+\end_inset
+
+И теперь нужно проверить:
+\begin_inset Formula 
+\begin{align*}
+\dot{I} & =C_{1}\dot{\rho}\zeta_{\rho}+\left[-\frac{k+1}{r}C_{1}\rho-\frac{k\tan\alpha}{r}R\right]\dot{\rho}\dot{\theta}\\
+ & +\left[R\tan\alpha+C_{1}\rho\right]\dot{\zeta}_{\rho}+R\dot{\zeta}_{n}+\left[-\frac{k+1}{r}C_{1}\frac{\rho^{2}}{2}-\frac{k\tan\alpha}{r}R\rho+C_{2}\right]\cancel{\ddot{\theta}}\\
+ & =C_{1}r\cos\alpha\zeta_{\phi}\zeta_{\rho}-\left(k+1\right)C_{1}\rho\cos\alpha\dot{\theta}\zeta_{\phi}-Rk\sin\alpha\zeta_{\phi}\dot{\theta}\\
+ & +R\left(k+1\right)\sin\alpha\dot{\theta}\zeta_{\phi}+C_{1}\rho\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\phi}-\frac{rR\sin\alpha}{\rho}\zeta_{\rho}\zeta_{\phi}-C_{1}r\cos\alpha\zeta_{\rho}\zeta_{\phi}\\
+ & -R\sin\alpha\dot{\theta}\zeta_{\phi}+\frac{Rr}{\rho}\sin\alpha\zeta_{\rho}\zeta_{\phi}\\
+ & =\cancel{-C_{1}\rho\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\phi}+C_{1}\rho\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\phi}}\\
+ & \cancel{+C_{1}r\cos\alpha\zeta_{\phi}\zeta_{\rho}-C_{1}r\cos\alpha\zeta_{\rho}\zeta_{\phi}}\\
+ & \cancel{-Rk\sin\alpha\dot{\theta}\zeta_{\phi}+R\left(k+1\right)\sin\alpha\dot{\theta}\zeta_{\phi}-R\sin\alpha\dot{\theta}\zeta_{\phi}}\\
+ & \cancel{-\frac{Rr\sin\alpha}{\rho}\zeta_{\rho}\zeta_{\phi}+\frac{Rr\sin\alpha}{\rho}\zeta_{\rho}\zeta_{\phi}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Парс аналитическая динамика
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

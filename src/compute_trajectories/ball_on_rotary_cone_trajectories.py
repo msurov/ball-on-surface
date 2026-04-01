@@ -298,5 +298,59 @@ def fixed_frame_trajectory():
   plt.tight_layout()
   plt.show()
 
+def verify_first_integrals():
+  simtime = 20.
+  cone_side_coef = -0.05
+  ball_radius = 0.06
+  table_angvel = 5.
+
+  surf = ConeSurface(cone_side_coef, eps=cone_side_coef**2 * ball_radius**2)
+  par = BallOnRotarySurfaceParameters(
+    surface = surf,
+    gravity_accel = 9.81,
+    ball_mass = 0.05,
+    ball_radius = ball_radius,
+  )
+  dynamics = BallOnRotaryConeDynamics(par)
+  def sys(t, st):
+    return dynamics(st, table_angvel, 0.)
+
+  rho = 0.25
+  phi = 0.012
+  w0 = np.array([2., 0.3, 0.7])
+  st0 = np.array([rho, phi, *w0])
+  sol = solve_ivp(sys, [0, simtime], st0, max_step=1e-2)
+
+  I1, I2, I3 = zip(*[dynamics.first_integrals(st, table_angvel) for st in sol.y.T])
+
+  t = sol.t
+  rho = sol.y[0]
+  phi = sol.y[1]
+  w = sol.y[2:5].T
+
+  x = np.cos(phi) * rho
+  y = np.sin(phi) * rho
+
+  plt.figure('x-y')
+  plt.plot(x, y)
+  plt.grid(True)
+  plt.tight_layout()
+
+  _, axes = plt.subplots(3, 1, sharex=True, num='I')
+  plt.sca(axes[0])
+  plt.plot(t, I1)
+  plt.ylabel('Impulse 1')
+  plt.sca(axes[1])
+  plt.plot(t, I2)
+  plt.ylabel('Impulse 2')
+  plt.sca(axes[2])
+  plt.plot(t, I3)
+  plt.ylabel('Energy')
+  plt.grid(True)
+  plt.tight_layout()
+
+  plt.show()
+
 if __name__ == '__main__':
-  circular_traj_analysis()
+  verify_first_integrals()
+

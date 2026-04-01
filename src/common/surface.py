@@ -16,6 +16,9 @@ class Surface(ABC):
     return self.derivative(x, y, 0, 0)
 
   def coords(self, x, y) -> np.ndarray:
+    R"""
+      computed [x, y, z] for given x, y
+    """
     return np.array([x, y, self.derivative(x, y, 0, 0)])
 
   def normal(self, x, y) -> np.ndarray:
