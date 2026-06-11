@@ -1815,25 +1815,7 @@ I_{2} & =\tan\alpha\zeta_{\rho}+\zeta_{n}-\frac{k\tan\alpha}{r}\rho\dot{\theta}.
 \end_inset
 
 Сохраняется ли энергия?
- Предположим,
- первый интеграл имеет вид 
-\begin_inset Formula 
-\begin{align*}
-I & =a\left(\rho\right)\zeta_{\rho}^{2}+b\left(\rho\right)\zeta_{\phi}^{2}+c\left(\rho\right)\zeta_{n}^{2}\\
- & +d\left(\rho\right)\zeta_{\rho}\zeta_{\phi}+e\left(\rho\right)\zeta_{\phi}\zeta_{n}+f\left(\rho\right)\zeta_{\rho}\zeta_{n}+w\left(\rho\right)
-\end{align*}
-
-\end_inset
-
-Третий интеграл движения 
-\begin_inset Formula 
-\[
-I_{3}=\zeta_{\rho}^{2}+\zeta_{\phi}^{2}-\left(k-1\right)\zeta_{n}^{2}-\frac{k\rho^{2}\dot{\theta}^{2}}{r^{2}}+\frac{2gk\tan\alpha}{r^{2}}\rho.
-\]
-
-\end_inset
-
-
+ ...
 \end_layout
 
 \begin_layout Subsection

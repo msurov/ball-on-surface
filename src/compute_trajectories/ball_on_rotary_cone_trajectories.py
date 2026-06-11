@@ -321,7 +321,7 @@ def verify_first_integrals():
   st0 = np.array([rho, phi, *w0])
   sol = solve_ivp(sys, [0, simtime], st0, max_step=1e-2)
 
-  I1, I2, I3 = zip(*[dynamics.first_integrals(st, table_angvel) for st in sol.y.T])
+  I1, I2 = zip(*[dynamics.first_integrals(st, table_angvel) for st in sol.y.T])
 
   t = sol.t
   rho = sol.y[0]
@@ -336,16 +336,11 @@ def verify_first_integrals():
   plt.grid(True)
   plt.tight_layout()
 
-  _, axes = plt.subplots(3, 1, sharex=True, num='I')
+  _, axes = plt.subplots(2, 1, sharex=True, num='I')
   plt.sca(axes[0])
   plt.plot(t, I1)
-  plt.ylabel('Impulse 1')
   plt.sca(axes[1])
   plt.plot(t, I2)
-  plt.ylabel('Impulse 2')
-  plt.sca(axes[2])
-  plt.plot(t, I3)
-  plt.ylabel('Energy')
   plt.grid(True)
   plt.tight_layout()
 
