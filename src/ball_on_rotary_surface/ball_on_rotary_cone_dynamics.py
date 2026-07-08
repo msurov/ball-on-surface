@@ -19,15 +19,20 @@ class BallOnRotaryConeDynamics:
     return self.dynamics(st, dθ, ddθ)
   
   def first_integrals(self, state, dθ):
-    ρ, _, ζρ, _, ζn = state
+    ρ, _, ζρ, ζϕ, ζn = state
+
     r = self.par.ball_radius
     M = self.par.ball_inertia
     m = self.par.ball_mass
     α = self.par.surface.cone_side_angle
+    tan_α = np.tan(α)
+    g = self.par.gravity_accel
+
     k = m*r**2 / (m*r**2 + M)
     I1 = ρ * ζρ - (k + 1) / r * ρ**2 / 2 * dθ
-    I2 = np.tan(α) * ζρ + ζn - k * np.tan(α) * ρ / r * dθ
-    return I1, I2
+    I2 = tan_α * ζρ + ζn - k * tan_α * ρ / r * dθ
+    I3 = ζρ**2 + ζϕ**2 + (1 - k) * ζn**2 - k * ρ**2 * dθ**2 / r**2 + 2 * g * k * tan_α * ρ / r**2
+    return I1, I2, I3
 
   def dynamics(self, state, dθ, ddθ):
     R"""

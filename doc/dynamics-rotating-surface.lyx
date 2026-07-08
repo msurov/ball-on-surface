@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -57,11 +57,19 @@ figs-within-sections
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 1
+\justification default
+\crossref_package refstyle
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -87,6 +95,7 @@ figs-within-sections
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -224,13 +233,13 @@ p_{w}=R_{wt}p_{t},
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-\dot{R}_{wt} & =R_{wt}\omega_{t,wt}^{\wedge},
+\dot{R}_{wt} & =R_{wt}\omega^{\wedge}_{t,wt},
 \end{align*}
 
 \end_inset
 
 где 
-\begin_inset Formula $\omega_{t,wt}^{\wedge}$
+\begin_inset Formula $\omega^{\wedge}_{t,wt}$
 \end_inset
 
  – угловая скорость стола относительно неподвижной СК в СК стола.
@@ -250,7 +259,7 @@ p_{w}=R_{wt}p_{t},
 \begin_inset Formula 
 \begin{align*}
 v_{w} & =R_{wt}v_{t}+\dot{R}_{wt}p_{t}\\
-v_{w} & =R_{wt}v_{t}+R_{wt}\omega_{t,wt}^{\wedge}p_{t}
+v_{w} & =R_{wt}v_{t}+R_{wt}\omega^{\wedge}_{t,wt}p_{t}
 \end{align*}
 
 \end_inset
@@ -263,9 +272,9 @@ v_{w} & =R_{wt}v_{t}+R_{wt}\omega_{t,wt}^{\wedge}p_{t}
  скорость и ускорение в СК стола
 \begin_inset Formula 
 \begin{align*}
-\dot{v}_{w} & =\dot{R}_{wt}v_{t}+R_{wt}\dot{v}_{t}+\dot{R}_{wt}\omega_{t,wt}^{\wedge}p_{t}+R_{wt}\dot{\omega}_{t,wt}^{\wedge}p_{t}+R_{wt}\omega_{t,wt}^{\wedge}\dot{p}_{t}\\
- & =R_{wt}\omega_{t,wt}^{\wedge}v_{t}+R_{wt}\dot{v}_{t}+R_{wt}\omega_{t,wt}^{\wedge}\omega_{t,wt}^{\wedge}p_{t}+R_{wt}\dot{\omega}_{t,wt}^{\wedge}p_{t}+R_{wt}\omega_{t,wt}^{\wedge}v_{t}\\
- & =R_{wt}\left(2\omega_{t,wt}^{\wedge}v_{t}+\dot{v}_{t}+\left(\omega_{t,wt}^{\wedge}\omega_{t,wt}^{\wedge}+\dot{\omega}_{t,wt}^{\wedge}\right)p_{t}\right).
+\dot{v}_{w} & =\dot{R}_{wt}v_{t}+R_{wt}\dot{v}_{t}+\dot{R}_{wt}\omega^{\wedge}_{t,wt}p_{t}+R_{wt}\dot{\omega}^{\wedge}_{t,wt}p_{t}+R_{wt}\omega^{\wedge}_{t,wt}\dot{p}_{t}\\
+ & =R_{wt}\omega^{\wedge}_{t,wt}v_{t}+R_{wt}\dot{v}_{t}+R_{wt}\omega^{\wedge}_{t,wt}\omega^{\wedge}_{t,wt}p_{t}+R_{wt}\dot{\omega}^{\wedge}_{t,wt}p_{t}+R_{wt}\omega^{\wedge}_{t,wt}v_{t}\\
+ & =R_{wt}\left(2\omega^{\wedge}_{t,wt}v_{t}+\dot{v}_{t}+\left(\omega^{\wedge}_{t,wt}\omega^{\wedge}_{t,wt}+\dot{\omega}^{\wedge}_{t,wt}\right)p_{t}\right).
 \end{align*}
 
 \end_inset
@@ -277,7 +286,7 @@ v_{w} & =R_{wt}v_{t}+R_{wt}\omega_{t,wt}^{\wedge}p_{t}
 :
 \begin_inset Formula 
 \begin{align*}
-\dot{v}_{t} & =R_{tw}\dot{v}_{w}-2\omega_{t,wt}^{\wedge}v_{t}-\left(\omega_{t,wt}^{\wedge}\omega_{t,wt}^{\wedge}+\dot{\omega}_{t,wt}^{\wedge}\right)p_{t}.
+\dot{v}_{t} & =R_{tw}\dot{v}_{w}-2\omega^{\wedge}_{t,wt}v_{t}-\left(\omega^{\wedge}_{t,wt}\omega^{\wedge}_{t,wt}+\dot{\omega}^{\wedge}_{t,wt}\right)p_{t}.
 \end{align*}
 
 \end_inset
@@ -294,10 +303,10 @@ v_{w} & =R_{wt}v_{t}+R_{wt}\omega_{t,wt}^{\wedge}p_{t}
  Для этого используем свойства матриц поворота
 \begin_inset Formula 
 \begin{align*}
-\dot{R}_{ws} & =R_{ws}\omega_{s,ws}^{\wedge}\\
-\dot{R}_{wt} & =R_{wt}\omega_{t,wt}^{\wedge}\\
+\dot{R}_{ws} & =R_{ws}\omega^{\wedge}_{s,ws}\\
+\dot{R}_{wt} & =R_{wt}\omega^{\wedge}_{t,wt}\\
 R_{ws} & =R_{wt}R_{ts}\\
-\dot{R}_{ts} & =R_{ts}\omega_{s,ts}^{\wedge}
+\dot{R}_{ts} & =R_{ts}\omega^{\wedge}_{s,ts}
 \end{align*}
 
 \end_inset
@@ -306,8 +315,8 @@ R_{ws} & =R_{wt}R_{ts}\\
 \begin_inset Formula 
 \begin{align*}
 \dot{R}_{ws} & =\dot{R}_{wt}R_{ts}+R_{wt}\dot{R}_{ts}\\
-R_{ws}\omega_{s,ws}^{\wedge} & =R_{wt}\omega_{t,wt}^{\wedge}R_{ts}+R_{wt}R_{ts}\omega_{s,ts}^{\wedge}\\
-\omega_{s,ws}^{\wedge} & =R_{st}\omega_{t,wt}^{\wedge}R_{ts}+\omega_{s,ts}^{\wedge}\\
+R_{ws}\omega^{\wedge}_{s,ws} & =R_{wt}\omega^{\wedge}_{t,wt}R_{ts}+R_{wt}R_{ts}\omega^{\wedge}_{s,ts}\\
+\omega^{\wedge}_{s,ws} & =R_{st}\omega^{\wedge}_{t,wt}R_{ts}+\omega^{\wedge}_{s,ts}\\
 \omega_{s,ws} & =\omega_{s,wt}+\omega_{s,ts}\\
 R_{ts}\omega_{s,ws} & =\omega_{t,wt}+\omega_{t,ts}
 \end{align*}
@@ -323,7 +332,7 @@ R_{ts}\omega_{s,ws} & =\omega_{t,wt}+\omega_{t,ts}
 \begin_inset Formula 
 \begin{align*}
 \dot{R}_{ts}\omega_{s,ws}+R_{ts}\dot{\omega}_{s,ws} & =\dot{\omega}_{t,wt}+\dot{\omega}_{t,ts}\\
-R_{ts}\omega_{s,ts}^{\wedge}\omega_{s,ws}+R_{ts}\dot{\omega}_{s,ws} & =\dot{\omega}_{t,wt}+\dot{\omega}_{t,ts}
+R_{ts}\omega^{\wedge}_{s,ts}\omega_{s,ws}+R_{ts}\dot{\omega}_{s,ws} & =\dot{\omega}_{t,wt}+\dot{\omega}_{t,ts}
 \end{align*}
 
 \end_inset
@@ -331,7 +340,7 @@ R_{ts}\omega_{s,ts}^{\wedge}\omega_{s,ws}+R_{ts}\dot{\omega}_{s,ws} & =\dot{\ome
  тогда получим
 \begin_inset Formula 
 \[
-\dot{\omega}_{t,ts}=R_{ts}\omega_{s,ts}^{\wedge}\omega_{s,ws}+R_{ts}\dot{\omega}_{s,ws}-\dot{\omega}_{t,wt}
+\dot{\omega}_{t,ts}=R_{ts}\omega^{\wedge}_{s,ts}\omega_{s,ws}+R_{ts}\dot{\omega}_{s,ws}-\dot{\omega}_{t,wt}
 \]
 
 \end_inset
@@ -342,7 +351,7 @@ R_{ts}\omega_{s,ts}^{\wedge}\omega_{s,ws}+R_{ts}\dot{\omega}_{s,ws} & =\dot{\ome
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\dot{\omega}_{t,ts}=R_{ts}\omega_{s,ts}^{\wedge}\left(\omega_{s,wt}+\omega_{s,ts}\right)+R_{ts}\dot{\omega}_{s,ws}-\dot{\omega}_{t,wt}
+\dot{\omega}_{t,ts}=R_{ts}\omega^{\wedge}_{s,ts}\left(\omega_{s,wt}+\omega_{s,ts}\right)+R_{ts}\dot{\omega}_{s,ws}-\dot{\omega}_{t,wt}
 \]
 
 \end_inset
@@ -353,7 +362,7 @@ R_{ts}\omega_{s,ts}^{\wedge}\omega_{s,ws}+R_{ts}\dot{\omega}_{s,ws} & =\dot{\ome
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\dot{\omega}_{t,ts}=R_{ts}\left(\omega_{s,ts}^{\wedge}\omega_{s,wt}\right)+R_{ts}\dot{\omega}_{s,ws}-\dot{\omega}_{t,wt}
+\dot{\omega}_{t,ts}=R_{ts}\left(\omega^{\wedge}_{s,ts}\omega_{s,wt}\right)+R_{ts}\dot{\omega}_{s,ws}-\dot{\omega}_{t,wt}
 \]
 
 \end_inset
@@ -393,9 +402,9 @@ status open
 \begin_inset Formula 
 \begin{align*}
 \dot{\omega}_{t,ts} & =\omega_{t,ts}\times\omega_{t,wt}+R_{ts}\dot{\omega}_{s,ws}-\dot{\omega}_{t,wt}\\
-\dot{v}_{t} & =R_{tw}\dot{v}_{w}-2\omega_{t,wt}^{\wedge}v_{t}-\left(\omega_{t,wt}^{\wedge}\omega_{t,wt}^{\wedge}+\dot{\omega}_{t,wt}^{\wedge}\right)p_{t}\\
+\dot{v}_{t} & =R_{tw}\dot{v}_{w}-2\omega^{\wedge}_{t,wt}v_{t}-\left(\omega^{\wedge}_{t,wt}\omega^{\wedge}_{t,wt}+\dot{\omega}^{\wedge}_{t,wt}\right)p_{t}\\
 \omega_{s,ws} & =\omega_{s,wt}+\omega_{s,ts}\\
-v_{w} & =R_{wt}v_{t}+R_{wt}\omega_{t,wt}^{\wedge}p_{t}
+v_{w} & =R_{wt}v_{t}+R_{wt}\omega^{\wedge}_{t,wt}p_{t}
 \end{align*}
 
 \end_inset
@@ -419,7 +428,7 @@ v_{w} & =R_{wt}v_{t}+R_{wt}\omega_{t,wt}^{\wedge}p_{t}
 m\dot{v}_{w} & =-\mathbf{e}_{z}mg+f_{w}\\
 M\dot{\omega}_{s,ws} & =\tau_{s}\\
 \omega_{s,ws} & =\omega_{s,wt}+\omega_{s,ts}\\
-v_{w} & =R_{wt}v_{t}+R_{wt}\omega_{t,wt}^{\wedge}p_{t},
+v_{w} & =R_{wt}v_{t}+R_{wt}\omega^{\wedge}_{t,wt}p_{t},
 \end{align*}
 
 \end_inset
@@ -431,7 +440,7 @@ v_{w} & =R_{wt}v_{t}+R_{wt}\omega_{t,wt}^{\wedge}p_{t},
 \begin_inset Formula 
 \begin{align*}
 \dot{\omega}_{t,ts} & =\omega_{t,ts}\times\omega_{t,wt}+R_{ts}\dot{\omega}_{s,ws}-\dot{\omega}_{t,wt}\\
-\dot{v}_{t} & =R_{tw}\dot{v}_{w}-2\omega_{t,wt}^{\wedge}v_{t}-\left(\omega_{t,wt}^{\wedge}\omega_{t,wt}^{\wedge}+\dot{\omega}_{t,wt}^{\wedge}\right)p_{t}.
+\dot{v}_{t} & =R_{tw}\dot{v}_{w}-2\omega^{\wedge}_{t,wt}v_{t}-\left(\omega^{\wedge}_{t,wt}\omega^{\wedge}_{t,wt}+\dot{\omega}^{\wedge}_{t,wt}\right)p_{t}.
 \end{align*}
 
 \end_inset
@@ -440,7 +449,7 @@ v_{w} & =R_{wt}v_{t}+R_{wt}\omega_{t,wt}^{\wedge}p_{t},
 \begin_inset Formula 
 \begin{align*}
 \dot{\omega}_{t,ts} & =\omega_{t,ts}\times\omega_{t,wt}+\frac{1}{M}\tau_{t}-\dot{\omega}_{t,wt}\\
-\dot{v}_{t} & =-R_{tw}\mathbf{e}_{z}g+\frac{1}{m}R_{tw}f_{w}-2\omega_{t,wt}^{\wedge}v_{t}-\left(\omega_{t,wt}^{\wedge}\omega_{t,wt}^{\wedge}+\dot{\omega}_{t,wt}^{\wedge}\right)p_{t}
+\dot{v}_{t} & =-R_{tw}\mathbf{e}_{z}g+\frac{1}{m}R_{tw}f_{w}-2\omega^{\wedge}_{t,wt}v_{t}-\left(\omega^{\wedge}_{t,wt}\omega^{\wedge}_{t,wt}+\dot{\omega}^{\wedge}_{t,wt}\right)p_{t}
 \end{align*}
 
 \end_inset
@@ -638,7 +647,7 @@ v_{w} & =R_{wt}v_{t}+R_{wt}\omega_{t,wt}^{\wedge}p_{t},
 \begin{align*}
 \dot{\omega} & =\omega\times\mu-\dot{\mu}+\frac{1}{M}\tau\\
 \dot{v} & =-gR_{tw}\mathbf{e}_{z}-2\mu^{\wedge}v-\left(\mu^{\wedge}\mu^{\wedge}+\dot{\mu}^{\wedge}\right)p+\frac{1}{m}f,\\
-\dot{R}_{ts} & =\omega_{t,ts}^{\wedge}R_{ts}\\
+\dot{R}_{ts} & =\omega^{\wedge}_{t,ts}R_{ts}\\
 \dot{p} & =v.
 \end{align*}
 
@@ -1053,7 +1062,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Formula 
 \begin{align}
-\dot{\omega} & =\left[-\frac{kg}{r}n^{\wedge}\mathbf{e}_{z}\right]+\left[-\dot{\theta}\mathbf{e}_{z}^{\wedge}+kn^{\wedge}\dot{n}^{\wedge}-k\dot{\theta}n^{\wedge}n^{\wedge}\mathbf{e}_{z}^{\wedge}+2k\dot{\theta}n^{\wedge}\mathbf{e}_{z}^{\wedge}n^{\wedge}\right]\omega\label{eq:w_dynamics_vertical_rot}\\
+\dot{\omega} & =\left[-\frac{kg}{r}n^{\wedge}\mathbf{e}_{z}\right]+\left[-\dot{\theta}\mathbf{e}^{\wedge}_{z}+kn^{\wedge}\dot{n}^{\wedge}-k\dot{\theta}n^{\wedge}n^{\wedge}\mathbf{e}^{\wedge}_{z}+2k\dot{\theta}n^{\wedge}\mathbf{e}^{\wedge}_{z}n^{\wedge}\right]\omega\label{eq:w_dynamics_vertical_rot}\\
  & \quad+\left[\frac{k}{r}n^{\wedge}D_{1,1,0}p\right]\dot{\theta}^{2}+\left[\frac{k}{r}n^{\wedge}p^{\wedge}-I-kn^{\wedge}n^{\wedge}\right]\mathbf{e}_{z}\ddot{\theta}\nonumber \\
 D_{1,1,0} & \equiv\mathrm{diag}\left(1,1,0\right)\equiv\left(\begin{array}{ccc}
 1 & 0 & 0\\
@@ -1320,8 +1329,8 @@ n
 \begin_inset Formula 
 \begin{align*}
 \frac{dA}{d\phi} & =\frac{d\mathbf{R}_{\mathbf{e}_{y},\alpha}\mathbf{R}_{\mathbf{e}_{z},-\phi}}{d\phi}\\
- & =-A\mathbf{e}_{z}^{\wedge}\\
-\frac{dA}{d\phi}A^{T} & =-A\mathbf{e}_{z}^{\wedge}A^{T}=-\left(A\mathbf{e}_{z}\right)^{\wedge},
+ & =-A\mathbf{e}^{\wedge}_{z}\\
+\frac{dA}{d\phi}A^{T} & =-A\mathbf{e}^{\wedge}_{z}A^{T}=-\left(A\mathbf{e}_{z}\right)^{\wedge},
 \end{align*}
 
 \end_inset
@@ -1356,7 +1365,7 @@ n
 
 \begin_inset Formula 
 \begin{align*}
-\dot{\omega} & =\left[-\frac{kg}{r}n^{\wedge}\mathbf{e}_{z}\right]+\left[-\dot{\theta}\mathbf{e}_{z}^{\wedge}+kn^{\wedge}\dot{n}^{\wedge}-k\dot{\theta}n^{\wedge}n^{\wedge}\mathbf{e}_{z}^{\wedge}+2k\dot{\theta}n^{\wedge}\mathbf{e}_{z}^{\wedge}n^{\wedge}\right]\omega\\
+\dot{\omega} & =\left[-\frac{kg}{r}n^{\wedge}\mathbf{e}_{z}\right]+\left[-\dot{\theta}\mathbf{e}^{\wedge}_{z}+kn^{\wedge}\dot{n}^{\wedge}-k\dot{\theta}n^{\wedge}n^{\wedge}\mathbf{e}^{\wedge}_{z}+2k\dot{\theta}n^{\wedge}\mathbf{e}^{\wedge}_{z}n^{\wedge}\right]\omega\\
  & +\left[\frac{k}{r}n^{\wedge}D_{1,1,0}p\right]\dot{\theta}^{2}+\left[\frac{k}{r}n^{\wedge}p^{\wedge}-I-kn^{\wedge}n^{\wedge}\right]\mathbf{e}_{z}\ddot{\theta}
 \end{align*}
 
@@ -1405,7 +1414,7 @@ A\left[\frac{k}{r}n^{\wedge}D_{1,1,0}p\right]=\rho\frac{k}{r}\cos\alpha\mathbf{e
 \begin_layout Standard
 \begin_inset Formula 
 \[
-A\left[-\dot{\theta}\mathbf{e}_{z}^{\wedge}-k\dot{\theta}n^{\wedge}n^{\wedge}\mathbf{e}_{z}^{\wedge}+2k\dot{\theta}n^{\wedge}\mathbf{e}_{z}^{\wedge}n^{\wedge}\right]A^{T}=\left(\begin{array}{ccc}
+A\left[-\dot{\theta}\mathbf{e}^{\wedge}_{z}-k\dot{\theta}n^{\wedge}n^{\wedge}\mathbf{e}^{\wedge}_{z}+2k\dot{\theta}n^{\wedge}\mathbf{e}^{\wedge}_{z}n^{\wedge}\right]A^{T}=\left(\begin{array}{ccc}
 0 & \left(k+1\right)\cos\alpha & 0\\
 -\left(k+1\right)\cos\alpha & 0 & \left(1-k\right)\sin\alpha\\
 0 & -\sin\alpha & 0
@@ -1529,7 +1538,7 @@ status open
 \dot{\rho} & =r\cos\alpha\zeta_{\phi}\label{eq:ball-on-cone-dynamics}\\
 \dot{\phi} & =-\frac{r}{\rho}\zeta_{\rho}\nonumber \\
 \dot{\zeta}_{\rho} & =\dot{\theta}\left(k+1\right)\cos\alpha\zeta_{\phi}-\frac{r}{\rho}\cos\alpha\zeta_{\rho}\zeta_{\phi}+\left(k-1\right)\sin\alpha\ddot{\theta}+\frac{k\rho}{r}\ddot{\theta}\nonumber \\
-\dot{\zeta}_{\phi} & =-\frac{gk}{r}\sin\alpha+\rho\frac{k}{r}\cos\alpha\dot{\theta}^{2}-\cos\alpha\left(k\dot{\theta}\zeta_{\rho}+\dot{\theta}\zeta_{\rho}-\frac{r}{\rho}\zeta_{\rho}^{2}\right)+\left(1-k\right)\sin\alpha\left(\dot{\theta}\zeta_{n}-\frac{r}{\rho}\zeta_{\rho}\zeta_{n}\right)\nonumber \\
+\dot{\zeta}_{\phi} & =-\frac{gk}{r}\sin\alpha+\rho\frac{k}{r}\cos\alpha\dot{\theta}^{2}-\cos\alpha\left(k\dot{\theta}\zeta_{\rho}+\dot{\theta}\zeta_{\rho}-\frac{r}{\rho}\zeta^{2}_{\rho}\right)+\left(1-k\right)\sin\alpha\left(\dot{\theta}\zeta_{n}-\frac{r}{\rho}\zeta_{\rho}\zeta_{n}\right)\nonumber \\
 \dot{\zeta}_{n} & =-\sin\alpha\left(\dot{\theta}\zeta_{\phi}-\frac{r}{\rho}\zeta_{\rho}\zeta_{\phi}\right)-\cos\alpha\ddot{\theta}\nonumber 
 \end{align}
 
@@ -1612,20 +1621,25 @@ I=P\left(\phi,\rho\right)\zeta_{\rho}+Q\left(\phi,\rho\right)\zeta_{\phi}+R\left
 
 \end_inset
 
-Тогда условие
+Пусть 
+\begin_inset Formula $\ddot{\theta}=0$
+\end_inset
+
+.
+ Тогда условие
 \begin_inset Formula 
 \begin{align*}
 \dot{I} & =P_{\rho}\dot{\rho}\zeta_{\rho}+P_{\phi}\dot{\phi}\zeta_{\rho}\\
  & +Q_{\rho}\dot{\rho}\zeta_{\phi}+Q_{\phi}\dot{\phi}\zeta_{\phi}\\
  & +R_{\rho}\dot{\rho}\zeta_{n}+R_{\phi}\dot{\phi}\zeta_{n}\\
  & +N_{\rho}\dot{\rho}\dot{\theta}+N_{\phi}\dot{\phi}\dot{\theta}\\
- & +P\dot{\zeta}_{\rho}+Q\dot{\zeta}_{\phi}+R\dot{\zeta}_{n}+N\ddot{\theta}=0
+ & +P\dot{\zeta}_{\rho}+Q\dot{\zeta}_{\phi}+R\dot{\zeta}_{n}=0
 \end{align*}
 
 \end_inset
 
 должно выполняться для всех 
-\begin_inset Formula $\zeta,\dot{\theta},\ddot{\theta}$
+\begin_inset Formula $\zeta,\dot{\theta}$
 \end_inset
 
 .
@@ -1636,7 +1650,7 @@ I=P\left(\phi,\rho\right)\zeta_{\rho}+Q\left(\phi,\rho\right)\zeta_{\phi}+R\left
  & +Q_{\rho}r\cos\alpha\zeta_{\phi}\zeta_{\phi}-\frac{r}{\rho}\zeta_{\rho}Q_{\phi}\zeta_{\phi}\\
  & +R_{\rho}r\cos\alpha\zeta_{\phi}\zeta_{n}-\frac{r}{\rho}\zeta_{\rho}R_{\phi}\zeta_{n}\\
  & +N_{\rho}r\cos\alpha\zeta_{\phi}\dot{\theta}-\frac{r}{\rho}\zeta_{\rho}N_{\phi}\dot{\theta}\\
- & +P\dot{\zeta}_{\rho}+Q\dot{\zeta}_{\phi}+R\dot{\zeta}_{n}+N\ddot{\theta}
+ & +P\dot{\zeta}_{\rho}+Q\dot{\zeta}_{\phi}+R\dot{\zeta}_{n}
 \end{align*}
 
 \end_inset
@@ -1644,14 +1658,13 @@ I=P\left(\phi,\rho\right)\zeta_{\rho}+Q\left(\phi,\rho\right)\zeta_{\phi}+R\left
 далее 
 \begin_inset Formula 
 \begin{align*}
-\dot{I} & =P_{\rho}r\cos\alpha\zeta_{\phi}\zeta_{\rho}-\frac{r}{\rho}P_{\phi}\zeta_{\rho}^{2}\\
- & +Q_{\rho}r\cos\alpha\zeta_{\phi}^{2}-\frac{r}{\rho}Q_{\phi}\zeta_{\phi}\zeta_{\rho}\\
+\dot{I} & =P_{\rho}r\cos\alpha\zeta_{\phi}\zeta_{\rho}-\frac{r}{\rho}P_{\phi}\zeta^{2}_{\rho}\\
+ & +Q_{\rho}r\cos\alpha\zeta^{2}_{\phi}-\frac{r}{\rho}Q_{\phi}\zeta_{\phi}\zeta_{\rho}\\
  & +R_{\rho}r\cos\alpha\zeta_{\phi}\zeta_{n}-\frac{r}{\rho}R_{\phi}\zeta_{n}\zeta_{\rho}\\
  & +N_{\rho}r\cos\alpha\dot{\theta}\zeta_{\phi}-\frac{r}{\rho}N_{\phi}\dot{\theta}\zeta_{\rho}\\
  & +P\left[\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\phi}-\frac{r\cos\alpha}{\rho}\zeta_{\rho}\zeta_{\phi}+\left(k-1\right)\sin\alpha\ddot{\theta}+\frac{k\rho}{r}\ddot{\theta}\right]\\
- & +Q\left[-\frac{gk\sin\alpha}{r}+\frac{\rho k\cos\alpha}{r}\dot{\theta}^{2}-\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\rho}+\frac{r\cos\alpha}{\rho}\zeta_{\rho}^{2}+\left(1-k\right)\sin\alpha\dot{\theta}\zeta_{n}-\frac{r\left(1-k\right)\sin\alpha}{\rho}\zeta_{\rho}\zeta_{n}\right]\\
+ & +Q\left[-\frac{gk\sin\alpha}{r}+\frac{\rho k\cos\alpha}{r}\dot{\theta}^{2}-\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\rho}+\frac{r\cos\alpha}{\rho}\zeta^{2}_{\rho}+\left(1-k\right)\sin\alpha\dot{\theta}\zeta_{n}-\frac{r\left(1-k\right)\sin\alpha}{\rho}\zeta_{\rho}\zeta_{n}\right]\\
  & +R\left[-\sin\alpha\dot{\theta}\zeta_{\phi}+\frac{r\sin\alpha}{\rho}\zeta_{\rho}\zeta_{\phi}-\cos\alpha\ddot{\theta}\right]\\
- & +N\ddot{\theta}
 \end{align*}
 
 \end_inset
@@ -1659,15 +1672,14 @@ I=P\left(\phi,\rho\right)\zeta_{\rho}+Q\left(\phi,\rho\right)\zeta_{\phi}+R\left
 или
 \begin_inset Formula 
 \begin{align*}
-\dot{I} & =\left[-\frac{r}{\rho}P_{\phi}+Q\frac{r\cos\alpha}{\rho}\right]\zeta_{\rho}^{2}\\
- & +\left[Q_{\rho}r\cos\alpha\right]\zeta_{\phi}^{2}\\
+\dot{I} & =\left[-\frac{r}{\rho}P_{\phi}+Q\frac{r\cos\alpha}{\rho}\right]\zeta^{2}_{\rho}\\
+ & +\left[Q_{\rho}r\cos\alpha\right]\zeta^{2}_{\phi}\\
  & +\left[-\frac{r}{\rho}Q_{\phi}+P_{\rho}r\cos\alpha+R\frac{r\sin\alpha}{\rho}-P\frac{r\cos\alpha}{\rho}\right]\zeta_{\rho}\zeta_{\phi}\\
  & +\left[-\frac{r}{\rho}R_{\phi}-Q\frac{r\left(1-k\right)\sin\alpha}{\rho}\right]\zeta_{\rho}\zeta_{n}\\
  & +\left[R_{\rho}r\cos\alpha\right]\zeta_{\phi}\zeta_{n}\\
  & +\left[N_{\rho}r\cos\alpha+P\left(k+1\right)\cos\alpha-R\sin\alpha\right]\dot{\theta}\zeta_{\phi}\\
  & +\left[-\frac{r}{\rho}N_{\phi}-Q\left(k+1\right)\cos\alpha\right]\dot{\theta}\zeta_{\rho}\\
  & +\left[Q\left(1-k\right)\sin\alpha\right]\dot{\theta}\zeta_{n}\\
- & +\left[P\left(k-1\right)\sin\alpha+P\frac{k\rho}{r}-R\cos\alpha+N\right]\ddot{\theta}\\
  & +\left[Q\frac{\rho k\cos\alpha}{r}\right]\dot{\theta}^{2}\\
  & -\left[Q\frac{gk\sin\alpha}{r}\right]
 \end{align*}
@@ -1679,43 +1691,12 @@ I=P\left(\phi,\rho\right)\zeta_{\rho}+Q\left(\phi,\rho\right)\zeta_{\phi}+R\left
 \end_inset
 
  должно выполняться для всех 
-\begin_inset Formula $\zeta,\dot{\theta},\ddot{\theta}$
+\begin_inset Formula $\zeta,\dot{\theta}$
 \end_inset
 
 ,
  все слагаемые должны быть равны нулю.
  Это требование приводит к 
-\begin_inset Formula 
-\begin{align*}
-Q & =0\\
-P_{\phi} & =0\\
-R_{\phi} & =0\\
-R_{\rho} & =0\\
-N_{\phi} & =0\\
-P_{\rho}r\cos\alpha+R\frac{r\sin\alpha}{\rho}-P\frac{r\cos\alpha}{\rho} & =0\\
-N_{\rho}r\cos\alpha+P\left(k+1\right)\cos\alpha-R\sin\alpha & =0\\
-P\left(k-1\right)\sin\alpha+P\frac{k\rho}{r}-R\cos\alpha+N & =0
-\end{align*}
-
-\end_inset
-
-Эта система уравнений неразрешима,
- поэтому при изменении скорости вращения обобщённый импульс сохраняться не будет.
- 
-\end_layout
-
-\begin_layout Standard
-Рассмотрим случай 
-\begin_inset Formula $\dot{\theta}=\mathrm{const}$
-\end_inset
-
-,
- тогда 
-\begin_inset Formula $\ddot{\theta}=0$
-\end_inset
-
-,
- тогда получим следующую систему ограничений
 \begin_inset Formula 
 \begin{align*}
 Q & =0\\
@@ -1745,7 +1726,7 @@ N & =N\left(\rho\right)
 \end_inset
 
 ,
- получим тогда
+ получим
 \begin_inset Formula 
 \begin{align*}
 \frac{dP}{d\rho} & =\frac{P}{\rho}-R\frac{\tan\alpha}{\rho}\Rightarrow\quad P\left(\rho\right)=R\tan\alpha+C_{1}\rho.
@@ -1814,8 +1795,321 @@ I_{2} & =\tan\alpha\zeta_{\rho}+\zeta_{n}-\frac{k\tan\alpha}{r}\rho\dot{\theta}.
 
 \end_inset
 
-Сохраняется ли энергия?
- ...
+Закон сохранения энергии 
+\begin_inset Formula 
+\[
+I_{3}=\zeta^{2}_{\rho}+\zeta^{2}_{\phi}+\left(1-k\right)\zeta^{2}_{n}-\frac{k\rho^{2}\dot{\theta}^{2}}{r^{2}}+\frac{2gk\tan\alpha}{r^{2}}\rho.
+\]
+
+\end_inset
+
+Вычисляем динамику переменных 
+\begin_inset Formula $I$
+\end_inset
+
+ при 
+\begin_inset Formula $\ddot{\theta}\ne0$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{dI_{1}}{dt} & = & \left[-\frac{k+1}{2r}\rho^{2}+\rho\left(k-1\right)\sin\alpha+\frac{k}{r}\right]\ddot{\theta}\\
+\frac{dI_{2}}{dt} & = & \left[\frac{k\sin^{2}\alpha-1}{\cos\alpha}\right]\ddot{\theta}\\
+\frac{dI_{3}}{dt} & = & \left[-\frac{k\left(1-k\right)\rho}{r}\left(\frac{\rho}{r}+2\sin\alpha\right)\dot{\theta}+\frac{2k}{r}I_{1}-2\left(1-k\right)\cos\alpha I_{2}\right]\ddot{\theta}
+\end{eqnarray*}
+
+\end_inset
+
+Получается:
+ 
+\begin_inset Formula 
+\begin{align*}
+I_{2}\left(t\right)-I_{2}\left(0\right) & =\frac{k\sin^{2}\alpha-1}{\cos\alpha}\dot{\theta}\left(t\right)-\frac{k\sin^{2}\alpha-1}{\cos\alpha}\dot{\theta}\left(0\right)\\
+I_{2}-\frac{k\sin^{2}\alpha-1}{\cos\alpha}\dot{\theta} & =I_{2}\left(0\right)-\frac{k\sin^{2}\alpha-1}{\cos\alpha}\dot{\theta}\left(0\right)=\mathrm{const}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Качение шара по плоскости
+\end_layout
+
+\begin_layout Standard
+Можно выписать уравнения для плоской поверхности положив 
+\begin_inset Formula $\alpha=0$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\dot{\rho} & =r\zeta_{\phi}\\
+\dot{\phi} & =-\frac{r}{\rho}\zeta_{\rho}\\
+\dot{\zeta}_{\rho} & =\dot{\theta}\left(k+1\right)\zeta_{\phi}-\frac{r}{\rho}\zeta_{\rho}\zeta_{\phi}+\frac{k\rho}{r}\ddot{\theta}\\
+\dot{\zeta}_{\phi} & =\rho\frac{k}{r}\dot{\theta}^{2}-\left(k\dot{\theta}\zeta_{\rho}+\dot{\theta}\zeta_{\rho}-\frac{r}{\rho}\zeta^{2}_{\rho}\right)\\
+\dot{\zeta}_{n} & =-\ddot{\theta}
+\end{align*}
+
+\end_inset
+
+Интегралы:
+\begin_inset Formula 
+\begin{align*}
+I_{1} & =\rho\zeta_{\rho}-\frac{k+1}{r}\frac{\rho^{2}}{2}\dot{\theta}\\
+I_{2} & =\zeta_{n}
+\end{align*}
+
+\end_inset
+
+Закон сохранения энергии
+\begin_inset Formula 
+\[
+I_{3}=\zeta^{2}_{\rho}+\zeta^{2}_{\phi}-\left(k-1\right)\zeta^{2}_{n}-\frac{k\rho^{2}\dot{\theta}^{2}}{r^{2}}
+\]
+
+\end_inset
+
+Динамика интегралов:
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{dI_{1}}{dt} & = & \left[-\frac{k+1}{2r}\rho^{2}+\frac{k}{r}\right]\ddot{\theta}\\
+\frac{dI_{2}}{dt} & = & -\ddot{\theta}\\
+\frac{dI_{3}}{dt} & = & \left[-\frac{k\left(1-k\right)\rho^{2}}{r^{2}}\dot{\theta}+\frac{2k}{r}I_{1}-2\left(1-k\right)I_{2}\right]\ddot{\theta}
+\end{eqnarray*}
+
+\end_inset
+
+Выразим угловые скорости через интегралы
+\begin_inset Formula 
+\begin{align*}
+\zeta_{\rho} & =\frac{I_{1}}{\rho}+\frac{k+1}{2r}\rho\dot{\theta}\\
+\zeta_{n} & =I_{2}\\
+\zeta^{2}_{\phi} & =I_{3}-\zeta^{2}_{\rho}+\left(k-1\right)\zeta^{2}_{n}+\frac{k\rho^{2}\dot{\theta}^{2}}{r^{2}}\\
+ & =I_{3}+\left(-\frac{k+1}{r}\dot{\theta}-\frac{1}{\rho^{2}}I_{1}\right)I_{1}+\left(k-1\right)I^{2}_{2}-\left(\frac{k-1}{2r}\right)^{2}\dot{\theta}^{2}\rho^{2}\\
+ & =\underbrace{I_{3}-\frac{k+1}{r}\dot{\theta}I_{1}+\left(k-1\right)I^{2}_{2}}_{\text{const}}-\frac{1}{\rho^{2}}I^{2}_{1}-\left(\frac{k-1}{2r}\dot{\theta}\right)^{2}\rho^{2}\\
+\zeta_{\phi} & =\pm\sqrt{I_{3}-\left(\frac{k+1}{r}\dot{\theta}+\frac{1}{\rho^{2}}I_{1}\right)I_{1}+\left(k-1\right)I^{2}_{2}-\left(\frac{k-1}{2r}\right)^{2}\dot{\theta}^{2}\rho^{2}}
+\end{align*}
+
+\end_inset
+
+Тогда 
+\begin_inset Formula 
+\[
+\dot{\rho}=\pm r\sqrt{I_{3}-\left(\frac{k+1}{r}\dot{\theta}+\frac{1}{\rho^{2}}I_{1}\right)I_{1}+\left(k-1\right)I^{2}_{2}-\left(\frac{k-1}{2r}\right)^{2}\dot{\theta}^{2}\rho^{2}}
+\]
+
+\end_inset
+
+Поскольку 
+\begin_inset Formula $\dot{\theta}=\mathrm{const},I=\mathrm{const}$
+\end_inset
+
+,
+ получаю
+\begin_inset Formula 
+\begin{align*}
+\dot{\rho} & =\pm\sqrt{C_{0}-\frac{1}{\rho^{2}}C_{1}-C_{2}\rho^{2}}\\
+C_{0} & =r^{2}I_{3}-r\left(k+1\right)\dot{\theta}I_{1}+r^{2}\left(k-1\right)I^{2}_{2}\\
+C_{1} & =-\left(\frac{r}{\rho}I_{1}\right)^{2}\\
+C_{2} & =-\left(\frac{k-1}{2}\right)^{2}\dot{\theta}^{2}\rho^{2}
+\end{align*}
+
+\end_inset
+
+Интеграл вида 
+\begin_inset Formula 
+\[
+dt=\int\frac{d\rho}{\sqrt{C_{0}+\frac{C_{1}}{\rho^{2}}+C_{2}\rho^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Планирование траекторий для конической поверхности
+\end_layout
+
+\begin_layout Standard
+Будем искать траектории при постоянной скорости вращения 
+\begin_inset Formula $\dot{\theta}_{*}$
+\end_inset
+
+.
+ В этом случае траектории определяются значениями интегралов 
+\begin_inset Formula $I$
+\end_inset
+
+.
+ Зафиксируем интегралы 
+\begin_inset Formula 
+\begin{align*}
+\dot{\phi} & =-\frac{r}{\rho}\zeta_{\rho}\\
+\dot{\rho} & =r\zeta_{\phi}\\
+I_{1*} & =\rho\zeta_{\rho}-\frac{k+1}{r}\frac{\rho^{2}}{2}\dot{\theta}_{*}\\
+I_{2*} & =\tan\alpha\zeta_{\rho}+\zeta_{n}-\frac{k\tan\alpha}{r}\rho\dot{\theta}_{*}\\
+I_{3*} & =\zeta^{2}_{\rho}+\zeta^{2}_{\phi}-\left(k-1\right)\zeta^{2}_{n}-\frac{k\rho^{2}\dot{\theta}^{2}_{*}}{r^{2}}+\frac{2gk\tan\alpha}{r^{2}}\rho
+\end{align*}
+
+\end_inset
+
+Тогда
+\begin_inset Formula 
+\begin{align*}
+\zeta_{\rho} & =\frac{1}{\rho}I_{1*}+\frac{k+1}{r}\frac{\rho}{2}\dot{\theta}_{*}\\
+\zeta_{n} & =I_{2*}-\tan\alpha\frac{1}{\rho}I_{1*}+\frac{k-1}{2}\frac{\tan\alpha}{r}\rho\dot{\theta}_{*}\\
+\zeta_{\phi}= & \pm\sqrt{I_{3*}+\left(k-1\right)\zeta^{2}_{n}+\frac{k\rho^{2}\dot{\theta}^{2}_{*}}{r^{2}}-\frac{2gk\tan\alpha}{r^{2}}\rho-\zeta^{2}_{\rho}}
+\end{align*}
+
+\end_inset
+
+или
+\begin_inset Formula 
+\begin{align*}
+\dot{\phi} & =-\frac{r}{\rho^{2}}I_{1*}-\frac{k+1}{2}\dot{\theta}_{*}\\
+\zeta_{n} & =I_{2*}-\tan\alpha\frac{1}{\rho}I_{1*}+\frac{k-1}{2}\frac{\tan\alpha}{r}\rho\dot{\theta}_{*}\\
+\dot{\rho} & =\pm\sqrt{r^{2}I_{3*}+\left(k-1\right)\left(I_{2*}r-\tan\alpha\frac{r}{\rho}I_{1*}+\frac{k-1}{2}\frac{\tan\alpha}{1}\rho\dot{\theta}_{*}\right)^{2}+k\rho^{2}\dot{\theta}^{2}_{*}-2gk\tan\alpha\rho-\left(\frac{r}{\rho}I_{1*}+\frac{k+1}{1}\frac{\rho}{2}\dot{\theta}_{*}\right)^{2}}
+\end{align*}
+
+\end_inset
+
+Из последнего уравнения нахожу частное решение 
+\begin_inset Formula $\rho_{*}\left(t\right)$
+\end_inset
+
+.
+ Подставляю его в первое,
+ нахожу частное решение первого уравнения – получаю 
+\begin_inset Formula $\phi_{*}\left(t\right).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Можно ли заменить переменную дифференцирования?
+ Что если 
+\begin_inset Formula $\frac{d}{dt}\mapsto\frac{d}{d\phi}$
+\end_inset
+
+:
+ 
+\begin_inset Formula 
+\[
+\frac{df}{d\phi}=\frac{df}{dt}\frac{1}{\dot{\phi}}=-\frac{df}{dt}\frac{\rho}{r\zeta_{\rho}}
+\]
+
+\end_inset
+
+Тогда 
+\begin_inset Formula 
+\[
+\frac{d\rho}{d\phi}=-\dot{\rho}\frac{\rho}{r\zeta_{\rho}}=-\frac{\rho\zeta_{\phi}}{\zeta_{\rho}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{d\rho}{d\phi}=\mp\rho\sqrt{\frac{I_{3*}}{\zeta^{2}_{\rho}}+\left(k-1\right)\frac{\zeta^{2}_{n}}{\zeta^{2}_{\rho}}+\frac{k\rho^{2}\dot{\theta}^{2}_{*}}{\zeta^{2}_{\rho}r^{2}}-\frac{2gk\tan\alpha}{r^{2}\zeta^{2}_{\rho}}\rho-1}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{d\rho}{d\phi}=\mp\sqrt{\frac{I_{3*}}{\left(\frac{I_{1*}}{\rho^{2}}+\frac{k+1}{2r}\dot{\theta}_{*}\right)^{2}}+\left(k-1\right)\left(\frac{I_{2*}-\tan\alpha\frac{1}{\rho}I_{1*}+\frac{k-1}{2}\frac{\tan\alpha}{r}\rho\dot{\theta}_{*}}{\frac{1}{\rho^{2}}I_{1*}+\frac{k+1}{2r}\dot{\theta}_{*}}\right)^{2}+\frac{k\rho^{2}\dot{\theta}^{2}_{*}}{\left(\frac{r}{\rho^{2}}I_{1*}+\frac{k+1}{2}\dot{\theta}_{*}\right)^{2}}-\frac{2gk\tan\alpha}{\left(\frac{r}{\rho^{2}}I_{1*}+\frac{k+1}{2}\dot{\theta}_{*}\right)^{2}}\rho-\rho^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{r^{2}}\cdot\frac{r^{2}I_{3*}+k\rho^{2}\dot{\theta}^{2}_{*}-2gk\tan\alpha\rho+r^{2}\left(k-1\right)\zeta^{2}_{n}}{\zeta^{2}_{\rho}}-1
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{1}{r^{2}}\cdot\frac{r^{2}I_{3*}+k\rho^{2}\dot{\theta}^{2}_{*}-2gk\tan\alpha\rho+r^{2}\left(k-1\right)\left(I_{2*}-\tan\alpha\frac{1}{\rho}I_{1*}+\frac{k-1}{2}\frac{\tan\alpha}{r}\rho\dot{\theta}_{*}\right)^{2}}{\left(\frac{1}{\rho}I_{1*}+\frac{k+1}{r}\frac{\rho}{2}\dot{\theta}_{*}\right)^{2}}-1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Семейство траекторий при изменении интегралов
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Из уравнения
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{dI_{2}}{dt} & = & \left[\frac{k\sin^{2}\alpha-1}{\cos\alpha}\right]\ddot{\theta}
+\end{eqnarray*}
+
+\end_inset
+
+следует,
+ что 
+\begin_inset Formula 
+\[
+I_{2}-\left[\frac{k\sin^{2}\alpha-1}{\cos\alpha}\right]\dot{\theta}=C
+\]
+
+\end_inset
+
+на решениях системы.
+ Это означает,
+ что при фиксированной скорости вращения стола 
+\begin_inset Formula $\dot{\theta}_{*}$
+\end_inset
+
+ значение переменной 
+\begin_inset Formula $I_{2}$
+\end_inset
+
+ будет определяться начальными условиями:
+\begin_inset Formula 
+\[
+I_{2}=C+\left[\frac{k\sin^{2}\alpha-1}{\cos\alpha}\right]\dot{\theta}_{*}.
+\]
+
+\end_inset
+
+Как следствие – функция 
+\begin_inset Formula $\rho_{*}\left(t\right)$
+\end_inset
+
+ тоже будет другой.
 \end_layout
 
 \begin_layout Subsection
@@ -1980,7 +2274,7 @@ p\cdot\dot{p} & =\left\Vert p\right\Vert r\zeta_{\phi}\\
 \begin_inset Formula 
 \begin{align*}
 \dot{\zeta}_{\rho} & =\dot{\theta}\left(k+1\right)\zeta_{\phi}-\frac{r}{\left\Vert p\right\Vert }\zeta_{\rho}\zeta_{\phi}\\
-\dot{\zeta}_{\phi} & =\left\Vert p\right\Vert \frac{k}{r}\dot{\theta}^{2}-\left(k+1\right)\zeta_{\rho}\dot{\theta}+\frac{r}{\left\Vert p\right\Vert }\zeta_{\rho}^{2}\\
+\dot{\zeta}_{\phi} & =\left\Vert p\right\Vert \frac{k}{r}\dot{\theta}^{2}-\left(k+1\right)\zeta_{\rho}\dot{\theta}+\frac{r}{\left\Vert p\right\Vert }\zeta^{2}_{\rho}\\
 \dot{\zeta}_{n} & =0
 \end{align*}
 
@@ -2030,7 +2324,7 @@ p_{t+\epsilon} & =p+\dot{p}\epsilon\\
 \dot{p}_{t+\epsilon} & =\dot{p}+\ddot{p}\epsilon\\
  & =\dot{p}+\left[\left(1-k\right)\frac{p}{\left\Vert p\right\Vert }r\zeta_{\rho}\dot{\theta}+\left(1-k\right)J\frac{p}{\left\Vert p\right\Vert }\zeta_{\phi}\dot{\theta}r-\left(1-k\right)p\dot{\theta}^{2}\right]\epsilon\\
 \zeta_{\phi|t+\epsilon} & =\zeta_{\phi}+\dot{\zeta}_{\phi}\epsilon\\
- & =\zeta_{\phi}+\left(\left\Vert p\right\Vert \frac{k}{r}\dot{\theta}^{2}-\left(k+1\right)\zeta_{\rho}\dot{\theta}+\frac{r}{\left\Vert p\right\Vert }\zeta_{\rho}^{2}\right)\epsilon\\
+ & =\zeta_{\phi}+\left(\left\Vert p\right\Vert \frac{k}{r}\dot{\theta}^{2}-\left(k+1\right)\zeta_{\rho}\dot{\theta}+\frac{r}{\left\Vert p\right\Vert }\zeta^{2}_{\rho}\right)\epsilon\\
 \zeta_{\rho|t+\epsilon} & =\zeta_{\rho}+\dot{\zeta}_{\rho}\epsilon\\
  & =\zeta_{\rho}+\left(\dot{\theta}\left(k+1\right)\zeta_{\phi}-\frac{r}{\left\Vert p\right\Vert }\zeta_{\rho}\zeta_{\phi}\right)\epsilon\\
 \frac{d\left\Vert p\right\Vert }{dt} & =\frac{p\cdot\dot{p}}{\left\Vert p\right\Vert }
@@ -2119,7 +2413,7 @@ p\cdot\dot{p} & =\left\Vert p\right\Vert r\zeta_{\phi}\\
 \begin{align*}
 \left\Vert p\right\Vert ^{2}\zeta_{\phi} & =c\cdot\left(p\zeta_{\phi}-Jp\zeta_{\rho}+J\frac{\left\Vert p\right\Vert }{r}p\dot{\theta}\right)\\
 2\left(p\cdot\dot{p}\right)\zeta_{\phi}+\left(p\cdot p\right)\dot{\zeta}_{\phi} & =c\cdot\left(\dot{p}\zeta_{\phi}+p\dot{\zeta}_{\phi}-J\dot{p}\zeta_{\rho}-Jp\dot{\zeta}_{\rho}+J\frac{d}{dt}\frac{\left\Vert p\right\Vert }{r}p\dot{\theta}+J\frac{\left\Vert p\right\Vert }{r}\dot{p}\dot{\theta}\right)\\
-2\left\Vert p\right\Vert r\zeta_{\phi}^{2}+\left\Vert p\right\Vert ^{2}\left(\left\Vert p\right\Vert \frac{k}{r}\dot{\theta}^{2}-\left(k+1\right)\zeta_{\rho}\dot{\theta}+\frac{r}{\left\Vert p\right\Vert }\zeta_{\rho}^{2}\right) & =c\cdot\left(\left(I\zeta_{\phi}-J\zeta_{\rho}+J\frac{\left\Vert p\right\Vert }{r}\dot{\theta}\right)^{2}\frac{p}{\left\Vert p\right\Vert }r-Jp\dot{\theta}k\zeta_{\phi}+p\left\Vert p\right\Vert \frac{k}{r}\dot{\theta}^{2}-p\left(k+1\right)\zeta_{\rho}\dot{\theta}+p\frac{r}{\left\Vert p\right\Vert }\zeta_{\rho}^{2}+Jp\frac{r}{\left\Vert p\right\Vert }\zeta_{\rho}\zeta_{\phi}\right)
+2\left\Vert p\right\Vert r\zeta^{2}_{\phi}+\left\Vert p\right\Vert ^{2}\left(\left\Vert p\right\Vert \frac{k}{r}\dot{\theta}^{2}-\left(k+1\right)\zeta_{\rho}\dot{\theta}+\frac{r}{\left\Vert p\right\Vert }\zeta^{2}_{\rho}\right) & =c\cdot\left(\left(I\zeta_{\phi}-J\zeta_{\rho}+J\frac{\left\Vert p\right\Vert }{r}\dot{\theta}\right)^{2}\frac{p}{\left\Vert p\right\Vert }r-Jp\dot{\theta}k\zeta_{\phi}+p\left\Vert p\right\Vert \frac{k}{r}\dot{\theta}^{2}-p\left(k+1\right)\zeta_{\rho}\dot{\theta}+p\frac{r}{\left\Vert p\right\Vert }\zeta^{2}_{\rho}+Jp\frac{r}{\left\Vert p\right\Vert }\zeta_{\rho}\zeta_{\phi}\right)
 \end{align*}
 
 \end_inset
@@ -2305,8 +2599,8 @@ status collapsed
 p_{x}\\
 p_{y}
 \end{array}\right)\left(p_{y},-p_{x}\right)=\left[\begin{array}{cc}
-p_{x}p_{y} & -p_{x}^{2}\\
-p_{y}^{2} & -p_{x}p_{y}
+p_{x}p_{y} & -p^{2}_{x}\\
+p^{2}_{y} & -p_{x}p_{y}
 \end{array}\right]$
 \end_inset
 
@@ -2315,14 +2609,14 @@ p_{y}^{2} & -p_{x}p_{y}
 
 \begin_layout Plain Layout
 \begin_inset Formula $\left[\begin{array}{cc}
-p_{x}^{2} & p_{x}p_{y}\\
-p_{x}p_{y} & p_{y}^{2}
+p^{2}_{x} & p_{x}p_{y}\\
+p_{x}p_{y} & p^{2}_{y}
 \end{array}\right]\left[\begin{array}{cc}
 0 & -1\\
 1 & 0
 \end{array}\right]=\left[\begin{array}{cc}
-p_{x}p_{y} & -p_{x}^{2}\\
-p_{y}^{2} & -p_{x}p_{y}
+p_{x}p_{y} & -p^{2}_{x}\\
+p^{2}_{y} & -p_{x}p_{y}
 \end{array}\right]$
 \end_inset
 
@@ -2334,11 +2628,11 @@ p_{y}^{2} & -p_{x}p_{y}
 0 & -1\\
 1 & 0
 \end{array}\right]\left[\begin{array}{cc}
-p_{x}^{2} & p_{x}p_{y}\\
-p_{x}p_{y} & p_{y}^{2}
+p^{2}_{x} & p_{x}p_{y}\\
+p_{x}p_{y} & p^{2}_{y}
 \end{array}\right]=\left[\begin{array}{cc}
--p_{x}p_{y} & -p_{y}^{2}\\
-p_{x}^{2} & p_{x}p_{y}
+-p_{x}p_{y} & -p^{2}_{y}\\
+p^{2}_{x} & p_{x}p_{y}
 \end{array}\right]$
 \end_inset
 
@@ -2347,11 +2641,11 @@ p_{x}^{2} & p_{x}p_{y}
 
 \begin_layout Plain Layout
 \begin_inset Formula $\left[\begin{array}{cc}
-p_{x}p_{y} & -p_{x}^{2}\\
-p_{y}^{2} & -p_{x}p_{y}
+p_{x}p_{y} & -p^{2}_{x}\\
+p^{2}_{y} & -p_{x}p_{y}
 \end{array}\right]+\left[\begin{array}{cc}
--p_{x}p_{y} & -p_{y}^{2}\\
-p_{x}^{2} & p_{x}p_{y}
+-p_{x}p_{y} & -p^{2}_{y}\\
+p^{2}_{x} & p_{x}p_{y}
 \end{array}\right]=Jp^{T}p$
 \end_inset
 
@@ -2449,9 +2743,9 @@ p_{x}^{2} & p_{x}p_{y}
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-\frac{d}{dt}f\left(p,\dot{p},\theta,\dot{\theta}\right) & =f_{p}^{T}\dot{p}+f_{\dot{p}}^{T}\ddot{p}+f_{\theta}\dot{\theta}+f_{\dot{\theta}}\ddot{\theta}=0\\
- & =f_{p}^{T}\dot{p}-\left(k-1\right)f_{\dot{p}}^{T}Jp\ddot{\theta}-\left(k-1\right)f_{\dot{p}}^{T}J\dot{p}\dot{\theta}+f_{\theta}\dot{\theta}+f_{\dot{\theta}}\ddot{\theta}=0\\
-0 & =f_{p}^{T}\dot{p}+\left[f_{\dot{\theta}}-\left(k-1\right)f_{\dot{p}}^{T}Jp\right]\ddot{\theta}+\left[f_{\theta}-\left(k-1\right)f_{\dot{p}}^{T}J\dot{p}\right]\dot{\theta}=0
+\frac{d}{dt}f\left(p,\dot{p},\theta,\dot{\theta}\right) & =f^{T}_{p}\dot{p}+f^{T}_{\dot{p}}\ddot{p}+f_{\theta}\dot{\theta}+f_{\dot{\theta}}\ddot{\theta}=0\\
+ & =f^{T}_{p}\dot{p}-\left(k-1\right)f^{T}_{\dot{p}}Jp\ddot{\theta}-\left(k-1\right)f^{T}_{\dot{p}}J\dot{p}\dot{\theta}+f_{\theta}\dot{\theta}+f_{\dot{\theta}}\ddot{\theta}=0\\
+0 & =f^{T}_{p}\dot{p}+\left[f_{\dot{\theta}}-\left(k-1\right)f^{T}_{\dot{p}}Jp\right]\ddot{\theta}+\left[f_{\theta}-\left(k-1\right)f^{T}_{\dot{p}}J\dot{p}\right]\dot{\theta}=0
 \end{align*}
 
 \end_inset
@@ -2459,9 +2753,9 @@ p_{x}^{2} & p_{x}p_{y}
 Допустим
 \begin_inset Formula 
 \begin{align*}
-0 & =f_{p}^{T}\dot{p}\\
-0 & =\left[f_{\dot{\theta}}-\left(k-1\right)f_{\dot{p}}^{T}Jp\right]\\
-0 & =\left[f_{\theta}-\left(k-1\right)f_{\dot{p}}^{T}J\dot{p}\right]
+0 & =f^{T}_{p}\dot{p}\\
+0 & =\left[f_{\dot{\theta}}-\left(k-1\right)f^{T}_{\dot{p}}Jp\right]\\
+0 & =\left[f_{\theta}-\left(k-1\right)f^{T}_{\dot{p}}J\dot{p}\right]
 \end{align*}
 
 \end_inset
@@ -2470,8 +2764,8 @@ p_{x}^{2} & p_{x}p_{y}
 \begin_inset Formula 
 \begin{align*}
 f_{p} & =\alpha J\dot{p}\\
-f_{\dot{\theta}} & =\left(k-1\right)f_{\dot{p}}^{T}Jp\\
-f_{\theta} & =\left(k-1\right)f_{\dot{p}}^{T}J\dot{p}
+f_{\dot{\theta}} & =\left(k-1\right)f^{T}_{\dot{p}}Jp\\
+f_{\theta} & =\left(k-1\right)f^{T}_{\dot{p}}J\dot{p}
 \end{align*}
 
 \end_inset
@@ -2548,203 +2842,6 @@ f_{\theta} & =-\alpha_{\theta}\dot{y}x+\alpha_{\theta}\dot{x}y+c_{\theta}\\
 
 \begin_layout Standard
 \begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Анализ траекторий
-\end_layout
-
-\begin_layout Standard
-Существование крговых траекторий.
- Предположим 
-\begin_inset Formula $\rho=\text{const}$
-\end_inset
-
-,
- тогда 
-\begin_inset Formula 
-\begin{align*}
-\zeta_{\phi} & =0\\
-\zeta_{n} & =0\\
-\zeta_{\rho} & =\text{const}
-\end{align*}
-
-\end_inset
-
-тогда 
-\begin_inset Formula 
-\begin{align*}
-0 & =-\frac{gk}{r}\sin\alpha+\rho\frac{k}{r}\cos\alpha\dot{\theta}^{2}-\dot{\theta}\left(k+1\right)\cos\alpha\zeta_{\rho}-\dot{\phi}\cos\alpha\zeta_{\rho}
-\end{align*}
-
-\end_inset
-
-вычисляем 
-\begin_inset Formula 
-\begin{align*}
-\zeta_{\rho}^{2}-\frac{\rho}{r}\dot{\theta}\left(k+1\right)\zeta_{\rho}-\frac{\rho gk}{r^{2}}\tan\alpha+\frac{\rho^{2}k}{r^{2}}\dot{\theta}^{2} & =0
-\end{align*}
-
-\end_inset
-
-решаем квадратное уравнение:
- 
-\begin_inset Formula 
-\[
-\zeta_{\rho}=\frac{\rho\dot{\theta}\left(k+1\right)\pm\sqrt{\rho^{2}\dot{\theta}^{2}\left(k-1\right)^{2}+4\rho gk\tan\alpha}}{2r}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\rho\dot{\theta}^{2}>-\frac{4gk\tan\alpha}{\left(k-1\right)^{2}}
-\]
-
-\end_inset
-
-Как найти период?
- 
-\begin_inset Formula 
-\begin{align*}
-T & =\frac{2\pi\rho}{r\zeta_{\rho}}
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Система управления
-\end_layout
-
-\begin_layout Standard
-TODO
-\end_layout
-
-\begin_layout Section
-Инварианты
-\end_layout
-
-\begin_layout Standard
-Скорее всего для конуса сохраняется обобщённый импульс
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-\dot{\Omega} & =u\\
-\dot{\rho} & =r\cos\alpha\zeta_{\phi}\\
-\dot{\phi} & =-\frac{r}{\rho}\zeta_{\rho}\\
-\dot{\zeta}_{\rho} & =\dot{\theta}\left(k+1\right)\cos\alpha\zeta_{\phi}-\frac{r\cos\alpha}{\rho}\zeta_{\phi}\zeta_{\rho}+\left(k-1\right)\sin\alpha\ddot{\theta}+\frac{k\rho}{r}\ddot{\theta}\\
-\dot{\zeta}_{\phi} & =-\frac{gk\sin\alpha}{r}+\frac{\rho k\cos\alpha}{r}\dot{\theta}^{2}-\left(k+1\right)\cos\alpha\dot{\theta}\zeta_{\rho}+\frac{r\cos\alpha}{\rho}\zeta_{\rho}^{2}+\left(1-k\right)\sin\alpha\dot{\theta}\zeta_{n}-\frac{r\left(1-k\right)\sin\alpha}{\rho}\zeta_{\rho}\zeta_{n}\\
-\dot{\zeta}_{n} & =-\sin\alpha\zeta_{\phi}\dot{\theta}+\sin\alpha\frac{r}{\rho}\zeta_{\phi}\zeta_{\rho}-\cos\alpha\ddot{\theta}
-\end{align*}
-
-\end_inset
-
-Пусть 
-\begin_inset Formula $\zeta$
-\end_inset
-
- – импульс системы,
- тогда 
-\end_layout
-
-\begin_layout Standard
-Линейная система 
-\begin_inset Formula $\dot{x}=Ax+Bu$
-\end_inset
-
- имеет первый интеграл 
-\begin_inset Formula $Lx={\normalcolor const}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-L\left(Ax+Bu\right)=0.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Уравнения Чаплыгина
-\end_layout
-
-\begin_layout Standard
-Кинетическая энергия шара 
-\begin_inset Formula 
-\[
-K=\left(\rho\cos\alpha\right)+\frac{M}{2}\left(\dot{\eta}^{2}+\dot{\varepsilon}^{2}+\dot{\pi}^{2}+2\dot{\eta}\dot{\epsilon}\cos\pi\right)
-\]
-
-\end_inset
-
-
-\begin_inset Formula $\eta,\epsilon,\pi$
-\end_inset
-
- – углы Эйлера 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-x & =\rho\cos\phi\\
-y & =\rho\sin\phi\\
-z & =\rho\tan\alpha\\
-\dot{x} & =\dot{\rho}\cos\phi-\rho\sin\phi\dot{\phi}\\
-\dot{y} & =\dot{\rho}\sin\phi+\rho\cos\phi\dot{\phi}\\
-\dot{z} & =\tan\alpha\dot{\rho}\\
-\left(\begin{array}{c}
-x_{w}\\
-y_{w}
-\end{array}\right) & =\rho R_{z,\theta}\left(\begin{array}{c}
-\cos\phi\\
-\sin\phi\\
-\tan\alpha
-\end{array}\right)\\
-\left(\begin{array}{c}
-\dot{x}_{w}\\
-\dot{y}_{w}
-\end{array}\right) & =\dot{\rho}R_{z,\theta}\left(\begin{array}{c}
-\cos\phi\\
-\sin\phi\\
-\tan\alpha
-\end{array}\right)+\rho R_{z,\theta}\mathbf{e}_{z}^{\wedge}\dot{\theta}\left(\begin{array}{c}
-\cos\phi\\
-\sin\phi\\
-\tan\alpha
-\end{array}\right)+\rho R_{z,\theta}\left(\begin{array}{c}
--\sin\phi\\
-\cos\phi\\
-0
-\end{array}\right)\dot{\phi}\\
- & =
-\end{align*}
-
 \end_inset
 
 
@@ -2898,14 +2995,14 @@ status collapsed
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Formula $A\left[-\dot{\theta}\mathbf{e}_{z}^{\wedge}-k\dot{\theta}n^{\wedge}n^{\wedge}\mathbf{e}_{z}^{\wedge}+2k\dot{\theta}n^{\wedge}\mathbf{e}_{z}^{\wedge}n^{\wedge}+kn^{\wedge}\dot{n}^{\wedge}\right]A^{T}\zeta$
+\begin_inset Formula $A\left[-\dot{\theta}\mathbf{e}^{\wedge}_{z}-k\dot{\theta}n^{\wedge}n^{\wedge}\mathbf{e}^{\wedge}_{z}+2k\dot{\theta}n^{\wedge}\mathbf{e}^{\wedge}_{z}n^{\wedge}+kn^{\wedge}\dot{n}^{\wedge}\right]A^{T}\zeta$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Formula $A\left[-\dot{\theta}\mathbf{e}_{z}^{\wedge}-k\dot{\theta}n^{\wedge}n^{\wedge}\mathbf{e}_{z}^{\wedge}+2k\dot{\theta}n^{\wedge}\mathbf{e}_{z}^{\wedge}n^{\wedge}\right]A^{T}\zeta$
+\begin_inset Formula $A\left[-\dot{\theta}\mathbf{e}^{\wedge}_{z}-k\dot{\theta}n^{\wedge}n^{\wedge}\mathbf{e}^{\wedge}_{z}+2k\dot{\theta}n^{\wedge}\mathbf{e}^{\wedge}_{z}n^{\wedge}\right]A^{T}\zeta$
 \end_inset
 
 
@@ -2957,42 +3054,42 @@ status collapsed
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Formula $\mathbf{e}_{z}^{\wedge}n^{\wedge}*=n\left(\mathbf{e}_{z}\cdot*\right)-*\left(\mathbf{e}_{z}\cdot n\right)=n\mathbf{e}_{z}^{T}-I\mathbf{e}_{z}^{T}n$
+\begin_inset Formula $\mathbf{e}^{\wedge}_{z}n^{\wedge}*=n\left(\mathbf{e}_{z}\cdot*\right)-*\left(\mathbf{e}_{z}\cdot n\right)=n\mathbf{e}^{T}_{z}-I\mathbf{e}^{T}_{z}n$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Formula $n^{\wedge}\mathbf{e}_{z}^{\wedge}n^{\wedge}=n^{\wedge}n\mathbf{e}_{z}^{T}-In^{\wedge}\mathbf{e}_{z}^{T}n=-n^{\wedge}\mathbf{e}_{z}^{T}n=-n_{z}n^{\wedge}$
+\begin_inset Formula $n^{\wedge}\mathbf{e}^{\wedge}_{z}n^{\wedge}=n^{\wedge}n\mathbf{e}^{T}_{z}-In^{\wedge}\mathbf{e}^{T}_{z}n=-n^{\wedge}\mathbf{e}^{T}_{z}n=-n_{z}n^{\wedge}$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Formula $n^{\wedge}\mathbf{e}_{z}^{\wedge}*=\mathbf{e}_{z}^{T}n-In_{z}$
+\begin_inset Formula $n^{\wedge}\mathbf{e}^{\wedge}_{z}*=\mathbf{e}^{T}_{z}n-In_{z}$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Formula $n^{\wedge}\mathbf{e}_{z}^{\wedge}*=\mathbf{e}_{z}\left(n\cdot*\right)-*\left(n\cdot\mathbf{e}_{z}\right)$
+\begin_inset Formula $n^{\wedge}\mathbf{e}^{\wedge}_{z}*=\mathbf{e}_{z}\left(n\cdot*\right)-*\left(n\cdot\mathbf{e}_{z}\right)$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Formula $n^{\wedge}\mathbf{e}_{z}^{\wedge}*=\mathbf{e}_{z}n^{T}-In_{z}$
+\begin_inset Formula $n^{\wedge}\mathbf{e}^{\wedge}_{z}*=\mathbf{e}_{z}n^{T}-In_{z}$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Formula $n^{\wedge}n^{\wedge}\mathbf{e}_{z}^{\wedge}*=n^{\wedge}\mathbf{e}_{z}n^{T}-n_{z}n^{\wedge}$
+\begin_inset Formula $n^{\wedge}n^{\wedge}\mathbf{e}^{\wedge}_{z}*=n^{\wedge}\mathbf{e}_{z}n^{T}-n_{z}n^{\wedge}$
 \end_inset
 
 
@@ -3006,7 +3103,7 @@ status collapsed
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Formula $kn^{\wedge}\frac{p}{r}^{\wedge}\mathbf{e}_{z}^{\wedge}-\mathbf{e}_{z}^{\wedge}-kn^{\wedge}n^{\wedge}\mathbf{e}_{z}^{\wedge}=kn^{\wedge}\left[\frac{p}{r}-n\right]^{\wedge}\mathbf{e}_{z}^{\wedge}-\mathbf{e}_{z}^{\wedge}=\left(kn^{\wedge}\left[\frac{p}{r}-n\right]^{\wedge}-I\right)\mathbf{e}_{z}^{\wedge}$
+\begin_inset Formula $kn^{\wedge}\frac{p}{r}^{\wedge}\mathbf{e}^{\wedge}_{z}-\mathbf{e}^{\wedge}_{z}-kn^{\wedge}n^{\wedge}\mathbf{e}^{\wedge}_{z}=kn^{\wedge}\left[\frac{p}{r}-n\right]^{\wedge}\mathbf{e}^{\wedge}_{z}-\mathbf{e}^{\wedge}_{z}=\left(kn^{\wedge}\left[\frac{p}{r}-n\right]^{\wedge}-I\right)\mathbf{e}^{\wedge}_{z}$
 \end_inset
 
 

@@ -319,9 +319,9 @@ def verify_first_integrals():
   phi = 0.012
   w0 = np.array([2., 0.3, 0.7])
   st0 = np.array([rho, phi, *w0])
-  sol = solve_ivp(sys, [0, simtime], st0, max_step=1e-2)
+  sol = solve_ivp(sys, [0, simtime], st0, max_step=1e-2, atol=1e-9, rtol=1e-9)
 
-  I1, I2 = zip(*[dynamics.first_integrals(st, table_angvel) for st in sol.y.T])
+  I1, I2, I3 = zip(*[dynamics.first_integrals(st, table_angvel) for st in sol.y.T])
 
   t = sol.t
   rho = sol.y[0]
@@ -336,14 +336,24 @@ def verify_first_integrals():
   plt.grid(True)
   plt.tight_layout()
 
-  _, axes = plt.subplots(2, 1, sharex=True, num='I')
-  plt.sca(axes[0])
-  plt.plot(t, I1)
-  plt.sca(axes[1])
-  plt.plot(t, I2)
-  plt.grid(True)
-  plt.tight_layout()
+  _, axes = plt.subplots(3, 1, sharex=True, num='I')
 
+  plt.sca(axes[0])
+  plt.grid(True)
+  plt.ylabel(R'$I_1$')
+  plt.plot(t, I1)
+
+  plt.sca(axes[1])
+  plt.grid(True)
+  plt.ylabel(R'$I_2$')
+  plt.plot(t, I2)
+
+  plt.sca(axes[2])
+  plt.grid(True)
+  plt.ylabel(R'$I_3$')
+  plt.plot(t, I3)
+
+  plt.tight_layout(pad=0.1)
   plt.show()
 
 if __name__ == '__main__':
